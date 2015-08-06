@@ -1,0 +1,16 @@
+# .gitignore file for a Quartus II FPGA project
+#
+# Quartus II absolutely _litters_ the working directory with
+# generated files. So we ignore everything and then explicitly
+# un-ignore the files that actually matter.
+
+# ignore everything
+/*
+
+# pay attention to files that matter
+!.gitignore
+!*.bdf
+!*.bsf
+!*.qpf
+!*.qsf
+
