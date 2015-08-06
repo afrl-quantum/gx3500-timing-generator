@@ -59,3 +59,4 @@ set_global_assignment -name BDF_FILE TimingGenerator128b.bdf
 set_global_assignment -name BDF_FILE Registers.bdf
 set_global_assignment -name QIP_FILE PLL_10MHz.qip
 set_global_assignment -name QIP_FILE PLL_80MHz.qip
+set_global_assignment -name BDF_FILE SequenceBuffer.bdf
