@@ -67,7 +67,7 @@ The configuration register consists of two blocks. Bits 31..16 should be set to 
 (unsigned) number of steps in the sequence being programmed.
 
 -----------------------------------------------------------
-| number of steps |X|X|X|X|X|X|X|X|X|X|X|X|`A`|`E`|`M`|`T`|
+| number of steps[31..16] |X|X|X|X|X|X|X|X|X|X|X|X|`A`|`E`|`M`|`T`|
 -----------------------------------------------------------
 
 `T`
