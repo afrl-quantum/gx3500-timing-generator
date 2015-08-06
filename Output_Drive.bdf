@@ -23,7 +23,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1136 168 1304 184)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
-	(text "trig0_enable" (rect 5 0 68 11)(font "Arial" ))
+	(text "trig0_enable" (rect 5 0 67 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -39,7 +39,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1000 296 1184 312)
 	(text "INPUT" (rect 141 0 170 10)(font "Arial" (font_size 6)))
-	(text "trig0_select[6..0]" (rect 5 0 87 11)(font "Arial" ))
+	(text "trig0_select[6..0]" (rect 5 0 86 11)(font "Arial" ))
 	(pt 184 8)
 	(drawing
 		(line (pt 100 12)(pt 125 12))
@@ -55,7 +55,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1136 328 1304 344)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
-	(text "trig1_enable" (rect 5 0 68 11)(font "Arial" ))
+	(text "trig1_enable" (rect 5 0 67 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -71,7 +71,7 @@ applicable agreement for further details.
 	(input)
 	(rect 992 456 1176 472)
 	(text "INPUT" (rect 141 0 170 10)(font "Arial" (font_size 6)))
-	(text "trig1_select[6..0]" (rect 5 0 87 11)(font "Arial" ))
+	(text "trig1_select[6..0]" (rect 5 0 86 11)(font "Arial" ))
 	(pt 184 8)
 	(drawing
 		(line (pt 100 12)(pt 125 12))
@@ -87,7 +87,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1136 480 1304 496)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
-	(text "trig2_enable" (rect 5 0 68 11)(font "Arial" ))
+	(text "trig2_enable" (rect 5 0 67 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -103,7 +103,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1000 608 1184 624)
 	(text "INPUT" (rect 141 0 170 10)(font "Arial" (font_size 6)))
-	(text "trig2_select[6..0]" (rect 5 0 87 11)(font "Arial" ))
+	(text "trig2_select[6..0]" (rect 5 0 86 11)(font "Arial" ))
 	(pt 184 8)
 	(drawing
 		(line (pt 100 12)(pt 125 12))
@@ -119,7 +119,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1136 632 1304 648)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
-	(text "trig3_enable" (rect 5 0 68 11)(font "Arial" ))
+	(text "trig3_enable" (rect 5 0 67 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -135,7 +135,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1000 760 1184 776)
 	(text "INPUT" (rect 141 0 170 10)(font "Arial" (font_size 6)))
-	(text "trig3_select[6..0]" (rect 5 0 87 11)(font "Arial" ))
+	(text "trig3_select[6..0]" (rect 5 0 86 11)(font "Arial" ))
 	(pt 184 8)
 	(drawing
 		(line (pt 100 12)(pt 125 12))
@@ -151,7 +151,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1136 784 1304 800)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
-	(text "trig4_enable" (rect 5 0 68 11)(font "Arial" ))
+	(text "trig4_enable" (rect 5 0 67 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -167,7 +167,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1008 912 1192 928)
 	(text "INPUT" (rect 141 0 170 10)(font "Arial" (font_size 6)))
-	(text "trig4_select[6..0]" (rect 5 0 87 11)(font "Arial" ))
+	(text "trig4_select[6..0]" (rect 5 0 86 11)(font "Arial" ))
 	(pt 184 8)
 	(drawing
 		(line (pt 100 12)(pt 125 12))
@@ -183,7 +183,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1136 936 1304 952)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
-	(text "trig5_enable" (rect 5 0 68 11)(font "Arial" ))
+	(text "trig5_enable" (rect 5 0 67 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -199,7 +199,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1008 1064 1192 1080)
 	(text "INPUT" (rect 141 0 170 10)(font "Arial" (font_size 6)))
-	(text "trig5_select[6..0]" (rect 5 0 87 11)(font "Arial" ))
+	(text "trig5_select[6..0]" (rect 5 0 86 11)(font "Arial" ))
 	(pt 184 8)
 	(drawing
 		(line (pt 100 12)(pt 125 12))
@@ -215,7 +215,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1136 1088 1304 1104)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
-	(text "trig6_enable" (rect 5 0 68 11)(font "Arial" ))
+	(text "trig6_enable" (rect 5 0 67 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -231,7 +231,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1008 1216 1192 1232)
 	(text "INPUT" (rect 141 0 170 10)(font "Arial" (font_size 6)))
-	(text "trig6_select[6..0]" (rect 5 0 87 11)(font "Arial" ))
+	(text "trig6_select[6..0]" (rect 5 0 86 11)(font "Arial" ))
 	(pt 184 8)
 	(drawing
 		(line (pt 100 12)(pt 125 12))
@@ -247,7 +247,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1136 1240 1304 1256)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
-	(text "trig7_enable" (rect 5 0 68 11)(font "Arial" ))
+	(text "trig7_enable" (rect 5 0 67 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -263,7 +263,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1016 1368 1192 1384)
 	(text "INPUT" (rect 133 0 162 10)(font "Arial" (font_size 6)))
-	(text "trig7_select[6..0]" (rect 5 0 87 11)(font "Arial" ))
+	(text "trig7_select[6..0]" (rect 5 0 86 11)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 92 12)(pt 117 12))
@@ -277,9 +277,9 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 328 232 512 248)
+	(rect 96 232 280 248)
 	(text "INPUT" (rect 141 0 170 10)(font "Arial" (font_size 6)))
-	(text "PortData[127..0]" (rect 5 0 86 11)(font "Arial" ))
+	(text "PortData[127..0]" (rect 5 0 85 11)(font "Arial" ))
 	(pt 184 8)
 	(drawing
 		(line (pt 100 12)(pt 125 12))
@@ -306,12 +306,13 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1592 1376 1656 1392))
 )
 (pin
 	(output)
-	(rect 720 368 896 384)
+	(rect 720 384 896 400)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
-	(text "PortA" (rect 90 0 120 11)(font "Arial" ))
+	(text "PortA[31..0]" (rect 90 0 149 11)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -325,9 +326,9 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 720 440 896 456)
+	(rect 720 456 896 472)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
-	(text "PortB" (rect 90 0 119 11)(font "Arial" ))
+	(text "PortB[31..0]" (rect 90 0 149 11)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -341,9 +342,9 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 720 504 896 520)
+	(rect 720 520 896 536)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
-	(text "PortC" (rect 90 0 119 11)(font "Arial" ))
+	(text "PortC[31..0]" (rect 90 0 149 11)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -357,9 +358,9 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 720 576 896 592)
+	(rect 720 592 896 608)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
-	(text "PortD" (rect 90 0 119 11)(font "Arial" ))
+	(text "PortD[31..0]" (rect 90 0 149 11)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -724,30 +725,6 @@ applicable agreement for further details.
 	(annotation_block (parameter)(rect 944 1264 1140 1303))
 )
 (symbol
-	(rect 536 464 584 496)
-	(text "ALT_OUTBUF" (rect 1 0 63 10)(font "Arial" (font_size 6)))
-	(text "inst" (rect 3 21 21 32)(font "Arial" ))
-	(port
-		(pt 0 16)
-		(input)
-		(text "i" (rect 2 7 9 18)(font "Courier New" (bold))(invisible))
-		(text "i" (rect 2 7 9 18)(font "Courier New" (bold))(invisible))
-		(line (pt 0 16)(pt 14 16))
-	)
-	(port
-		(pt 48 16)
-		(output)
-		(text "o" (rect 32 7 40 18)(font "Courier New" (bold))(invisible))
-		(text "o" (rect 32 7 40 18)(font "Courier New" (bold))(invisible))
-		(line (pt 32 16)(pt 48 16))
-	)
-	(drawing
-		(line (pt 14 25)(pt 14 7))
-		(line (pt 14 7)(pt 32 16))
-		(line (pt 14 25)(pt 32 16))
-	)
-)
-(symbol
 	(rect 1288 224 1336 256)
 	(text "ALT_OUTBUF_TRI" (rect 1 0 84 10)(font "Arial" (font_size 6)))
 	(text "inst1" (rect 3 21 26 32)(font "Arial" ))
@@ -993,6 +970,34 @@ applicable agreement for further details.
 		(line (pt 14 25)(pt 14 7))
 		(line (pt 14 25)(pt 32 16))
 		(line (pt 14 7)(pt 32 16))
+	)
+)
+(symbol
+	(rect 352 384 584 528)
+	(text "Driver128b" (rect 85 0 164 16)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 129 26 140)(font "Arial" ))
+	(port
+		(pt 0 112)
+		(input)
+		(text "datain[127..0]" (rect 0 0 77 13)(font "Arial" (font_size 8)))
+		(text "datain[127..0]" (rect 4 99 81 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 100 112)(line_width 3))
+	)
+	(port
+		(pt 232 112)
+		(output)
+		(text "dataout[127..0]" (rect 0 0 86 13)(font "Arial" (font_size 8)))
+		(text "dataout[127..0]" (rect 158 99 244 112)(font "Arial" (font_size 8)))
+		(line (pt 232 112)(pt 131 112)(line_width 3))
+	)
+	(drawing
+		(line (pt 100 96)(pt 100 128))
+		(line (pt 100 96)(pt 132 112))
+		(line (pt 100 128)(pt 132 112))
+		(line (pt 0 0)(pt 234 0))
+		(line (pt 234 0)(pt 234 146))
+		(line (pt 0 146)(pt 234 146))
+		(line (pt 0 0)(pt 0 146))
 	)
 )
 (connector
@@ -1327,74 +1332,78 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
+	(text "PortDataBuf[127..0]" (rect 584 480 680 491)(font "Arial" ))
+	(pt 584 496)
+	(pt 648 496)
+	(bus)
+)
+(connector
+	(text "PortDataBuf[31..0]" (rect 658 376 748 387)(font "Arial" ))
+	(pt 720 392)
+	(pt 648 392)
+	(bus)
+)
+(connector
+	(text "PortDataBuf[63..32]" (rect 658 448 754 459)(font "Arial" ))
+	(pt 720 464)
+	(pt 648 464)
+	(bus)
+)
+(connector
+	(text "PortDataBuf[95..64]" (rect 658 512 754 523)(font "Arial" ))
+	(pt 648 528)
+	(pt 720 528)
+	(bus)
+)
+(connector
+	(text "PortDataBuf[127..96]" (rect 656 584 758 595)(font "Arial" ))
+	(pt 720 600)
+	(pt 648 600)
+	(bus)
+)
+(connector
+	(pt 648 392)
+	(pt 648 464)
+	(bus)
+)
+(connector
+	(pt 648 464)
+	(pt 648 496)
+	(bus)
+)
+(connector
+	(pt 648 496)
+	(pt 648 528)
+	(bus)
+)
+(connector
+	(pt 648 528)
+	(pt 648 600)
+	(bus)
+)
+(connector
 	(pt 920 240)
 	(pt 1144 240)
 	(bus)
 )
 (connector
-	(pt 648 376)
-	(pt 648 448)
+	(pt 352 496)
+	(pt 328 496)
 	(bus)
 )
 (connector
-	(pt 648 512)
-	(pt 648 584)
+	(pt 328 496)
+	(pt 328 240)
 	(bus)
 )
 (connector
-	(text "PortDataBuf[31..0]" (rect 658 360 748 371)(font "Arial" ))
-	(pt 720 376)
-	(pt 648 376)
-)
-(connector
-	(text "PortDataBuf[63..32]" (rect 658 432 754 443)(font "Arial" ))
-	(pt 720 448)
-	(pt 648 448)
-)
-(connector
-	(text "PortDataBuf[95..64]" (rect 658 496 754 507)(font "Arial" ))
-	(pt 648 512)
-	(pt 720 512)
-)
-(connector
-	(text "PortDataBuf[127..96]" (rect 656 568 758 579)(font "Arial" ))
-	(pt 720 584)
-	(pt 648 584)
-)
-(connector
-	(pt 520 240)
-	(pt 520 480)
+	(pt 280 240)
+	(pt 328 240)
 	(bus)
 )
 (connector
-	(pt 520 480)
-	(pt 536 480)
-	(bus)
-)
-(connector
-	(pt 512 240)
-	(pt 520 240)
-	(bus)
-)
-(connector
-	(pt 520 240)
+	(pt 328 240)
 	(pt 920 240)
-	(bus)
-)
-(connector
-	(pt 648 448)
-	(pt 648 480)
-	(bus)
-)
-(connector
-	(pt 648 480)
-	(pt 648 512)
-	(bus)
-)
-(connector
-	(text "PortDataBuf[127..0]" (rect 584 464 680 475)(font "Arial" ))
-	(pt 584 480)
-	(pt 648 480)
 	(bus)
 )
 (junction (pt 920 1160))
@@ -1411,8 +1420,8 @@ applicable agreement for further details.
 (junction (pt 1400 704))
 (junction (pt 1400 1008))
 (junction (pt 1400 856))
-(junction (pt 648 448))
-(junction (pt 648 512))
-(junction (pt 648 480))
-(junction (pt 520 240))
+(junction (pt 648 464))
+(junction (pt 648 496))
+(junction (pt 648 528))
+(junction (pt 328 240))
 (text "Send Output" (rect 616 48 758 73)(font "Arial" (font_size 16)))
