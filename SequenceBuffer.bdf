@@ -930,18 +930,8 @@ applicable agreement for further details.
 	)
 )
 (connector
-	(text "PCI_Allowed" (rect 576 87 587 151)(font "Arial" )(vertical))
-	(pt 592 88)
-	(pt 592 152)
-)
-(connector
 	(pt 296 248)
 	(pt 296 264)
-)
-(connector
-	(text "PCI_Allowed" (rect 130 248 194 259)(font "Arial" ))
-	(pt 296 264)
-	(pt 120 264)
 )
 (connector
 	(pt 200 192)
@@ -1030,18 +1020,6 @@ applicable agreement for further details.
 	(pt 376 440)
 	(pt 376 288)
 	(bus)
-)
-(connector
-	(pt 560 672)
-	(pt 456 672)
-)
-(connector
-	(pt 456 728)
-	(pt 456 672)
-)
-(connector
-	(pt 456 672)
-	(pt 456 496)
 )
 (connector
 	(pt 608 672)
@@ -1231,22 +1209,6 @@ applicable agreement for further details.
 	(pt 248 408)
 )
 (connector
-	(pt 296 664)
-	(pt 296 680)
-)
-(connector
-	(pt 296 680)
-	(pt 368 680)
-)
-(connector
-	(pt 368 680)
-	(pt 368 728)
-)
-(connector
-	(pt 456 728)
-	(pt 888 728)
-)
-(connector
 	(pt 840 64)
 	(pt 648 64)
 	(bus)
@@ -1269,14 +1231,6 @@ applicable agreement for further details.
 (connector
 	(pt 216 728)
 	(pt 264 728)
-)
-(connector
-	(pt 328 728)
-	(pt 368 728)
-)
-(connector
-	(pt 368 728)
-	(pt 456 728)
 )
 (connector
 	(pt 264 744)
@@ -1387,6 +1341,53 @@ applicable agreement for further details.
 (connector
 	(pt 400 624)
 	(pt 352 624)
+)
+(connector
+	(pt 560 672)
+	(pt 456 672)
+)
+(connector
+	(pt 456 728)
+	(pt 456 672)
+)
+(connector
+	(pt 456 672)
+	(pt 456 496)
+)
+(connector
+	(pt 296 664)
+	(pt 296 680)
+)
+(connector
+	(pt 296 680)
+	(pt 368 680)
+)
+(connector
+	(pt 368 680)
+	(pt 368 728)
+)
+(connector
+	(text "PCI_Enabled" (rect 466 712 532 723)(font "Arial" ))
+	(pt 456 728)
+	(pt 888 728)
+)
+(connector
+	(pt 328 728)
+	(pt 368 728)
+)
+(connector
+	(pt 368 728)
+	(pt 456 728)
+)
+(connector
+	(text "PCI_Enabled" (rect 130 248 196 259)(font "Arial" ))
+	(pt 296 264)
+	(pt 120 264)
+)
+(connector
+	(text "PCI_Enabled" (rect 575 86 586 152)(font "Arial" )(vertical))
+	(pt 592 88)
+	(pt 592 152)
 )
 (junction (pt 360 472))
 (junction (pt 232 384))
