@@ -115,7 +115,7 @@ an error is detected and may be cleared by writing 1 to the appropriate bit
 in the register.
 
 ----------------------------------------------------------------------------------
-|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|`I`|`X`|`P`|`D`|`S`|`B`| state[1:0] |
+|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|`I`|`X`|`P`|`D`|`S`|`B`| state\[1:0] |
 ----------------------------------------------------------------------------------
 
 `B`

@@ -8,7 +8,7 @@ a 4-bit port mask and a 28-bit delay (in units of 10 ns) and then is followed by
 one 32-bit pattern word for each port specified in the mask:
 
 -------------------------------
-|`A`|`B`|`C`|`D`| delay[27:0] |
+|`A`|`B`|`C`|`D`| delay\[27:0] |
 -------------------------------
 
 where `A`--`D` are 1 if there is a new pattern for that port, or 0 if the pattern
