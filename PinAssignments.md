@@ -14,6 +14,8 @@ Port D\[31..0]: `FlexIO[151..120]`
 
 External trigger input: `FlexIO[32]`
 Trigger indicator: `FlexIO[33]` (goes HIGH when the card enters the `RUN` state)
-External clock input: `FlexIO[34]` (*is this the best choice for noise immunity?*)
-Sequence transition indicator: `FlexIO[35]` (pulses HIGH for 20 ns when a new pattern is output)
+Sequence transition indicator: `FlexIO[34]` (pulses HIGH for 20 ns when a new pattern is output)
+
+We would like to also support an external 10MHz reference input, but CLKINs cannot come
+from GPIO pins, i.e. the FlexIOs --- there are dedicated CLKIN pins.
 
