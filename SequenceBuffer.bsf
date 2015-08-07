@@ -26,8 +26,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 32)
 		(input)
-		(text "DecodeAddr[16..0]" (rect 0 0 106 13)(font "Arial" (font_size 8)))
-		(text "DecodeAddr[16..0]" (rect 21 27 127 40)(font "Arial" (font_size 8)))
+		(text "DecodeAddr[15..0]" (rect 0 0 106 13)(font "Arial" (font_size 8)))
+		(text "DecodeAddr[15..0]" (rect 21 27 127 40)(font "Arial" (font_size 8)))
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
@@ -99,6 +99,13 @@ applicable agreement for further details.
 		(text "err_bad_pci_access" (rect 0 0 114 13)(font "Arial" (font_size 8)))
 		(text "err_bad_pci_access" (rect 137 59 251 72)(font "Arial" (font_size 8)))
 		(line (pt 272 64)(pt 256 64))
+	)
+	(port
+		(pt 272 80)
+		(output)
+		(text "PCI_Enabled" (rect 0 0 75 13)(font "Arial" (font_size 8)))
+		(text "PCI_Enabled" (rect 176 75 251 88)(font "Arial" (font_size 8)))
+		(line (pt 272 80)(pt 256 80))
 	)
 	(port
 		(pt 272 32)
