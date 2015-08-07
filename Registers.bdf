@@ -91,7 +91,7 @@ applicable agreement for further details.
 	(input)
 	(rect -248 432 -80 448)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
-	(text "Addr[19..0]" (rect 5 0 60 11)(font "Arial" ))
+	(text "Addr[19..0]" (rect 5 0 59 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -125,22 +125,6 @@ applicable agreement for further details.
 	(rect 1480 192 1669 208)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "refclk_use_10MHz" (rect 90 0 183 11)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-)
-(pin
-	(output)
-	(rect 1480 216 1672 232)
-	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
-	(text "refclk_use_external" (rect 90 0 186 11)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -1517,11 +1501,6 @@ applicable agreement for further details.
 	(pt 1368 200)
 )
 (connector
-	(text "reg_CONFIG[2]" (rect 1368 208 1445 219)(font "Arial" ))
-	(pt 1480 224)
-	(pt 1368 224)
-)
-(connector
 	(text "reg_CONFIG[3]" (rect 1368 232 1445 243)(font "Arial" ))
 	(pt 1480 248)
 	(pt 1368 248)
@@ -2206,7 +2185,6 @@ applicable agreement for further details.
 (text "Reading/decoding register addresses" (rect -144 384 66 397)(font "Arial" (font_size 8)))
 (text "Reading/decoding register addresses" (rect -144 384 66 397)(font "Arial" (font_size 8)))
 (text "True : Use External Clock" (rect 1488 240 1634 253)(font "Arial" (font_size 8)))
-(text "0b1 : 10MHz Clock" (rect 1488 208 1596 221)(font "Arial" (font_size 8)))
 (text "For 10MHz, Internal clock is PXI 10MHz" (rect 1000 272 1225 285)(font "Arial" (font_size 8)))
 (text "For 80MHz:  Internal is 80MHz onboard reference" (rect 1000 304 1278 317)(font "Arial" (font_size 8)))
 (text "External is not currently available" (rect 1064 320 1250 333)(font "Arial" (font_size 8)))

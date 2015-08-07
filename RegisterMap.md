@@ -67,21 +67,16 @@ The configuration register consists of two blocks. Bits 31..16 should be set to 
 (unsigned) number of steps in the sequence being programmed.
 
 -----------------------------------------------------------
-| number of steps[31..16] |X|X|X|X|X|X|X|X|X|X|X|X|`A`|`E`|`M`|`T`|
+| number of steps[31..16] |X|X|X|X|X|X|X|X|X|X|X|X|`A`|X|`M`|`T`|
 -----------------------------------------------------------
 
 `T`
 :   `TRIG_ENABLE` -- set this bit to unmask the external trigger input
 
 `M`
-:   `REFCLK_10MHZ` -- if set, the Master Clock is derived from a 10 MHz
-    reference, either the PXI 10 MHz clock or an external clock. If clear,
-    the Master Clock is derived from the card's own 80 MHz onboard oscillator.
-
-`E`
-:   `REFCLK_EXTERNAL` -- if set and `REFCLK_10MHZ` is set, the Master Clock
-    is derived from an external 10 MHz reference on FlexIO\[34]. Must not
-    be set if `REFCLK_10MHZ` is clear.
+:   `REFCLK_10MHZ` -- if set, the Master Clock is derived from the PXI 10 MHz
+    clock. If clear, the Master Clock is derived from the card's own 80 MHz
+    onboard oscillator.
 
 `A`
 :   `AUTO_TRIGGER` -- controls the behavior of the card when `N_REPS` is not 1;
