@@ -11,9 +11,10 @@
 !.gitignore
 !*.bdf
 !*.bsf
+!*.md
 !*.ppf
 !*.qip
 !*.qpf
 !*.qsf
-!*.md
+!*.smf
 !*.v

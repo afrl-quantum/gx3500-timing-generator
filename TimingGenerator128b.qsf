@@ -51,15 +51,6 @@ set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_global_assignment -name BDF_FILE Clocks.bdf
-set_global_assignment -name BDF_FILE Output_Drive.bdf
-set_global_assignment -name TCL_SCRIPT_FILE "../../../../../group/current/docs/commercial-info/marvintest/windows-software/GxFpga/Gx3500Pins.tcl"
-set_global_assignment -name BDF_FILE TimingGenerator128b.bdf
-set_global_assignment -name BDF_FILE Registers.bdf
-set_global_assignment -name QIP_FILE PLL_10MHz.qip
-set_global_assignment -name QIP_FILE PLL_80MHz.qip
-set_global_assignment -name BDF_FILE SequenceBuffer.bdf
-set_global_assignment -name QIP_FILE MainRAM.qip
 set_location_assignment PIN_A17 -to FDt[31]
 set_location_assignment PIN_B16 -to FDt[30]
 set_location_assignment PIN_A18 -to FDt[29]
@@ -163,8 +154,6 @@ set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name QIP_FILE Driver128b.qip
-set_global_assignment -name SDC_FILE TimingGenerator128b.sdc
 set_instance_assignment -name SAFE_STATE_MACHINE ON -to *
 set_instance_assignment -name IO_STANDARD "2.5 V" -to FlexIO*
 set_location_assignment PIN_W22 -to FlexIO1
@@ -327,4 +316,21 @@ set_location_assignment PIN_G13 -to FlexIO116
 set_location_assignment PIN_G10 -to FlexIO117
 set_location_assignment PIN_F10 -to FlexIO118
 set_location_assignment PIN_F8 -to FlexIO119
+set_global_assignment -name VERILOG_FILE RAM_Clock_Switch.v
+set_global_assignment -name BDF_FILE Clocks.bdf
+set_global_assignment -name BDF_FILE Output_Drive.bdf
+set_global_assignment -name TCL_SCRIPT_FILE "../../../../../group/current/docs/commercial-info/marvintest/windows-software/GxFpga/Gx3500Pins.tcl"
+set_global_assignment -name BDF_FILE TimingGenerator128b.bdf
+set_global_assignment -name BDF_FILE Registers.bdf
+set_global_assignment -name QIP_FILE PLL_10MHz.qip
+set_global_assignment -name QIP_FILE PLL_80MHz.qip
+set_global_assignment -name BDF_FILE SequenceBuffer.bdf
+set_global_assignment -name QIP_FILE MainRAM.qip
+set_global_assignment -name QIP_FILE Driver128b.qip
+set_global_assignment -name SDC_FILE TimingGenerator128b.sdc
+set_global_assignment -name QIP_FILE CommandFifo.qip
+set_global_assignment -name QIP_FILE StatusFifo.qip
+set_global_assignment -name SMF_FILE RAM_Clock_Switch.smf
+set_global_assignment -name QIP_FILE PLL_Mux.qip
+set_global_assignment -name QIP_FILE PLL_PCIClock.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

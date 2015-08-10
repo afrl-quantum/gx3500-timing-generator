@@ -102,16 +102,36 @@ If an undefined command is written, the bit `STATUS:ERR_BAD_CMD` is latched. If
 a command is issued in an inappropriate state (e.g. `ARM` when in `PAUSED`),
 the bit `STATUS:ERR_INAPPROPRIATE_STATE` is latched.
 
+The command register is implemented as a FIFO, and it's buffer-full status is
+available as the `STATUS:FIFO_FULL` bit.
+
 #### `STATUS`
 
-The status register consists of two parts, a readback of the current state in
-`STATUS[1:0]` and a set of latched error bits. The error bits are set to 1 when
-an error is detected and may be cleared by writing 1 to the appropriate bit
-in the register.
+The status register consists of three parts, a readback of the current state in
+`STATUS[2:0]`, a command FIFO full bit, and a set of latched error bits. The error
+bits are set to 1 when an error is detected and may be cleared by writing 1 to the
+appropriate bit in the register. Writes to State\[2:0] and `F` are ignored.
 
-----------------------------------------------------------------------------------
-|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|`I`|`X`|`P`|`D`|`S`|`B`| state\[1:0] |
-----------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|`I`|`R`|`P`|`D`|`S`|`B`|`F`| State\[2:0] |
+---------------------------------------------------------------------------------------
+
+State\[2:0]
+:   The current state of the card:
+    --------------------
+    | Value | State    |
+    |-------|----------|
+    | 0b000 | SETUP    |
+    | 0b001 | READY    |
+    | 0b010 | RUN      |
+    | 0b011 | PAUSED   |
+    | 0b100 | ARMING   |
+    | 0b101 | STOPPING |
+    | 0b11X |   ---    |
+    --------------------
+
+`F`
+:   `FIFO_FULL` -- Command FIFO is full.
 
 `B`
 :   `ERR_BAD_CMD` -- an undefined command number was written to the `CMD` register
@@ -129,8 +149,8 @@ in the register.
 :   `ERR_BAD_PCI_ACCESS` -- PCI access to the sequence buffer was detected while the
     card was not in the `SETUP` state.
 
-`X`
-:   `WARN_NO_EXTERNAL_CLOCK` -- the card does not detect a valid external 10 MHz clock
+`R`
+:   `WARN_BAD_REFCLK` -- the card cannot lock to the onboard 80 MHz reference clock
 
 `I`
 :   `WARN_NO_PXI_CLOCK` -- the card does not detect a valid 10 MHz PXI clock
