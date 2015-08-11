@@ -76,7 +76,7 @@ The configuration register consists of two blocks. Bits 31..16 should be set to 
 `M`
 :   `REFCLK_10MHZ` -- if set, the Master Clock is derived from the PXI 10 MHz
     clock. If clear, the Master Clock is derived from the card's own 80 MHz
-    onboard oscillator.
+    onboard oscillator. **This is not currently implemented as a software bit**
 
 `A`
 :   `AUTO_TRIGGER` -- controls the behavior of the card when `N_REPS` is not 1;

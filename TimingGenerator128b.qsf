@@ -316,6 +316,7 @@ set_location_assignment PIN_G13 -to FlexIO116
 set_location_assignment PIN_G10 -to FlexIO117
 set_location_assignment PIN_F10 -to FlexIO118
 set_location_assignment PIN_F8 -to FlexIO119
+set_global_assignment -name BDF_FILE CaptureSynchronizer.bdf
 set_global_assignment -name VERILOG_FILE RAM_Clock_Switch.v
 set_global_assignment -name BDF_FILE Clocks.bdf
 set_global_assignment -name BDF_FILE Output_Drive.bdf

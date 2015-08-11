@@ -65,6 +65,13 @@ applicable agreement for further details.
 		(text "RAM_Enabled" (rect 133 59 195 71)(font "Arial" ))
 		(line (pt 216 64)(pt 200 64)(line_width 1))
 	)
+	(port
+		(pt 216 80)
+		(output)
+		(text "UsePCIClock" (rect 0 0 54 12)(font "Arial" ))
+		(text "UsePCIClock" (rect 141 75 195 87)(font "Arial" ))
+		(line (pt 216 80)(pt 200 80)(line_width 1))
+	)
 	(parameter
 		"NoPCI_RAM_Disabled_L"
 		"0"
@@ -138,6 +145,16 @@ applicable agreement for further details.
 	(parameter
 		"LWait4"
 		"14"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"NoPCI_Clock"
+		"15"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"PCI_Clock"
+		"16"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing

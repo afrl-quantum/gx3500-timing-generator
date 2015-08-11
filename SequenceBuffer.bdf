@@ -70,7 +70,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 40 840 216 856)
+	(rect 32 840 208 856)
 	(text "INPUT" (rect 133 0 162 10)(font "Arial" (font_size 6)))
 	(text "PCI_Allowed" (rect 9 0 73 11)(font "Arial" ))
 	(pt 176 8)
@@ -172,7 +172,7 @@ applicable agreement for further details.
 	(input)
 	(rect 40 776 208 792)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
-	(text "MClr" (rect 5 0 30 11)(font "Arial" ))
+	(text "MClr" (rect 5 0 29 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -186,7 +186,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 1016 568 1192 584)
+	(rect 1016 608 1192 624)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "err_bad_pci_access" (rect 90 0 190 11)(font "Arial" ))
 	(pt 0 8)
@@ -218,7 +218,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 1016 792 1192 808)
+	(rect 1024 976 1200 992)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "PCI_Enabled" (rect 90 0 156 11)(font "Arial" ))
 	(pt 0 8)
@@ -234,7 +234,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 1016 440 1221 456)
+	(rect 1016 496 1221 512)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "bug_bad_ram_access" (rect 90 0 199 11)(font "Arial" ))
 	(pt 0 8)
@@ -699,39 +699,6 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 664 496 728 544)
-	(text "OR2" (rect 1 0 23 10)(font "Arial" (font_size 6)))
-	(text "inst1" (rect 3 37 27 48)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "IN2" (rect 2 23 23 34)(font "Courier New" (bold))(invisible))
-		(text "IN2" (rect 2 23 23 34)(font "Courier New" (bold))(invisible))
-		(line (pt 0 32)(pt 15 32))
-	)
-	(port
-		(pt 0 16)
-		(input)
-		(text "IN1" (rect 2 7 23 18)(font "Courier New" (bold))(invisible))
-		(text "IN1" (rect 2 7 23 18)(font "Courier New" (bold))(invisible))
-		(line (pt 0 16)(pt 15 16))
-	)
-	(port
-		(pt 64 24)
-		(output)
-		(text "OUT" (rect 48 15 69 26)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect 48 15 69 26)(font "Courier New" (bold))(invisible))
-		(line (pt 48 24)(pt 64 24))
-	)
-	(drawing
-		(line (pt 14 36)(pt 25 36))
-		(line (pt 14 13)(pt 25 13))
-		(arc (pt 7 29)(pt 7 19)(rect -14 8 19 41))
-		(arc (pt 49 24)(pt 25 13)(rect -6 13 57 76))
-		(arc (pt 25 35)(pt 49 24)(rect -6 -27 57 36))
-	)
-)
-(symbol
 	(rect 400 408 512 496)
 	(text "BUSMUX" (rect 28 0 96 16)(font "Arial" (font_size 10)))
 	(text "RdWrMux" (rect 3 77 62 90)(font "Arial" (font_size 8)))
@@ -812,7 +779,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 864 424 928 472)
+	(rect 800 480 864 528)
 	(text "AND2" (rect 1 0 29 10)(font "Arial" (font_size 6)))
 	(text "inst13" (rect 3 37 33 48)(font "Arial" ))
 	(port
@@ -844,7 +811,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 792 384 840 416)
+	(rect 728 440 776 472)
 	(text "NOT" (rect 1 0 22 10)(font "Arial" (font_size 6)))
 	(text "inst14" (rect 3 21 33 32)(font "Arial" ))
 	(port
@@ -867,132 +834,6 @@ applicable agreement for further details.
 		(line (pt 13 25)(pt 31 16))
 		(circle (rect 31 12 39 20))
 	)
-)
-(symbol
-	(rect 520 768 736 880)
-	(text "RAM_Clock_Switch" (rect 5 0 102 11)(font "Arial" ))
-	(text "statemachine" (rect 8 96 75 107)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "reset" (rect 0 0 25 11)(font "Arial" ))
-		(text "reset" (rect 21 27 46 38)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "clock" (rect 0 0 27 11)(font "Arial" ))
-		(text "clock" (rect 21 43 48 54)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "PCI_Allowed" (rect 0 0 64 11)(font "Arial" ))
-		(text "PCI_Allowed" (rect 21 59 85 70)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 216 32)
-		(output)
-		(text "UsePCI" (rect 0 0 38 11)(font "Arial" ))
-		(text "UsePCI" (rect 163 27 195 38)(font "Arial" ))
-		(line (pt 216 32)(pt 200 32))
-	)
-	(port
-		(pt 216 48)
-		(output)
-		(text "PCI_Enabled" (rect 0 0 66 11)(font "Arial" ))
-		(text "PCI_Enabled" (rect 140 43 195 54)(font "Arial" ))
-		(line (pt 216 48)(pt 200 48))
-	)
-	(port
-		(pt 216 64)
-		(output)
-		(text "RAM_Enabled" (rect 0 0 73 11)(font "Arial" ))
-		(text "RAM_Enabled" (rect 134 59 195 70)(font "Arial" ))
-		(line (pt 216 64)(pt 200 64))
-	)
-	(parameter
-		"NoPCI_RAM_Disabled_L"
-		"0"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"PCI_RAM_Disabled_L"
-		"1"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"Steady_State_NoPCI"
-		"2"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"Start"
-		"3"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"Steady_State_PCI"
-		"4"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"PCI_RAM_Disabled_R"
-		"5"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"NoPCI_RAM_Disabled_R"
-		"6"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"RWait1"
-		"7"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"RWait2"
-		"8"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"RWait3"
-		"9"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"RWait4"
-		"10"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"LWait1"
-		"11"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"LWait2"
-		"12"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"LWait3"
-		"13"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"LWait4"
-		"14"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 200 96))
-	)
-	(annotation_block (parameter)(rect 536 912 784 1120))
 )
 (symbol
 	(rect 272 616 472 744)
@@ -1069,7 +910,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 264 824 328 904)
+	(rect 312 824 376 904)
 	(text "DFF" (rect 1 0 21 10)(font "Arial" (font_size 6)))
 	(text "inst20" (rect 3 68 33 79)(font "Arial" ))
 	(port
@@ -1119,7 +960,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 392 824 456 904)
+	(rect 424 824 488 904)
 	(text "DFF" (rect 1 0 21 10)(font "Arial" (font_size 6)))
 	(text "inst21" (rect 3 68 33 79)(font "Arial" ))
 	(port
@@ -1169,7 +1010,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 848 792 912 872)
+	(rect 992 792 1056 872)
 	(text "DFF" (rect 1 0 21 10)(font "Arial" (font_size 6)))
 	(text "inst22" (rect 3 68 33 79)(font "Arial" ))
 	(port
@@ -1219,7 +1060,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 936 792 1000 872)
+	(rect 1080 792 1144 872)
 	(text "DFF" (rect 1 0 21 10)(font "Arial" (font_size 6)))
 	(text "inst23" (rect 3 68 33 79)(font "Arial" ))
 	(port
@@ -1266,6 +1107,307 @@ applicable agreement for further details.
 		(line (pt 12 32)(pt 20 40))
 		(circle (rect 28 4 36 12))
 		(circle (rect 28 68 36 76))
+	)
+)
+(symbol
+	(rect 520 768 736 880)
+	(text "RAM_Clock_Switch" (rect 5 0 102 11)(font "Arial" ))
+	(text "statemachine" (rect 8 96 75 107)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "reset" (rect 0 0 25 11)(font "Arial" ))
+		(text "reset" (rect 21 27 46 38)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clock" (rect 0 0 27 11)(font "Arial" ))
+		(text "clock" (rect 21 43 48 54)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "PCI_Allowed" (rect 0 0 64 11)(font "Arial" ))
+		(text "PCI_Allowed" (rect 21 59 85 70)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 216 32)
+		(output)
+		(text "UsePCI" (rect 0 0 38 11)(font "Arial" ))
+		(text "UsePCI" (rect 163 27 201 38)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32))
+	)
+	(port
+		(pt 216 48)
+		(output)
+		(text "PCI_Enabled" (rect 0 0 66 11)(font "Arial" ))
+		(text "PCI_Enabled" (rect 140 43 206 54)(font "Arial" ))
+		(line (pt 216 48)(pt 200 48))
+	)
+	(port
+		(pt 216 64)
+		(output)
+		(text "RAM_Enabled" (rect 0 0 73 11)(font "Arial" ))
+		(text "RAM_Enabled" (rect 134 59 207 70)(font "Arial" ))
+		(line (pt 216 64)(pt 200 64))
+	)
+	(port
+		(pt 216 80)
+		(output)
+		(text "UsePCIClock" (rect 0 0 67 11)(font "Arial" ))
+		(text "UsePCIClock" (rect 139 75 206 86)(font "Arial" ))
+		(line (pt 216 80)(pt 200 80))
+	)
+	(parameter
+		"NoPCI_RAM_Disabled_L"
+		"0"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"PCI_RAM_Disabled_L"
+		"1"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"Steady_State_NoPCI"
+		"2"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"Start"
+		"3"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"Steady_State_PCI"
+		"4"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"PCI_RAM_Disabled_R"
+		"5"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"NoPCI_RAM_Disabled_R"
+		"6"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"RWait1"
+		"7"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"RWait2"
+		"8"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"RWait3"
+		"9"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"RWait4"
+		"10"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LWait1"
+		"11"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LWait2"
+		"12"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LWait3"
+		"13"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LWait4"
+		"14"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"NoPCI_Clock"
+		"15"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"PCI_Clock"
+		"16"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 200 96))
+	)
+	(annotation_block (parameter)(rect 416 912 664 1120))
+)
+(symbol
+	(rect 896 792 960 872)
+	(text "DFF" (rect 1 0 21 10)(font "Arial" (font_size 6)))
+	(text "inst1" (rect 3 68 27 79)(font "Arial" ))
+	(port
+		(pt 32 80)
+		(input)
+		(text "CLRN" (rect 21 59 48 70)(font "Courier New" (bold)))
+		(text "CLRN" (rect 21 58 48 69)(font "Courier New" (bold)))
+		(line (pt 32 80)(pt 32 76))
+	)
+	(port
+		(pt 0 40)
+		(input)
+		(text "CLK" (rect 3 29 24 40)(font "Courier New" (bold))(invisible))
+		(text "CLK" (rect 3 29 24 40)(font "Courier New" (bold))(invisible))
+		(line (pt 0 40)(pt 12 40))
+	)
+	(port
+		(pt 0 24)
+		(input)
+		(text "D" (rect 14 20 22 31)(font "Courier New" (bold)))
+		(text "D" (rect 14 20 22 31)(font "Courier New" (bold)))
+		(line (pt 0 24)(pt 12 24))
+	)
+	(port
+		(pt 32 0)
+		(input)
+		(text "PRN" (rect 24 13 44 24)(font "Courier New" (bold)))
+		(text "PRN" (rect 24 11 44 22)(font "Courier New" (bold)))
+		(line (pt 32 4)(pt 32 0))
+	)
+	(port
+		(pt 64 24)
+		(output)
+		(text "Q" (rect 45 20 53 31)(font "Courier New" (bold)))
+		(text "Q" (rect 41 20 49 31)(font "Courier New" (bold)))
+		(line (pt 52 24)(pt 64 24))
+	)
+	(drawing
+		(line (pt 12 12)(pt 52 12))
+		(line (pt 12 68)(pt 52 68))
+		(line (pt 52 68)(pt 52 12))
+		(line (pt 12 68)(pt 12 12))
+		(line (pt 19 40)(pt 12 47))
+		(line (pt 12 32)(pt 20 40))
+		(circle (rect 28 4 36 12))
+		(circle (rect 28 68 36 76))
+	)
+)
+(symbol
+	(rect 232 824 296 904)
+	(text "DFF" (rect 1 0 21 10)(font "Arial" (font_size 6)))
+	(text "inst3" (rect 3 68 27 79)(font "Arial" ))
+	(port
+		(pt 32 80)
+		(input)
+		(text "CLRN" (rect 21 59 48 70)(font "Courier New" (bold)))
+		(text "CLRN" (rect 21 58 48 69)(font "Courier New" (bold)))
+		(line (pt 32 80)(pt 32 76))
+	)
+	(port
+		(pt 0 40)
+		(input)
+		(text "CLK" (rect 3 29 24 40)(font "Courier New" (bold))(invisible))
+		(text "CLK" (rect 3 29 24 40)(font "Courier New" (bold))(invisible))
+		(line (pt 0 40)(pt 12 40))
+	)
+	(port
+		(pt 0 24)
+		(input)
+		(text "D" (rect 14 20 22 31)(font "Courier New" (bold)))
+		(text "D" (rect 14 20 22 31)(font "Courier New" (bold)))
+		(line (pt 0 24)(pt 12 24))
+	)
+	(port
+		(pt 32 0)
+		(input)
+		(text "PRN" (rect 24 13 44 24)(font "Courier New" (bold)))
+		(text "PRN" (rect 24 11 44 22)(font "Courier New" (bold)))
+		(line (pt 32 4)(pt 32 0))
+	)
+	(port
+		(pt 64 24)
+		(output)
+		(text "Q" (rect 45 20 53 31)(font "Courier New" (bold)))
+		(text "Q" (rect 41 20 49 31)(font "Courier New" (bold)))
+		(line (pt 52 24)(pt 64 24))
+	)
+	(drawing
+		(line (pt 12 12)(pt 52 12))
+		(line (pt 12 68)(pt 52 68))
+		(line (pt 52 68)(pt 52 12))
+		(line (pt 12 68)(pt 12 12))
+		(line (pt 19 40)(pt 12 47))
+		(line (pt 12 32)(pt 20 40))
+		(circle (rect 28 4 36 12))
+		(circle (rect 28 68 36 76))
+	)
+)
+(symbol
+	(rect 880 584 1008 680)
+	(text "CaptureSynchronizer" (rect 5 0 125 13)(font "Arial" (font_size 8)))
+	(text "inst5" (rect 8 81 32 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "capture" (rect 0 0 43 13)(font "Arial" (font_size 8)))
+		(text "capture" (rect 21 27 64 40)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clock" (rect 0 0 31 13)(font "Arial" (font_size 8)))
+		(text "clock" (rect 21 43 52 56)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 128 32)
+		(output)
+		(text "pulse" (rect 0 0 31 13)(font "Arial" (font_size 8)))
+		(text "pulse" (rect 76 27 107 40)(font "Arial" (font_size 8)))
+		(line (pt 128 32)(pt 112 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 112 80))
+	)
+)
+(symbol
+	(rect 880 472 1008 568)
+	(text "CaptureSynchronizer" (rect 5 0 125 13)(font "Arial" (font_size 8)))
+	(text "inst7" (rect 8 81 32 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "capture" (rect 0 0 43 13)(font "Arial" (font_size 8)))
+		(text "capture" (rect 21 27 64 40)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clock" (rect 0 0 31 13)(font "Arial" (font_size 8)))
+		(text "clock" (rect 21 43 52 56)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 128 32)
+		(output)
+		(text "pulse" (rect 0 0 31 13)(font "Arial" (font_size 8)))
+		(text "pulse" (rect 76 27 107 40)(font "Arial" (font_size 8)))
+		(line (pt 128 32)(pt 112 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 112 80))
 	)
 )
 (connector
@@ -1517,24 +1659,6 @@ applicable agreement for further details.
 	(pt 640 568)
 )
 (connector
-	(pt 664 528)
-	(pt 656 528)
-)
-(connector
-	(pt 656 568)
-	(pt 656 528)
-)
-(connector
-	(text "DecodeRdWr[0]" (rect 568 496 647 507)(font "Arial" ))
-	(pt 664 512)
-	(pt 568 512)
-)
-(connector
-	(text "active" (rect 738 504 768 515)(font "Arial" ))
-	(pt 728 520)
-	(pt 800 520)
-)
-(connector
 	(pt 304 448)
 	(pt 320 448)
 )
@@ -1550,14 +1674,6 @@ applicable agreement for further details.
 (connector
 	(pt 352 392)
 	(pt 352 552)
-)
-(connector
-	(pt 640 568)
-	(pt 656 568)
-)
-(connector
-	(pt 656 568)
-	(pt 688 568)
 )
 (connector
 	(pt 688 584)
@@ -1623,32 +1739,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 864 440)
-	(pt 864 400)
-)
-(connector
-	(pt 864 400)
-	(pt 840 400)
-)
-(connector
-	(text "RAM_Enabled" (rect 738 384 811 395)(font "Arial" ))
-	(pt 792 400)
-	(pt 728 400)
-)
-(connector
-	(text "Decode_RdEn" (rect 778 440 851 451)(font "Arial" ))
-	(pt 864 456)
-	(pt 768 456)
-)
-(connector
-	(pt 928 448)
-	(pt 1016 448)
-)
-(connector
-	(pt 752 576)
-	(pt 1016 576)
-)
-(connector
 	(pt 296 784)
 	(pt 208 784)
 )
@@ -1692,20 +1782,9 @@ applicable agreement for further details.
 	(pt 272 688)
 )
 (connector
-	(text "UsePCI,gnd" (rect 226 704 287 715)(font "Arial" ))
-	(pt 272 720)
-	(pt 216 720)
-	(bus)
-)
-(connector
 	(text "RAMClock" (rect 482 656 536 667)(font "Arial" ))
 	(pt 472 672)
 	(pt 560 672)
-)
-(connector
-	(text "RAM_Enabled" (rect 746 816 819 827)(font "Arial" ))
-	(pt 736 832)
-	(pt 816 832)
 )
 (connector
 	(pt 296 784)
@@ -1721,34 +1800,8 @@ applicable agreement for further details.
 	(pt 520 800)
 )
 (connector
-	(pt 264 848)
-	(pt 216 848)
-)
-(connector
-	(text "MasterClk" (rect 226 848 276 859)(font "Arial" ))
-	(pt 264 864)
-	(pt 216 864)
-)
-(connector
-	(pt 328 848)
-	(pt 392 848)
-)
-(connector
-	(text "RAMClock" (rect 352 848 406 859)(font "Arial" ))
-	(pt 392 864)
-	(pt 352 864)
-)
-(connector
 	(pt 520 832)
 	(pt 496 832)
-)
-(connector
-	(pt 496 832)
-	(pt 496 848)
-)
-(connector
-	(pt 496 848)
-	(pt 456 848)
 )
 (connector
 	(text "UsePCI" (rect 746 784 784 795)(font "Arial" ))
@@ -1760,42 +1813,207 @@ applicable agreement for further details.
 	(pt 808 808)
 )
 (connector
-	(pt 1016 800)
-	(pt 1008 800)
+	(pt 640 568)
+	(pt 688 568)
 )
 (connector
-	(pt 1008 800)
-	(pt 1008 816)
+	(text "RAM_Enabled" (rect 746 816 819 827)(font "Arial" ))
+	(pt 736 832)
+	(pt 824 832)
 )
 (connector
-	(pt 1008 816)
-	(pt 1000 816)
+	(text "UsePCIClock" (rect 746 832 813 843)(font "Arial" ))
+	(pt 736 848)
+	(pt 808 848)
 )
 (connector
-	(pt 936 816)
-	(pt 912 816)
+	(pt 808 848)
+	(pt 808 856)
 )
 (connector
-	(pt 848 816)
+	(text "UsePCIClock,gnd" (rect 226 704 314 715)(font "Arial" ))
+	(pt 272 720)
+	(pt 216 720)
+	(bus)
+)
+(connector
+	(pt 1080 832)
+	(pt 1072 832)
+)
+(connector
+	(pt 992 832)
+	(pt 984 832)
+)
+(connector
+	(pt 984 832)
+	(pt 984 888)
+)
+(connector
+	(pt 984 888)
+	(pt 1072 888)
+)
+(connector
+	(text "MasterClk" (rect 1056 859 1067 909)(font "Arial" )(vertical))
+	(pt 1072 832)
+	(pt 1072 888)
+)
+(connector
+	(pt 1072 888)
+	(pt 1072 912)
+)
+(connector
+	(pt 1056 816)
+	(pt 1080 816)
+)
+(connector
+	(pt 1168 816)
+	(pt 1144 816)
+)
+(connector
+	(pt 1168 968)
+	(pt 1168 816)
+)
+(connector
+	(pt 1168 968)
+	(pt 1008 968)
+)
+(connector
+	(pt 1008 968)
+	(pt 1008 984)
+)
+(connector
+	(pt 1008 984)
+	(pt 1024 984)
+)
+(connector
+	(pt 960 816)
+	(pt 992 816)
+)
+(connector
 	(pt 736 816)
+	(pt 896 816)
 )
 (connector
-	(pt 848 832)
-	(pt 840 832)
+	(pt 896 832)
+	(pt 880 832)
 )
 (connector
-	(text "RAMClock" (rect 824 856 835 910)(font "Arial" )(vertical))
-	(pt 840 832)
-	(pt 840 912)
+	(text "RAMClock" (rect 864 848 875 902)(font "Arial" )(vertical))
+	(pt 880 832)
+	(pt 880 904)
 )
 (connector
-	(pt 936 832)
-	(pt 928 832)
+	(pt 408 912)
+	(pt 408 864)
 )
 (connector
-	(text "MasterClk" (rect 912 859 923 909)(font "Arial" )(vertical))
-	(pt 928 832)
-	(pt 928 912)
+	(pt 496 832)
+	(pt 496 848)
+)
+(connector
+	(pt 496 848)
+	(pt 488 848)
+)
+(connector
+	(text "RAMClock" (rect 376 848 430 859)(font "Arial" ))
+	(pt 384 864)
+	(pt 408 864)
+)
+(connector
+	(pt 408 864)
+	(pt 424 864)
+)
+(connector
+	(pt 376 848)
+	(pt 424 848)
+)
+(connector
+	(pt 304 864)
+	(pt 304 912)
+)
+(connector
+	(pt 408 912)
+	(pt 304 912)
+)
+(connector
+	(pt 312 864)
+	(pt 304 864)
+)
+(connector
+	(pt 312 848)
+	(pt 296 848)
+)
+(connector
+	(pt 232 848)
+	(pt 208 848)
+)
+(connector
+	(pt 232 864)
+	(pt 224 864)
+)
+(connector
+	(text "MasterClk" (rect 208 891 219 941)(font "Arial" )(vertical))
+	(pt 224 864)
+	(pt 224 944)
+)
+(connector
+	(text "RAM_Enabled" (rect 674 440 747 451)(font "Arial" ))
+	(pt 728 456)
+	(pt 664 456)
+)
+(connector
+	(text "Decode_RdEn" (rect 714 496 787 507)(font "Arial" ))
+	(pt 800 512)
+	(pt 704 512)
+)
+(connector
+	(pt 800 456)
+	(pt 800 496)
+)
+(connector
+	(pt 864 504)
+	(pt 880 504)
+)
+(connector
+	(pt 776 456)
+	(pt 800 456)
+)
+(connector
+	(pt 880 520)
+	(pt 864 520)
+)
+(connector
+	(pt 880 632)
+	(pt 864 632)
+)
+(connector
+	(pt 864 520)
+	(pt 864 632)
+)
+(connector
+	(text "PCIClock" (rect 848 686 859 733)(font "Arial" )(vertical))
+	(pt 864 632)
+	(pt 864 736)
+)
+(connector
+	(pt 1008 504)
+	(pt 1016 504)
+)
+(connector
+	(pt 1008 616)
+	(pt 1016 616)
+)
+(connector
+	(pt 752 576)
+	(pt 808 576)
+)
+(connector
+	(pt 808 576)
+	(pt 808 616)
+)
+(connector
+	(pt 808 616)
+	(pt 880 616)
 )
 (junction (pt 360 472))
 (junction (pt 232 384))
@@ -1806,7 +2024,9 @@ applicable agreement for further details.
 (junction (pt 352 368))
 (junction (pt 704 264))
 (junction (pt 976 184))
-(junction (pt 656 568))
+(junction (pt 1072 888))
+(junction (pt 408 864))
+(junction (pt 864 632))
 (text "What we want to do when PCI_Allowed changes, is to disable the" (rect -144 856 221 869)(font "Arial" (font_size 8)))
 (text "RAM for 3 cycles of the RAMClock, then switch UsePCI, wait" (rect -144 872 197 885)(font "Arial" (font_size 8)))
 (text "3 cycles of the new RAMClock, enable the RAM and toggle PCI_Enabled to match PCI_Allowed" (rect -144 888 391 901)(font "Arial" (font_size 8)))
