@@ -316,6 +316,7 @@ set_location_assignment PIN_G13 -to FlexIO116
 set_location_assignment PIN_G10 -to FlexIO117
 set_location_assignment PIN_F10 -to FlexIO118
 set_location_assignment PIN_F8 -to FlexIO119
+set_global_assignment -name VERILOG_FILE System_State.v
 set_global_assignment -name BDF_FILE CaptureSynchronizer.bdf
 set_global_assignment -name VERILOG_FILE RAM_Clock_Switch.v
 set_global_assignment -name BDF_FILE Clocks.bdf
@@ -329,8 +330,11 @@ set_global_assignment -name BDF_FILE SequenceBuffer.bdf
 set_global_assignment -name QIP_FILE MainRAM.qip
 set_global_assignment -name QIP_FILE Driver128b.qip
 set_global_assignment -name SDC_FILE TimingGenerator128b.sdc
-set_global_assignment -name QIP_FILE CommandFifo.qip
-set_global_assignment -name QIP_FILE StatusFifo.qip
 set_global_assignment -name SMF_FILE RAM_Clock_Switch.smf
 set_global_assignment -name QIP_FILE RAMClock_CTRL.qip
+set_global_assignment -name SMF_FILE System_State.smf
+set_global_assignment -name QIP_FILE Compare_LE5_U.qip
+set_global_assignment -name QIP_FILE InstrDecoder.qip
+set_global_assignment -name BDF_FILE CommandDecoder.bdf
+set_global_assignment -name QIP_FILE StateDecoder.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

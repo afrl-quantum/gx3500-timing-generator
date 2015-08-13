@@ -23,7 +23,7 @@ derive_pll_clocks -create_base_clocks
 #set_clock_groups -asynchronous -group {PCIClock} \
 #    -group {clocks|pll_10MHz|altpll_component|auto_generated|pll1|clk[0], \
 #	         clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}
-       
+
 create_generated_clock [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_uhi_component|clkctrl1|outclk}] \
 	-name "RAM_PCI" \
 	-source [get_ports {PCIClock}] \
