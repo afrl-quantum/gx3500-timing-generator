@@ -110,7 +110,7 @@ bits are set to 1 when an error is detected and may be cleared by writing 1 to t
 appropriate bit in the register. Writes to State\[2:0] and `F` are ignored.
 
 ---------------------------------------------------------------------------------------
-|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|`I`|`R`|`P`|`D`|`S`|`B`| State\[2:0] |
+|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|`I`|`R`|`P`|`D`|`S`|`B`|`A`| State\[2:0] |
 ---------------------------------------------------------------------------------------
 
 State\[2:0]
@@ -126,6 +126,9 @@ State\[2:0]
     | 0b101 | STOPPING |
     | 0b11X |   ---    |
     --------------------
+
+`A`
+:   `PCI_PERMITTED` -- 1 if PCI access to the RAM area is permitted, 0 if it is forbidden
 
 `B`
 :   `ERR_BAD_CMD` -- an undefined command number was written to the `CMD` register

@@ -115,6 +115,13 @@ applicable agreement for further details.
 		(line (pt 0 224)(pt 16 224))
 	)
 	(port
+		(pt 0 240)
+		(input)
+		(text "PCI_Enabled" (rect 0 0 75 13)(font "Arial" (font_size 8)))
+		(text "PCI_Enabled" (rect 21 235 96 248)(font "Arial" (font_size 8)))
+		(line (pt 0 240)(pt 16 240))
+	)
+	(port
 		(pt 328 32)
 		(output)
 		(text "trig_enable" (rect 0 0 63 13)(font "Arial" (font_size 8)))
