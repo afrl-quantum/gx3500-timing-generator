@@ -1934,7 +1934,7 @@ applicable agreement for further details.
 (symbol
 	(rect 1120 936 1184 1016)
 	(text "DFF" (rect 1 0 21 10)(font "Arial" (font_size 6)))
-	(text "status_master1" (rect 3 68 79 79)(font "Arial" ))
+	(text "pci_master" (rect 3 68 58 79)(font "Arial" ))
 	(port
 		(pt 32 80)
 		(input)
@@ -1984,7 +1984,7 @@ applicable agreement for further details.
 (symbol
 	(rect 1208 936 1272 1016)
 	(text "DFF" (rect 1 0 21 10)(font "Arial" (font_size 6)))
-	(text "status_pci3" (rect 3 68 60 79)(font "Arial" ))
+	(text "pci_pci" (rect 3 68 38 79)(font "Arial" ))
 	(port
 		(pt 32 80)
 		(input)
@@ -2034,7 +2034,7 @@ applicable agreement for further details.
 (symbol
 	(rect 1312 936 1376 1016)
 	(text "DFF" (rect 1 0 21 10)(font "Arial" (font_size 6)))
-	(text "status_pci4" (rect 3 68 60 79)(font "Arial" ))
+	(text "pci_pci2" (rect 3 68 45 79)(font "Arial" ))
 	(port
 		(pt 32 80)
 		(input)

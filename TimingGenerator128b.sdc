@@ -60,6 +60,16 @@ set_multicycle_path -start -hold \
 	-to {SequenceBuffer:sequencebuffer|inst22} \
 	6
 
+set_multicycle_path -start -setup \
+	-from {Registers:registers|pci_master} \
+	-to {Registers:registers|pci_pci} \
+	6
+
+set_multicycle_path -start -hold \
+	-from {Registers:registers|pci_master} \
+	-to {Registers:registers|pci_pci} \
+	6
+
 # tsu/th constraints
 
 set_input_delay -clock PCIClock_ext -min 0ns [get_ports {FDt[*] Addr[*] CS[*] RdEn WrEn}]
