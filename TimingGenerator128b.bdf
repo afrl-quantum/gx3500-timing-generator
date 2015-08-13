@@ -19,12 +19,15 @@ Altera or its authorized distributors.  Please refer to the
 applicable agreement for further details.
 */
 (header "graphic" (version "1.4"))
+(alias "<<__$DEF_ALIAS8721>>""DefaultPortData[127..0]")
 (alias "<<__$DEF_ALIAS7219>>""vcc;gnd")
+(alias "<<__$DEF_ALIAS8722>>""DefaultPortData[127..0]")
 (alias "<<__$DEF_ALIAS29416>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS6002>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS6099>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS29905>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS7172>>""PCIClockBuf;MasterClk")
+(alias "<<__$DEF_ALIAS8719>>""DefaultPortData[127..0]")
 (alias "<<__$DEF_ALIAS6121>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS7211>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS7220>>""vcc;gnd")
@@ -343,10 +346,6 @@ applicable agreement for further details.
 	(block_io "PortD[31..0]" (output))
 	(block_io "PxiTrig[7..0]" (output))
 	(mapper
-		(pt 0 216)
-		(bidir)
-		)
-	(mapper
 		(pt 176 32)
 		(bidir)
 		(mapping "PortA[31..0]" "FlexIO[31..0]" )
@@ -374,6 +373,12 @@ applicable agreement for further details.
 		(pt 176 304)
 		(bidir)
 		)
+	(mapper
+		(pt 0 216)
+		(bidir)
+		(mapping "PortData[127..0]" "DefaultPortData[127..0]" )
+		(annotation_block (mapping)(rect 624 288 836 314))
+	)
 )
 (block
 	(rect 264 688 464 928)
@@ -464,8 +469,8 @@ applicable agreement for further details.
 	)
 )
 (block
-	(rect 544 760 728 1016)
-	(text "System_State" (rect 5 5 74 16)(font "Arial" ))	(text "statemgr" (rect 5 254 49 265)(font "Arial" ))	(block_io "reset" (input))
+	(rect 544 760 728 1032)
+	(text "System_State" (rect 5 5 74 16)(font "Arial" ))	(text "statemgr" (rect 5 270 49 281)(font "Arial" ))	(block_io "reset" (input))
 	(block_io "clock" (input))
 	(block_io "Do_Arm" (input))
 	(block_io "Do_Stop" (input))
@@ -481,6 +486,7 @@ applicable agreement for further details.
 	(block_io "Run_Timer" (output))
 	(block_io "Reset_Timer" (output))
 	(block_io "Internal_State[2..0]" (output))
+	(block_io "Output_Sequence" (output))
 	(parameter
 		"STOPPING"
 		"0"
@@ -559,6 +565,7 @@ applicable agreement for further details.
 	(block_io "number_iterations[31..0]" (output))
 	(block_io "trig2_select[6..0]" (output))
 	(block_io "trig3_enable" (output))
+	(block_io "reset_outputs[127..0]" (output))
 	(block_io "trig3_select[6..0]" (output))
 	(block_io "trig4_enable" (output))
 	(block_io "trig4_select[6..0]" (output))
@@ -572,10 +579,6 @@ applicable agreement for further details.
 	(block_io "trig7_select[6..0]" (output))
 	(block_io "Visible_State[2..0]" (output))
 	(block_io "FDt[31..0]" (bidir))
-	(mapper
-		(pt 256 240)
-		(bidir)
-		)
 	(mapper
 		(pt 0 56)
 		(bidir)
@@ -594,8 +597,15 @@ applicable agreement for further details.
 		(mapping "PCIClock" "PCIClockBuf" )
 		(annotation_block (mapping)(rect 24 384 150 410))
 	)
+	(mapper
+		(pt 256 240)
+		(bidir)
+		(mapping "reset_outputs[127..0]" "DefaultPortData[127..0]" )
+		(annotation_block (mapping)(rect 440 296 680 328))
+	)
 )
 (connector
+	(text "<<__$DEF_ALIAS8719>>" (rect 0 0 129 11)(font "Arial" )(invisible))
 	(pt 432 280)
 	(pt 424 280)
 	(conduit)
@@ -607,13 +617,9 @@ applicable agreement for further details.
 	(conduit)
 )
 (connector
+	(text "<<__$DEF_ALIAS8721>>" (rect 0 0 129 11)(font "Arial" )(invisible))
 	(pt 432 280)
 	(pt 432 272)
-	(conduit)
-)
-(connector
-	(pt 432 272)
-	(pt 856 272)
 	(conduit)
 )
 (connector
@@ -823,6 +829,12 @@ applicable agreement for further details.
 	(text "gnd" (rect 880 861 891 881)(font "Arial" )(vertical))
 	(pt 896 864)
 	(pt 896 888)
+)
+(connector
+	(text "<<__$DEF_ALIAS8722>>" (rect 0 0 129 11)(font "Arial" )(invisible))
+	(pt 432 272)
+	(pt 856 272)
+	(conduit)
 )
 (junction (pt 144 832))
 (junction (pt 480 136))

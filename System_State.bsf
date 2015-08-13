@@ -135,6 +135,13 @@ applicable agreement for further details.
 		(text "Internal_State[2..0]" (rect 136 96 229 106)(font "DejaVu Sans" (font_size 6)))
 		(line (pt 232 104)(pt 216 104))
 	)
+	(port
+		(pt 232 128)
+		(output)
+		(text "Output_Sequence" (rect 178 120 280 133)(font "Arial" (font_size 8)))
+		(text "Output_Sequence" (rect 136 120 222 130)(font "DejaVu Sans" (font_size 6)))
+		(line (pt 232 128)(pt 216 128))
+	)
 	(parameter
 		"STOPPING"
 		"0"

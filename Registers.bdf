@@ -220,7 +220,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1528 808 1696 824)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
-	(text "RefClk_OK" (rect 5 0 63 11)(font "Arial" ))
+	(text "RefClk_OK" (rect 5 0 62 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -236,7 +236,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1520 848 1696 864)
 	(text "INPUT" (rect 133 0 162 10)(font "Arial" (font_size 6)))
-	(text "PXIClock_OK" (rect 5 0 75 11)(font "Arial" ))
+	(text "PXIClock_OK" (rect 5 0 74 11)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 92 12)(pt 117 12))
@@ -621,6 +621,22 @@ applicable agreement for further details.
 	(rect 1472 920 1657 936)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "Visible_State[2..0]" (rect 90 0 179 11)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 1480 368 1679 384)
+	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
+	(text "reset_outputs[127..0]" (rect 90 0 193 11)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -3149,6 +3165,12 @@ applicable agreement for further details.
 	(text "error_bits[4]" (rect 1786 800 1845 811)(font "Arial" ))
 	(pt 1768 816)
 	(pt 1840 816)
+)
+(connector
+	(text "reg_RESET_D[31..0], reg_RESET_C[31..0], reg_RESET_B[31..0], reg_RESET_A[31..0]" (rect 1360 360 1790 371)(font "Arial" ))
+	(pt 1480 376)
+	(pt 1360 376)
+	(bus)
 )
 (junction (pt 560 256))
 (junction (pt 536 272))

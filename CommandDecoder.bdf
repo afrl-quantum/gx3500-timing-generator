@@ -102,7 +102,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 720 320 896 336)
+	(rect 720 336 896 352)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "err_bad_cmd" (rect 90 0 156 11)(font "Arial" ))
 	(pt 0 8)
@@ -594,7 +594,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 584 304 648 384)
+	(rect 584 320 648 400)
 	(text "DFF" (rect 1 0 21 10)(font "Arial" (font_size 6)))
 	(text "inst15" (rect 3 68 33 79)(font "Arial" ))
 	(port
@@ -1266,29 +1266,8 @@ applicable agreement for further details.
 	(pt 720 472)
 )
 (connector
-	(pt 648 328)
-	(pt 720 328)
-)
-(connector
-	(pt 584 328)
-	(pt 488 328)
-)
-(connector
-	(pt 584 344)
-	(pt 552 344)
-)
-(connector
 	(pt 584 488)
 	(pt 552 488)
-)
-(connector
-	(pt 552 344)
-	(pt 552 488)
-)
-(connector
-	(text "PCIClock" (rect 536 526 547 573)(font "Arial" )(vertical))
-	(pt 552 488)
-	(pt 552 576)
 )
 (connector
 	(text "command_source[2..0]" (rect 72 264 184 275)(font "Arial" ))
@@ -1594,6 +1573,35 @@ applicable agreement for further details.
 (connector
 	(pt 400 536)
 	(pt 384 536)
+)
+(connector
+	(pt 488 328)
+	(pt 576 328)
+)
+(connector
+	(pt 720 344)
+	(pt 648 344)
+)
+(connector
+	(pt 576 328)
+	(pt 576 344)
+)
+(connector
+	(pt 576 344)
+	(pt 584 344)
+)
+(connector
+	(pt 552 360)
+	(pt 584 360)
+)
+(connector
+	(pt 552 360)
+	(pt 552 488)
+)
+(connector
+	(text "PCIClock" (rect 536 526 547 573)(font "Arial" )(vertical))
+	(pt 552 488)
+	(pt 552 576)
 )
 (junction (pt 520 160))
 (junction (pt 520 56))
