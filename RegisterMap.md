@@ -4,30 +4,30 @@ Register map for 128-bit timing generator
 The timing generator is configured through register space (PCI BAR 1), and currently
 supports 19 32-bit registers over a 32 word address space (0x0000 - 0x007f).
 
--------------------------------------------------------
-|  Address | Register function (Mnemonic)     | `R/W` |
-|----------|----------------------------------|-------|
-| `0x0000` | Port A reset value (`RESET_A`)   |  `RW` |
-| `0x0004` | Port B reset value (`RESET_B`)   |  `RW` |
-| `0x0008` | Port C reset value (`RESET_C`)   |  `RW` |
-| `0x000c` | Port D reset value (`RESET_D`)   |  `RW` |
-| `0x0010` | PXI3-0 routing table (`PXI_RT1`) |  `RW` |
-| `0x0014` | PXI7-4 routing table (`PXI_RT2`) |  `RW` |
-| `0x0018` | Cycle repeat limit (`N_REPS`)    |  `RW` |
-| `0x001c` | Config register (`CONFIG`)       |  `RW` |
-| `0x0020` | Command register (`CMD`)         |  ` W` |
-| `0x0024` | Status register (`STATUS`)       |  `RW` |
-| `0x0028` | Current step counter (`STEP`)    |  `R ` |
-| `0x002c` | Cycle repeat count (`REP_CNT`)   |  `R ` |
-| `0x0030` | Port A readback (`OUTPUT_A`)     |  `R ` |
-| `0x0034` | Port B readback (`OUTPUT_B`)     |  `R ` |
-| `0x0038` | Port C readback (`OUTPUT_C`)     |  `R ` |
-| `0x003c` | Port D readback (`OUTPUT_D`)     |  `R ` |
-| `0x0040` | Current time hiword (`TIME_HI`)  |  `R ` |
-| `0x0044` | Current time loword (`TIME_LO`)  |  `R ` |
-|          |             ...                  |       |
-| `0x007c` | Board ID & version (`VERSION`)   |  `R ` |
--------------------------------------------------------
+---------------------------------------------------------------
+| Index |  Address | Register function (Mnemonic)     | `R/W` |
+|-------|----------|----------------------------------|-------|
+|   `0` | `0x0000` | Port A reset value (`RESET_A`)   |  `RW` |
+|   `1` | `0x0004` | Port B reset value (`RESET_B`)   |  `RW` |
+|   `2` | `0x0008` | Port C reset value (`RESET_C`)   |  `RW` |
+|   `3` | `0x000c` | Port D reset value (`RESET_D`)   |  `RW` |
+|   `4` | `0x0010` | PXI3-0 routing table (`PXI_RT1`) |  `RW` |
+|   `5` | `0x0014` | PXI7-4 routing table (`PXI_RT2`) |  `RW` |
+|   `6` | `0x0018` | Cycle repeat limit (`N_REPS`)    |  `RW` |
+|   `7` | `0x001c` | Config register (`CONFIG`)       |  `RW` |
+|   `8` | `0x0020` | Command register (`CMD`)         |  ` W` |
+|   `9` | `0x0024` | Status register (`STATUS`)       |  `RW` |
+|  `10` | `0x0028` | Current step counter (`STEP`)    |  `R ` |
+|  `11` | `0x002c` | Cycle repeat count (`REP_CNT`)   |  `R ` |
+|  `12` | `0x0030` | Port A readback (`OUTPUT_A`)     |  `R ` |
+|  `13` | `0x0034` | Port B readback (`OUTPUT_B`)     |  `R ` |
+|  `14` | `0x0038` | Port C readback (`OUTPUT_C`)     |  `R ` |
+|  `15` | `0x003c` | Port D readback (`OUTPUT_D`)     |  `R ` |
+|  `16` | `0x0040` | Current time hiword (`TIME_HI`)  |  `R ` |
+|  `17` | `0x0044` | Current time loword (`TIME_LO`)  |  `R ` |
+|       |          |             ...                  |       |
+|  `31` | `0x007c` | Board ID & version (`VERSION`)   |  `R ` |
+---------------------------------------------------------------
 
 Register descriptions
 ---------------------
