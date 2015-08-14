@@ -1,0 +1,278 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 272 352)
+	(text "Core_Timing_Loop" (rect 5 0 82 12)(font "Arial" ))
+	(text "inst" (rect 8 320 20 332)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "MClr" (rect 0 0 20 12)(font "Arial" ))
+		(text "MClr" (rect 21 27 41 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "MasterClk" (rect 0 0 41 12)(font "Arial" ))
+		(text "MasterClk" (rect 21 43 62 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "Load_Instructions" (rect 0 0 70 12)(font "Arial" ))
+		(text "Load_Instructions" (rect 21 59 91 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "Run_Timer" (rect 0 0 47 12)(font "Arial" ))
+		(text "Run_Timer" (rect 21 75 68 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "timer_is_zero" (rect 0 0 54 12)(font "Arial" ))
+		(text "timer_is_zero" (rect 21 91 75 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "mask_A" (rect 0 0 36 12)(font "Arial" ))
+		(text "mask_A" (rect 21 107 57 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "mask_B" (rect 0 0 34 12)(font "Arial" ))
+		(text "mask_B" (rect 21 123 55 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "mask_C" (rect 0 0 35 12)(font "Arial" ))
+		(text "mask_C" (rect 21 139 56 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "mask_D" (rect 0 0 35 12)(font "Arial" ))
+		(text "mask_D" (rect 21 155 56 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 1))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "reached_end" (rect 0 0 51 12)(font "Arial" ))
+		(text "reached_end" (rect 21 171 72 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 1))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "mask_A_fast" (rect 0 0 57 12)(font "Arial" ))
+		(text "mask_A_fast" (rect 21 187 78 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 1))
+	)
+	(port
+		(pt 256 32)
+		(output)
+		(text "clear_addr" (rect 0 0 42 12)(font "Arial" ))
+		(text "clear_addr" (rect 193 27 235 39)(font "Arial" ))
+		(line (pt 256 32)(pt 240 32)(line_width 1))
+	)
+	(port
+		(pt 256 48)
+		(output)
+		(text "clear_timers" (rect 0 0 49 12)(font "Arial" ))
+		(text "clear_timers" (rect 186 43 235 55)(font "Arial" ))
+		(line (pt 256 48)(pt 240 48)(line_width 1))
+	)
+	(port
+		(pt 256 64)
+		(output)
+		(text "load_reset" (rect 0 0 41 12)(font "Arial" ))
+		(text "load_reset" (rect 194 59 235 71)(font "Arial" ))
+		(line (pt 256 64)(pt 240 64)(line_width 1))
+	)
+	(port
+		(pt 256 80)
+		(output)
+		(text "rden" (rect 0 0 17 12)(font "Arial" ))
+		(text "rden" (rect 218 75 235 87)(font "Arial" ))
+		(line (pt 256 80)(pt 240 80)(line_width 1))
+	)
+	(port
+		(pt 256 96)
+		(output)
+		(text "dec_timer" (rect 0 0 40 12)(font "Arial" ))
+		(text "dec_timer" (rect 195 91 235 103)(font "Arial" ))
+		(line (pt 256 96)(pt 240 96)(line_width 1))
+	)
+	(port
+		(pt 256 112)
+		(output)
+		(text "inc_counter" (rect 0 0 46 12)(font "Arial" ))
+		(text "inc_counter" (rect 189 107 235 119)(font "Arial" ))
+		(line (pt 256 112)(pt 240 112)(line_width 1))
+	)
+	(port
+		(pt 256 128)
+		(output)
+		(text "inc_addr" (rect 0 0 34 12)(font "Arial" ))
+		(text "inc_addr" (rect 201 123 235 135)(font "Arial" ))
+		(line (pt 256 128)(pt 240 128)(line_width 1))
+	)
+	(port
+		(pt 256 144)
+		(output)
+		(text "load_timeout" (rect 0 0 49 12)(font "Arial" ))
+		(text "load_timeout" (rect 186 139 235 151)(font "Arial" ))
+		(line (pt 256 144)(pt 240 144)(line_width 1))
+	)
+	(port
+		(pt 256 160)
+		(output)
+		(text "load_A" (rect 0 0 29 12)(font "Arial" ))
+		(text "load_A" (rect 206 155 235 167)(font "Arial" ))
+		(line (pt 256 160)(pt 240 160)(line_width 1))
+	)
+	(port
+		(pt 256 176)
+		(output)
+		(text "load_B" (rect 0 0 27 12)(font "Arial" ))
+		(text "load_B" (rect 208 171 235 183)(font "Arial" ))
+		(line (pt 256 176)(pt 240 176)(line_width 1))
+	)
+	(port
+		(pt 256 192)
+		(output)
+		(text "load_C" (rect 0 0 28 12)(font "Arial" ))
+		(text "load_C" (rect 207 187 235 199)(font "Arial" ))
+		(line (pt 256 192)(pt 240 192)(line_width 1))
+	)
+	(port
+		(pt 256 208)
+		(output)
+		(text "load_D" (rect 0 0 28 12)(font "Arial" ))
+		(text "load_D" (rect 207 203 235 215)(font "Arial" ))
+		(line (pt 256 208)(pt 240 208)(line_width 1))
+	)
+	(port
+		(pt 256 224)
+		(output)
+		(text "set_Buffer_Empty" (rect 0 0 77 12)(font "Arial" ))
+		(text "set_Buffer_Empty" (rect 158 219 235 231)(font "Arial" ))
+		(line (pt 256 224)(pt 240 224)(line_width 1))
+	)
+	(port
+		(pt 256 240)
+		(output)
+		(text "clear_Buffer_Empty" (rect 0 0 84 12)(font "Arial" ))
+		(text "clear_Buffer_Empty" (rect 151 235 235 247)(font "Arial" ))
+		(line (pt 256 240)(pt 240 240)(line_width 1))
+	)
+	(port
+		(pt 256 256)
+		(output)
+		(text "latch_outputABC" (rect 0 0 68 12)(font "Arial" ))
+		(text "latch_outputABC" (rect 167 251 235 263)(font "Arial" ))
+		(line (pt 256 256)(pt 240 256)(line_width 1))
+	)
+	(port
+		(pt 256 272)
+		(output)
+		(text "latch_outputD" (rect 0 0 54 12)(font "Arial" ))
+		(text "latch_outputD" (rect 181 267 235 279)(font "Arial" ))
+		(line (pt 256 272)(pt 240 272)(line_width 1))
+	)
+	(port
+		(pt 256 288)
+		(output)
+		(text "latch_outputDq" (rect 0 0 59 12)(font "Arial" ))
+		(text "latch_outputDq" (rect 176 283 235 295)(font "Arial" ))
+		(line (pt 256 288)(pt 240 288)(line_width 1))
+	)
+	(port
+		(pt 256 304)
+		(output)
+		(text "inc_step" (rect 0 0 33 12)(font "Arial" ))
+		(text "inc_step" (rect 202 299 235 311)(font "Arial" ))
+		(line (pt 256 304)(pt 240 304)(line_width 1))
+	)
+	(parameter
+		"LD_B"
+		"0"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"PRELOAD"
+		"1"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"HOLD"
+		"2"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LD_A"
+		"3"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LDTIME"
+		"4"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LD_C"
+		"5"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LD_D"
+		"6"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"DELAY"
+		"7"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"FINISHING"
+		"8"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 240 320)(line_width 1))
+	)
+	(annotation_block (parameter)(rect 272 -64 372 16))
+)

@@ -22,16 +22,15 @@ applicable agreement for further details.
 (alias "<<__$DEF_ALIAS6099>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS7211>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS7230>>""PCIClockBuf;MasterClk")
+(alias "<<__$DEF_ALIAS25601>>""PCIClockBuf;MasterClk")
+(alias "<<__$DEF_ALIAS25603>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS7172>>""PCIClockBuf;MasterClk")
-(alias "<<__$DEF_ALIAS8721>>""DefaultPortData[127..0]")
-(alias "<<__$DEF_ALIAS7219>>""vcc;gnd")
 (alias "<<__$DEF_ALIAS29905>>""PCIClockBuf;MasterClk")
-(alias "<<__$DEF_ALIAS7220>>""vcc;gnd")
 (alias "<<__$DEF_ALIAS29416>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS6002>>""PCIClockBuf;MasterClk")
-(alias "<<__$DEF_ALIAS8719>>""DefaultPortData[127..0]")
 (alias "<<__$DEF_ALIAS6121>>""PCIClockBuf;MasterClk")
-(alias "<<__$DEF_ALIAS8722>>""DefaultPortData[127..0]")
+(alias "<<__$DEF_ALIAS25600>>""PCIClockBuf;MasterClk")
+(alias "<<__$DEF_ALIAS25606>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS4987>>""PCIClockBuf;MasterClk")
 (pin
 	(input)
@@ -289,38 +288,6 @@ applicable agreement for further details.
 	(text "VCC" (rect 4 7 25 17)(font "Arial" (font_size 6)))
 	(annotation_block (location)(rect 664 144 728 160))
 )
-(symbol
-	(rect 864 800 896 816)
-	(text "VCC" (rect 7 0 28 10)(font "Arial" (font_size 6)))
-	(text "inst" (rect 3 5 21 16)(font "Arial" )(invisible))
-	(port
-		(pt 16 16)
-		(output)
-		(text "1" (rect 19 7 27 18)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 19 7 27 18)(font "Courier New" (bold))(invisible))
-		(line (pt 16 16)(pt 16 8))
-	)
-	(drawing
-		(line (pt 8 8)(pt 24 8))
-	)
-)
-(symbol
-	(rect 880 888 912 920)
-	(text "GND" (rect 8 16 30 26)(font "Arial" (font_size 6)))
-	(text "inst1" (rect 3 21 27 32)(font "Arial" )(invisible))
-	(port
-		(pt 16 0)
-		(output)
-		(text "1" (rect 18 0 26 11)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 18 0 26 11)(font "Courier New" (bold))(invisible))
-		(line (pt 16 8)(pt 16 0))
-	)
-	(drawing
-		(line (pt 8 8)(pt 16 16))
-		(line (pt 16 16)(pt 24 8))
-		(line (pt 8 8)(pt 24 8))
-	)
-)
 (block
 	(rect 856 56 1032 392)
 	(text "Output_Drive" (rect 5 5 71 16)(font "Arial" ))	(text "outputdrivers" (rect 5 334 69 345)(font "Arial" ))	(block_io "trig0_enable" (input))
@@ -350,12 +317,6 @@ applicable agreement for further details.
 		(bidir)
 		)
 	(mapper
-		(pt 0 216)
-		(bidir)
-		(mapping "PortData[127..0]" "DefaultPortData[127..0]" )
-		(annotation_block (mapping)(rect 624 288 836 314))
-	)
-	(mapper
 		(pt 176 32)
 		(bidir)
 		(mapping "PortA[31..0]" "FlexIO[32..1]" )
@@ -379,6 +340,10 @@ applicable agreement for further details.
 		(mapping "PortD[31..0]" "FlexIO[152..121]" )
 		(annotation_block (mapping)(rect 1048 312 1202 338))
 	)
+	(mapper
+		(pt 0 216)
+		(bidir)
+		)
 )
 (block
 	(rect 264 688 464 928)
@@ -531,9 +496,7 @@ applicable agreement for further details.
 	(mapper
 		(pt 256 240)
 		(bidir)
-		(mapping "reset_outputs[127..0]" "DefaultPortData[127..0]" )
-		(annotation_block (mapping)(rect 440 296 680 328))
-	)
+		)
 )
 (block
 	(rect 544 760 728 1032)
@@ -590,13 +553,6 @@ applicable agreement for further details.
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(mapper
-		(pt 184 104)
-		(bidir)
-		(mapping "Is_Finished" "vcc" )
-		(mapping "Buffer_Empty" "gnd" )
-		(annotation_block (mapping)(rect 744 880 869 919))
-	)
-	(mapper
 		(pt 0 40)
 		(bidir)
 		(mapping "clock" "MasterClk" )
@@ -610,8 +566,31 @@ applicable agreement for further details.
 	)
 	(annotation_block (parameter)(rect 536 1020 712 1124))
 )
+(block
+	(rect 872 456 1080 672)
+	(text "TimingCore" (rect 5 5 64 16)(font "Arial" ))	(text "timingcore" (rect 5 214 56 225)(font "Arial" ))	(block_io "MClr" (input))
+	(block_io "MasterClk" (input))
+	(block_io "Load_Instructions" (input))
+	(block_io "Run_Timer" (input))
+	(block_io "Decode_q[31..0]" (input))
+	(block_io "Number_Steps[15..0]" (input))
+	(block_io "reset_outputs[127..0]" (input))
+	(block_io "Decode_RdEn" (output))
+	(block_io "TimeCounter[63..0]" (output))
+	(block_io "Buffer_Empty" (output))
+	(block_io "Step[15..0]" (output))
+	(block_io "DecodeAddr[15..0]" (output))
+	(block_io "PortData[127..0]" (output))
+	(mapper
+		(pt 0 208)
+		(bidir)
+		)
+	(mapper
+		(pt 0 64)
+		(bidir)
+		)
+)
 (connector
-	(text "<<__$DEF_ALIAS8719>>" (rect 0 0 129 11)(font "Arial" )(invisible))
 	(pt 432 280)
 	(pt 424 280)
 	(conduit)
@@ -623,7 +602,6 @@ applicable agreement for further details.
 	(conduit)
 )
 (connector
-	(text "<<__$DEF_ALIAS8721>>" (rect 0 0 129 11)(font "Arial" )(invisible))
 	(pt 432 280)
 	(pt 432 272)
 	(conduit)
@@ -748,12 +726,6 @@ applicable agreement for further details.
 	(conduit)
 )
 (connector
-	(text "<<__$DEF_ALIAS7172>>" (rect 0 0 129 11)(font "Arial" )(invisible))
-	(pt 496 656)
-	(pt 496 800)
-	(conduit)
-)
-(connector
 	(text "<<__$DEF_ALIAS4987>>" (rect -64 0 65 11)(font "Arial" )(invisible))
 	(pt 144 656)
 	(pt 496 656)
@@ -766,27 +738,6 @@ applicable agreement for further details.
 	(conduit)
 )
 (connector
-	(pt 880 816)
-	(pt 880 856)
-)
-(connector
-	(text "vcc" (rect 858 840 875 851)(font "Arial" ))
-	(pt 880 856)
-	(pt 848 856)
-)
-(connector
-	(text "<<__$DEF_ALIAS7220>>" (rect 0 0 129 11)(font "Arial" )(invisible))
-	(pt 848 864)
-	(pt 848 856)
-	(conduit)
-)
-(connector
-	(text "<<__$DEF_ALIAS7219>>" (rect 0 0 129 11)(font "Arial" )(invisible))
-	(pt 728 864)
-	(pt 848 864)
-	(conduit)
-)
-(connector
 	(text "<<__$DEF_ALIAS7230>>" (rect 0 0 129 11)(font "Arial" )(invisible))
 	(pt 496 800)
 	(pt 544 800)
@@ -795,21 +746,6 @@ applicable agreement for further details.
 (connector
 	(pt 104 768)
 	(pt 264 768)
-	(conduit)
-)
-(connector
-	(pt 848 864)
-	(pt 896 864)
-)
-(connector
-	(text "gnd" (rect 880 861 891 881)(font "Arial" )(vertical))
-	(pt 896 864)
-	(pt 896 888)
-)
-(connector
-	(text "<<__$DEF_ALIAS8722>>" (rect 0 0 129 11)(font "Arial" )(invisible))
-	(pt 432 272)
-	(pt 856 272)
 	(conduit)
 )
 (connector
@@ -852,6 +788,56 @@ applicable agreement for further details.
 	(pt 104 968)
 	(conduit)
 )
+(connector
+	(pt 872 520)
+	(pt 784 520)
+	(conduit)
+)
+(connector
+	(text "<<__$DEF_ALIAS25600>>" (rect 0 0 135 11)(font "Arial" )(invisible))
+	(pt 872 664)
+	(pt 784 664)
+	(conduit)
+)
+(connector
+	(text "<<__$DEF_ALIAS25601>>" (rect 0 0 135 11)(font "Arial" )(invisible))
+	(pt 784 712)
+	(pt 784 664)
+	(conduit)
+)
+(connector
+	(text "<<__$DEF_ALIAS25603>>" (rect 0 0 135 11)(font "Arial" )(invisible))
+	(pt 784 712)
+	(pt 496 712)
+	(conduit)
+)
+(connector
+	(text "<<__$DEF_ALIAS7172>>" (rect 0 0 129 11)(font "Arial" )(invisible))
+	(pt 496 656)
+	(pt 496 712)
+	(conduit)
+)
+(connector
+	(text "<<__$DEF_ALIAS25606>>" (rect 0 0 135 11)(font "Arial" )(invisible))
+	(pt 496 712)
+	(pt 496 800)
+	(conduit)
+)
+(connector
+	(pt 784 272)
+	(pt 784 520)
+	(conduit)
+)
+(connector
+	(pt 432 272)
+	(pt 784 272)
+	(conduit)
+)
+(connector
+	(pt 784 272)
+	(pt 856 272)
+	(conduit)
+)
 (junction (pt 144 832))
 (junction (pt 480 136))
 (junction (pt 480 96))
@@ -860,6 +846,7 @@ applicable agreement for further details.
 (junction (pt 104 696))
 (junction (pt 144 656))
 (junction (pt 496 656))
-(junction (pt 848 864))
 (junction (pt 104 768))
+(junction (pt 496 712))
+(junction (pt 784 272))
 (text "PLL CLKINs cannot come from FlexIOs. :-(" (rect -328 880 -88 893)(font "Arial" (font_size 8)))
