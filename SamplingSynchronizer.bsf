@@ -21,7 +21,7 @@ applicable agreement for further details.
 (header "symbol" (version "1.2"))
 (symbol
 	(rect 16 16 200 112)
-	(text "FFSynchronizer" (rect 5 0 95 13)(font "Arial" (font_size 8)))
+	(text "SamplingSynchronizer" (rect 5 0 132 13)(font "Arial" (font_size 8)))
 	(text "inst" (rect 8 81 26 92)(font "Arial" ))
 	(port
 		(pt 0 32)

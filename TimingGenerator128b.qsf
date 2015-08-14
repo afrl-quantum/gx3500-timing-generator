@@ -347,4 +347,7 @@ set_global_assignment -name QIP_FILE Incr16b.qip
 set_global_assignment -name QIP_FILE IsZero28b.qip
 set_global_assignment -name QIP_FILE Eq32b.qip
 set_global_assignment -name QIP_FILE Eq16b.qip
+set_global_assignment -name BDF_FILE SystemController.bdf
+set_global_assignment -name BDF_FILE FFSynchronizer.bdf
+set_global_assignment -name BDF_FILE SamplingSynchronizer.bdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
