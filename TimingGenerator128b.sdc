@@ -60,6 +60,7 @@ set_multicycle_path -start -hold \
 	-to {SequenceBuffer:sequencebuffer|inst22} \
 	6
 
+# the PCI_PERMITTED bit is slow
 set_multicycle_path -start -setup \
 	-from {Registers:registers|pci_master} \
 	-to {Registers:registers|pci_pci} \
@@ -70,6 +71,17 @@ set_multicycle_path -start -hold \
 	-to {Registers:registers|pci_pci} \
 	6
 
+# the State bits in reg_STATUS are slow
+set_multicycle_path -start -setup \
+	-from {Registers:registers|status_master*} \
+	-to {Registers:registers|status_pci*} \
+	5
+
+set_multicycle_path -start -hold \
+	-from {Registers:registers|status_master*} \
+	-to {Registers:registers|status_pci*} \
+	5
+	
 # tsu/th constraints
 
 set_input_delay -clock PCIClock_ext -min 0ns [get_ports {FDt[*] Addr[*] CS[*] RdEn WrEn}]
