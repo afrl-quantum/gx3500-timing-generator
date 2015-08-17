@@ -20,9 +20,23 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 64 64 296 304)
+	(rect 64 64 304 272)
 	(text "System_State" (rect 5 0 74 11)(font "Arial" ))
-	(text "inst" (rect 8 224 26 235)(font "Arial" ))
+	(text "inst" (rect 8 192 26 203)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "MClr" (rect 0 0 24 11)(font "Arial" ))
+		(text "MClr" (rect 21 27 45 38)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "MasterClk" (rect 0 0 50 11)(font "Arial" ))
+		(text "MasterClk" (rect 21 43 71 54)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
 	(port
 		(pt 0 64)
 		(input)
@@ -40,8 +54,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 96)
 		(input)
-		(text "Do_Trigger" (rect 0 0 56 11)(font "Arial" ))
-		(text "Do_Trigger" (rect 21 91 77 102)(font "Arial" ))
+		(text "trigger" (rect 0 0 33 11)(font "Arial" ))
+		(text "trigger" (rect 21 91 54 102)(font "Arial" ))
 		(line (pt 0 96)(pt 16 96))
 	)
 	(port
@@ -61,72 +75,65 @@ applicable agreement for further details.
 	(port
 		(pt 0 144)
 		(input)
-		(text "Do_Repeat" (rect 0 0 57 11)(font "Arial" ))
-		(text "Do_Repeat" (rect 21 139 78 150)(font "Arial" ))
+		(text "Do_Pause" (rect 0 0 53 11)(font "Arial" ))
+		(text "Do_Pause" (rect 21 139 74 150)(font "Arial" ))
 		(line (pt 0 144)(pt 16 144))
 	)
 	(port
 		(pt 0 160)
 		(input)
-		(text "Do_Pause" (rect 0 0 53 11)(font "Arial" ))
-		(text "Do_Pause" (rect 21 155 74 166)(font "Arial" ))
+		(text "Do_Resume" (rect 0 0 62 11)(font "Arial" ))
+		(text "Do_Resume" (rect 21 155 83 166)(font "Arial" ))
 		(line (pt 0 160)(pt 16 160))
 	)
 	(port
 		(pt 0 176)
 		(input)
-		(text "Do_Resume" (rect 0 0 62 11)(font "Arial" ))
-		(text "Do_Resume" (rect 21 171 83 182)(font "Arial" ))
+		(text "is_finished" (rect 0 0 54 11)(font "Arial" ))
+		(text "is_finished" (rect 21 171 75 182)(font "Arial" ))
 		(line (pt 0 176)(pt 16 176))
 	)
 	(port
-		(pt 0 192)
-		(input)
-		(text "Is_Finished" (rect 0 0 57 11)(font "Arial" ))
-		(text "Is_Finished" (rect 21 187 78 198)(font "Arial" ))
-		(line (pt 0 192)(pt 16 192))
-	)
-	(port
-		(pt 0 32)
-		(input)
-		(text "MClr" (rect 0 0 24 11)(font "Arial" ))
-		(text "MClr" (rect 21 27 45 38)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "MasterClk" (rect 0 0 50 11)(font "Arial" ))
-		(text "MasterClk" (rect 21 43 71 54)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 232 32)
+		(pt 240 32)
 		(output)
 		(text "PCI_Allowed" (rect 0 0 64 11)(font "Arial" ))
-		(text "PCI_Allowed" (rect 157 27 221 38)(font "Arial" ))
-		(line (pt 232 32)(pt 216 32))
+		(text "PCI_Allowed" (rect 165 27 229 38)(font "Arial" ))
+		(line (pt 240 32)(pt 224 32))
 	)
 	(port
-		(pt 232 48)
+		(pt 240 48)
 		(output)
 		(text "Load_Instructions" (rect 0 0 88 11)(font "Arial" ))
-		(text "Load_Instructions" (rect 137 43 225 54)(font "Arial" ))
-		(line (pt 232 48)(pt 216 48))
+		(text "Load_Instructions" (rect 145 43 233 54)(font "Arial" ))
+		(line (pt 240 48)(pt 224 48))
 	)
 	(port
-		(pt 232 64)
+		(pt 240 64)
 		(output)
 		(text "Run_Timer" (rect 0 0 56 11)(font "Arial" ))
-		(text "Run_Timer" (rect 164 59 220 70)(font "Arial" ))
-		(line (pt 232 64)(pt 216 64))
+		(text "Run_Timer" (rect 172 59 228 70)(font "Arial" ))
+		(line (pt 240 64)(pt 224 64))
 	)
 	(port
-		(pt 232 88)
+		(pt 240 80)
 		(output)
-		(text "Internal_State[2..0]" (rect 178 80 285 93)(font "Arial" (font_size 8)))
-		(text "Internal_State[2..0]" (rect 136 80 229 90)(font "DejaVu Sans" (font_size 6)))
-		(line (pt 232 88)(pt 216 88))
+		(text "inc_repeat_count" (rect 0 0 86 11)(font "Arial" ))
+		(text "inc_repeat_count" (rect 147 75 233 86)(font "Arial" ))
+		(line (pt 240 80)(pt 224 80))
+	)
+	(port
+		(pt 240 96)
+		(output)
+		(text "clear_repeat_count" (rect 0 0 95 11)(font "Arial" ))
+		(text "clear_repeat_count" (rect 139 91 234 102)(font "Arial" ))
+		(line (pt 240 96)(pt 224 96))
+	)
+	(port
+		(pt 240 120)
+		(output)
+		(text "Internal_State[2..0]" (rect 186 112 293 125)(font "Arial" (font_size 8)))
+		(text "Internal_State[2..0]" (rect 138 112 231 122)(font "DejaVu Sans" (font_size 6)))
+		(line (pt 240 120)(pt 224 120))
 	)
 	(parameter
 		"STOPPING"
@@ -163,8 +170,13 @@ applicable agreement for further details.
 		"6"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"DONE"
+		"7"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 216 224))
+		(rectangle (rect 16 16 224 192))
 	)
-	(annotation_block (parameter)(rect 296 -40 472 64))
+	(annotation_block (parameter)(rect 304 -56 480 64))
 )

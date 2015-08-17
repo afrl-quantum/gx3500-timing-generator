@@ -314,7 +314,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 1480 168 1656 184)
+	(rect 1512 544 1688 560)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "trig_enable" (rect 90 0 146 11)(font "Arial" ))
 	(pt 0 8)
@@ -330,7 +330,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 1480 192 1669 208)
+	(rect 1512 568 1701 584)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "refclk_use_10MHz" (rect 90 0 183 11)(font "Arial" ))
 	(pt 0 8)
@@ -346,7 +346,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 1480 264 1701 280)
+	(rect 1480 208 1701 224)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "number_transitions[15..0]" (rect 90 0 215 11)(font "Arial" ))
 	(pt 0 8)
@@ -362,7 +362,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 1480 320 1695 336)
+	(rect 1480 312 1695 328)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "number_iterations[31..0]" (rect 90 0 209 11)(font "Arial" ))
 	(pt 0 8)
@@ -634,7 +634,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 1480 240 1656 256)
+	(rect 1480 104 1656 120)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "auto_trigger" (rect 90 0 150 11)(font "Arial" ))
 	(pt 0 8)
@@ -698,7 +698,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 1480 368 1679 384)
+	(rect 1480 416 1679 432)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "reset_outputs[127..0]" (rect 90 0 193 11)(font "Arial" ))
 	(pt 0 8)
@@ -2428,6 +2428,174 @@ applicable agreement for further details.
 	)
 	(annotation_block (parameter)(rect 1248 776 1376 809))
 )
+(symbol
+	(rect 1280 80 1464 176)
+	(text "FFSynchronizer" (rect 5 0 95 13)(font "Arial" (font_size 8)))
+	(text "auto_trigger_sync" (rect 8 81 97 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clka" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clka" (rect 21 27 44 40)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clkb" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clkb" (rect 21 43 44 56)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "input[N..0]" (rect 0 0 59 13)(font "Arial" (font_size 8)))
+		(text "input[N..0]" (rect 21 59 80 72)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 184 32)
+		(output)
+		(text "output[N..0]" (rect 0 0 67 13)(font "Arial" (font_size 8)))
+		(text "output[N..0]" (rect 96 27 163 40)(font "Arial" (font_size 8)))
+		(line (pt 184 32)(pt 168 32)(line_width 3))
+	)
+	(parameter
+		"N"
+		"0"
+		""
+	)
+	(drawing
+		(rectangle (rect 16 16 168 80))
+	)
+	(annotation_block (parameter)(rect 1464 47 1586 73))
+)
+(symbol
+	(rect 1280 184 1464 280)
+	(text "FFSynchronizer" (rect 5 0 95 13)(font "Arial" (font_size 8)))
+	(text "nr_transitions_sync" (rect 8 81 104 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clka" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clka" (rect 21 27 44 40)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clkb" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clkb" (rect 21 43 44 56)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "input[N..0]" (rect 0 0 59 13)(font "Arial" (font_size 8)))
+		(text "input[N..0]" (rect 21 59 80 72)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 184 32)
+		(output)
+		(text "output[N..0]" (rect 0 0 67 13)(font "Arial" (font_size 8)))
+		(text "output[N..0]" (rect 96 27 163 40)(font "Arial" (font_size 8)))
+		(line (pt 184 32)(pt 168 32)(line_width 3))
+	)
+	(parameter
+		"N"
+		"15"
+		""
+	)
+	(drawing
+		(rectangle (rect 16 16 168 80))
+	)
+	(annotation_block (parameter)(rect 1464 151 1586 177))
+)
+(symbol
+	(rect 1280 288 1464 384)
+	(text "FFSynchronizer" (rect 5 0 95 13)(font "Arial" (font_size 8)))
+	(text "n_reps_sync" (rect 8 81 71 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clka" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clka" (rect 21 27 44 40)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clkb" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clkb" (rect 21 43 44 56)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "input[N..0]" (rect 0 0 59 13)(font "Arial" (font_size 8)))
+		(text "input[N..0]" (rect 21 59 80 72)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 184 32)
+		(output)
+		(text "output[N..0]" (rect 0 0 67 13)(font "Arial" (font_size 8)))
+		(text "output[N..0]" (rect 96 27 163 40)(font "Arial" (font_size 8)))
+		(line (pt 184 32)(pt 168 32)(line_width 3))
+	)
+	(parameter
+		"N"
+		"31"
+		""
+	)
+	(drawing
+		(rectangle (rect 16 16 168 80))
+	)
+	(annotation_block (parameter)(rect 1464 255 1586 281))
+)
+(symbol
+	(rect 1280 392 1464 488)
+	(text "FFSynchronizer" (rect 5 0 95 13)(font "Arial" (font_size 8)))
+	(text "reset_sync" (rect 8 81 63 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clka" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clka" (rect 21 27 44 40)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clkb" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clkb" (rect 21 43 44 56)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "input[N..0]" (rect 0 0 59 13)(font "Arial" (font_size 8)))
+		(text "input[N..0]" (rect 21 59 80 72)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 184 32)
+		(output)
+		(text "output[N..0]" (rect 0 0 67 13)(font "Arial" (font_size 8)))
+		(text "output[N..0]" (rect 96 27 163 40)(font "Arial" (font_size 8)))
+		(line (pt 184 32)(pt 168 32)(line_width 3))
+	)
+	(parameter
+		"N"
+		"127"
+		""
+	)
+	(drawing
+		(rectangle (rect 16 16 168 80))
+	)
+	(annotation_block (parameter)(rect 1464 359 1586 385))
+)
 (connector
 	(text "Addr[6..2]" (rect -102 472 -54 483)(font "Arial" ))
 	(pt -112 488)
@@ -2524,33 +2692,6 @@ applicable agreement for further details.
 (connector
 	(pt 232 544)
 	(pt 232 616)
-	(bus)
-)
-(connector
-	(text "reg_CONFIG[0]" (rect 1368 160 1445 171)(font "Arial" ))
-	(pt 1480 176)
-	(pt 1368 176)
-)
-(connector
-	(text "reg_CONFIG[1]" (rect 1368 184 1445 195)(font "Arial" ))
-	(pt 1480 200)
-	(pt 1368 200)
-)
-(connector
-	(text "reg_CONFIG[3]" (rect 1368 232 1445 243)(font "Arial" ))
-	(pt 1480 248)
-	(pt 1368 248)
-)
-(connector
-	(text "reg_CONFIG[31..16]" (rect 1360 256 1461 267)(font "Arial" ))
-	(pt 1480 272)
-	(pt 1360 272)
-	(bus)
-)
-(connector
-	(text "reg_N_REPS[31..0]" (rect 1360 312 1456 323)(font "Arial" ))
-	(pt 1480 328)
-	(pt 1360 328)
 	(bus)
 )
 (connector
@@ -3203,12 +3344,6 @@ applicable agreement for further details.
 	(pt 1840 816)
 )
 (connector
-	(text "reg_RESET_D[31..0], reg_RESET_C[31..0], reg_RESET_B[31..0], reg_RESET_A[31..0]" (rect 1360 360 1790 371)(font "Arial" ))
-	(pt 1480 376)
-	(pt 1360 376)
-	(bus)
-)
-(connector
 	(pt 1440 1144)
 	(pt 1440 1128)
 	(bus)
@@ -3731,6 +3866,126 @@ applicable agreement for further details.
 	(pt 1168 840)
 	(pt 1168 960)
 )
+(connector
+	(pt 1480 424)
+	(pt 1464 424)
+	(bus)
+)
+(connector
+	(text "reg_RESET_D[31..0], reg_RESET_C[31..0], reg_RESET_B[31..0], reg_RESET_A[31..0]" (rect 872 440 1302 451)(font "Arial" ))
+	(pt 968 456)
+	(pt 1280 456)
+	(bus)
+)
+(connector
+	(pt 1464 320)
+	(pt 1480 320)
+	(bus)
+)
+(connector
+	(text "reg_N_REPS[31..0]" (rect 1138 336 1234 347)(font "Arial" ))
+	(pt 1280 352)
+	(pt 1128 352)
+	(bus)
+)
+(connector
+	(text "reg_CONFIG[31..16]" (rect 1138 232 1239 243)(font "Arial" ))
+	(pt 1280 248)
+	(pt 1128 248)
+	(bus)
+)
+(connector
+	(pt 1480 216)
+	(pt 1464 216)
+	(bus)
+)
+(connector
+	(text "reg_CONFIG[0]" (rect 1400 536 1477 547)(font "Arial" ))
+	(pt 1512 552)
+	(pt 1400 552)
+)
+(connector
+	(text "reg_CONFIG[1]" (rect 1400 560 1477 571)(font "Arial" ))
+	(pt 1512 576)
+	(pt 1400 576)
+)
+(connector
+	(pt 1464 112)
+	(pt 1480 112)
+	(bus)
+)
+(connector
+	(text "reg_CONFIG[3]" (rect 1146 128 1223 139)(font "Arial" ))
+	(pt 1280 144)
+	(pt 1136 144)
+	(bus)
+)
+(connector
+	(pt 1280 112)
+	(pt 1224 112)
+)
+(connector
+	(pt 1280 128)
+	(pt 1256 128)
+)
+(connector
+	(pt 1280 232)
+	(pt 1256 232)
+)
+(connector
+	(text "MasterClk" (rect 1240 75 1251 125)(font "Arial" )(vertical))
+	(pt 1256 40)
+	(pt 1256 128)
+)
+(connector
+	(pt 1280 216)
+	(pt 1224 216)
+)
+(connector
+	(text "PCIClock" (rect 1208 62 1219 109)(font "Arial" )(vertical))
+	(pt 1224 40)
+	(pt 1224 112)
+)
+(connector
+	(pt 1280 336)
+	(pt 1256 336)
+)
+(connector
+	(pt 1256 128)
+	(pt 1256 232)
+)
+(connector
+	(pt 1280 320)
+	(pt 1224 320)
+)
+(connector
+	(pt 1224 112)
+	(pt 1224 216)
+)
+(connector
+	(pt 1280 440)
+	(pt 1256 440)
+)
+(connector
+	(pt 1256 232)
+	(pt 1256 336)
+)
+(connector
+	(pt 1256 336)
+	(pt 1256 440)
+)
+(connector
+	(pt 1280 424)
+	(pt 1224 424)
+)
+(connector
+	(pt 1224 216)
+	(pt 1224 320)
+)
+(connector
+	(pt 1224 320)
+	(pt 1224 424)
+)
 (junction (pt 560 256))
 (junction (pt 536 272))
 (junction (pt 232 544))
@@ -3782,12 +4037,16 @@ applicable agreement for further details.
 (junction (pt 864 1176))
 (junction (pt 400 1192))
 (junction (pt 864 960))
+(junction (pt 1256 128))
+(junction (pt 1224 112))
+(junction (pt 1256 232))
+(junction (pt 1224 216))
+(junction (pt 1256 336))
+(junction (pt 1224 320))
 (text "Reading/decoding register addresses" (rect -144 384 66 397)(font "Arial" (font_size 8)))
 (text "Reading/decoding register addresses" (rect -144 384 66 397)(font "Arial" (font_size 8)))
-(text "True : Use External Clock" (rect 1488 240 1634 253)(font "Arial" (font_size 8)))
 (text "Signal Routing to PXI Trigger lines" (rect 1880 136 2073 149)(font "Arial" (font_size 8)))
-(text "Register definitions" (rect 1584 64 1798 89)(font "Arial" (font_size 16)))
-(text "True : Use External Clock" (rect 1488 240 1634 253)(font "Arial" (font_size 8)))
+(text "Register definitions" (rect 1648 64 1862 89)(font "Arial" (font_size 16)))
 (text "The STATUS regster has a number of resettable, asynchronously latched error bits" (rect 1024 736 1487 749)(font "Arial" (font_size 8)))
 (text "plus the command FIFO full bit and the state readback from the Master Clock which is" (rect 1024 752 1503 765)(font "Arial" (font_size 8)))
 (text "This doesn't actually need to have error_bits on the ALOAD port, since they" (rect 1064 1040 1486 1053)(font "Arial" (font_size 8)))

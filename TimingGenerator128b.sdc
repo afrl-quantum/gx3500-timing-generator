@@ -40,7 +40,7 @@ create_generated_clock [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altc
 	-source [get_pins {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}] \
 	-master_clock [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}]
 
-set_clock_groups -logically_exclusive -group {RAM_PCI PCIClock_ext PCIClock} -group {RAM_Master} -group {Addr[2] CS[2]}
+set_clock_groups -logically_exclusive -group {RAM_PCI PCIClock_ext PCIClock} -group {RAM_Master} #-group {Addr[2] CS[2]}
 
 # Automatically calculate clock uncertainty to jitter and other effects.
 derive_clock_uncertainty
@@ -76,28 +76,38 @@ set_multicycle_path -start -hold \
 	-to {Registers:registers|pci_sync|b} \
 	6
 
-# the State bits in reg_STATUS are slow
-set_multicycle_path -start -setup \
-	-from {Registers:registers|FFSynchronizer:state_sync|a*} \
-	-to {Registers:registers|FFSynchronizer:state_sync|b*} \
-	5
-
-set_multicycle_path -start -hold \
-	-from {Registers:registers|FFSynchronizer:state_sync|a*} \
-	-to {Registers:registers|FFSynchronizer:state_sync|b*} \
-	5
-
 # capture synchronizers
 set_multicycle_path -start -setup \
-  -from {*|CaptureSynchronizer:inst*|cap} \
-  -to {*|CaptureSynchronizer:inst*|lock} \
+  -from {*|CaptureSynchronizer:*|cap*} \
+  -to {*|CaptureSynchronizer:*|lock*} \
   2
 
 set_multicycle_path -start -hold \
-  -from {*|CaptureSynchronizer:inst*|cap} \
-  -to {*|CaptureSynchronizer:inst*|lock} \
+  -from {*|CaptureSynchronizer:*|cap*} \
+  -to {*|CaptureSynchronizer:*|lock*} \
   2
-	
+
+# flip-flop synchronizers
+set_multicycle_path -start -setup \
+  -from {*|FFSynchronizer:*|a*} \
+  -to {*|FFSynchronizer:*|b*} \
+  2
+
+set_multicycle_path -start -hold \
+  -from {*|FFSynchronizer:*|a*} \
+  -to {*|FFSynchronizer:*|b*} \
+  2
+  
+# Tell TimeQuest that the timing core doesn't try to access the RAM when it is using RAM_PCI
+# as its clock
+set_false_path -from [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}] \
+	-through [get_pins -compatibility_mode timingcore\|addrff*] \
+	-to [get_clocks {RAM_PCI}]
+
+set_false_path -to [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}] \
+	-through [get_pins -compatibility_mode sequencebuffer\|RAM_Qreg*] \
+	-from [get_clocks {RAM_PCI}]
+  
 # tsu/th constraints
 
 set_input_delay -clock PCIClock_ext -min 0ns [get_ports {FDt[*] Addr[*] CS[*] RdEn WrEn}]

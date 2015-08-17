@@ -19,19 +19,25 @@ Altera or its authorized distributors.  Please refer to the
 applicable agreement for further details.
 */
 (header "graphic" (version "1.4"))
+(alias "<<__$DEF_ALIAS8745>>""PCIClockBuf;MasterClk")
+(alias "<<__$DEF_ALIAS39960>>""PCIClockBuf;MasterClk")
+(alias "<<__$DEF_ALIAS40012>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS6099>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS26908>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS27000>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS25601>>""PCIClockBuf;MasterClk")
+(alias "<<__$DEF_ALIAS39956>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS29905>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS29416>>""PCIClockBuf;MasterClk")
-(alias "<<__$DEF_ALIAS6002>>""PCIClockBuf;MasterClk")
-(alias "<<__$DEF_ALIAS6121>>""PCIClockBuf;MasterClk")
-(alias "<<__$DEF_ALIAS25600>>""PCIClockBuf;MasterClk")
+(alias "<<__$DEF_ALIAS8734>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS25606>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS4987>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS7211>>""PCIClockBuf;MasterClk")
+(alias "<<__$DEF_ALIAS27006>>""PCIClockBuf;MasterClk")
 (alias "<<__$DEF_ALIAS25603>>""PCIClockBuf;MasterClk")
+(alias "<<__$DEF_ALIAS39963>>""PCIClockBuf;MasterClk")
+(alias "<<__$DEF_ALIAS6002>>""PCIClockBuf;MasterClk")
+(alias "<<__$DEF_ALIAS25600>>""PCIClockBuf;MasterClk")
 (pin
 	(input)
 	(rect -344 824 -168 840)
@@ -289,7 +295,7 @@ applicable agreement for further details.
 	(annotation_block (location)(rect 664 144 728 160))
 )
 (block
-	(rect 856 56 1032 392)
+	(rect 856 48 1032 384)
 	(text "Output_Drive" (rect 5 5 71 16)(font "Arial" ))	(text "outputdrivers" (rect 5 334 69 345)(font "Arial" ))	(block_io "trig0_enable" (input))
 	(block_io "PortData[127..0]" (input))
 	(block_io "trig0_select[6..0]" (input))
@@ -320,25 +326,25 @@ applicable agreement for further details.
 		(pt 176 32)
 		(bidir)
 		(mapping "PortA[31..0]" "FlexIO[32..1]" )
-		(annotation_block (mapping)(rect 1048 104 1184 130))
+		(annotation_block (mapping)(rect 1048 96 1184 122))
 	)
 	(mapper
 		(pt 176 120)
 		(bidir)
 		(mapping "PortB[31..0]" "FlexIO[72..41]" )
-		(annotation_block (mapping)(rect 1048 192 1190 218))
+		(annotation_block (mapping)(rect 1048 184 1190 210))
 	)
 	(mapper
 		(pt 176 176)
 		(bidir)
 		(mapping "PortC[31..0]" "FlexIO[112..81]" )
-		(annotation_block (mapping)(rect 1048 248 1196 274))
+		(annotation_block (mapping)(rect 1048 240 1196 266))
 	)
 	(mapper
 		(pt 176 240)
 		(bidir)
 		(mapping "PortD[31..0]" "FlexIO[152..121]" )
-		(annotation_block (mapping)(rect 1048 312 1202 338))
+		(annotation_block (mapping)(rect 1048 304 1202 330))
 	)
 	(mapper
 		(pt 0 216)
@@ -372,10 +378,6 @@ applicable agreement for further details.
 		(mapping "PCIClock" "PCIClockBuf" )
 		(annotation_block (mapping)(rect 136 920 262 946))
 	)
-	(mapper
-		(pt 0 80)
-		(bidir)
-		)
 )
 (block
 	(rect -96 800 96 976)
@@ -434,8 +436,56 @@ applicable agreement for further details.
 	)
 )
 (block
-	(rect 168 40 424 608)
-	(text "Registers" (rect 5 5 53 16)(font "Arial" ))	(text "registers" (rect 5 566 48 577)(font "Arial" ))	(block_io "PCIClock" (input))
+	(rect 872 456 1080 672)
+	(text "TimingCore" (rect 5 5 64 16)(font "Arial" ))	(text "timingcore" (rect 5 214 56 225)(font "Arial" ))	(block_io "MClr" (input))
+	(block_io "MasterClk" (input))
+	(block_io "Load_Instructions" (input))
+	(block_io "Run_Timer" (input))
+	(block_io "Decode_q[31..0]" (input))
+	(block_io "number_transitions[15..0]" (input))
+	(block_io "reset_outputs[127..0]" (input))
+	(block_io "Decode_RdEn" (output))
+	(block_io "TimeCounter[63..0]" (output))
+	(block_io "Buffer_Empty" (output))
+	(block_io "Step[15..0]" (output))
+	(block_io "DecodeAddr[15..0]" (output))
+	(block_io "PortData[127..0]" (output))
+	(mapper
+		(pt 0 208)
+		(bidir)
+		)
+	(mapper
+		(pt 0 64)
+		(bidir)
+		)
+)
+(block
+	(rect 544 760 768 1016)
+	(text "SystemController" (rect 5 5 91 16)(font "Arial" ))	(text "controller" (rect 5 254 52 265)(font "Arial" ))	(block_io "MasterClk" (input))
+	(block_io "MClr" (input))
+	(block_io "Do_Arm" (input))
+	(block_io "Do_Stop" (input))
+	(block_io "PCI_Enabled" (input))
+	(block_io "Buffer_Empty" (input))
+	(block_io "Do_Pause" (input))
+	(block_io "Do_Resume" (input))
+	(block_io "number_iterations[31..0]" (input))
+	(block_io "Do_Trigger" (input))
+	(block_io "HW_Trigger" (input))
+	(block_io "Autotrigger" (input))
+	(block_io "PCI_Allowed" (output))
+	(block_io "Load_Instructions" (output))
+	(block_io "Run_Timer" (output))
+	(block_io "Internal_State[2..0]" (output))
+	(block_io "Repetition[31..0]" (output))
+	(mapper
+		(pt 0 48)
+		(bidir)
+		)
+)
+(block
+	(rect 168 24 424 648)
+	(text "Registers" (rect 5 5 53 16)(font "Arial" ))	(text "registers" (rect 5 622 48 633)(font "Arial" ))	(block_io "PCIClock" (input))
 	(block_io "Addr[19..0]" (input))
 	(block_io "CS[1]" (input))
 	(block_io "WrEn" (input))
@@ -443,12 +493,16 @@ applicable agreement for further details.
 	(block_io "err_bad_cmd" (input))
 	(block_io "err_inappropriate_state" (input))
 	(block_io "err_bad_duration" (input))
+	(block_io "MasterClk" (input))
 	(block_io "err_bad_pci_access" (input))
 	(block_io "RefClk_OK" (input))
-	(block_io "Internal_State[2..0]" (input))
-	(block_io "MasterClk" (input))
 	(block_io "PXIClock_OK" (input))
+	(block_io "Internal_State[2..0]" (input))
 	(block_io "PCI_Enabled" (input))
+	(block_io "Step[15..0]" (input))
+	(block_io "Repetition[31..0]" (input))
+	(block_io "PortData[127..0]" (input))
+	(block_io "TimeCounter[63..0]" (input))
 	(block_io "trig_enable" (output))
 	(block_io "trig0_enable" (output))
 	(block_io "refclk_use_10MHz" (output))
@@ -491,114 +545,12 @@ applicable agreement for further details.
 		(pt 0 384)
 		(bidir)
 		(mapping "PCIClock" "PCIClockBuf" )
-		(annotation_block (mapping)(rect 24 384 150 410))
+		(annotation_block (mapping)(rect 24 368 150 394))
 	)
 	(mapper
 		(pt 256 240)
 		(bidir)
 		)
-)
-(block
-	(rect 872 456 1080 672)
-	(text "TimingCore" (rect 5 5 64 16)(font "Arial" ))	(text "timingcore" (rect 5 214 56 225)(font "Arial" ))	(block_io "MClr" (input))
-	(block_io "MasterClk" (input))
-	(block_io "Load_Instructions" (input))
-	(block_io "Run_Timer" (input))
-	(block_io "Decode_q[31..0]" (input))
-	(block_io "Number_Steps[15..0]" (input))
-	(block_io "reset_outputs[127..0]" (input))
-	(block_io "Decode_RdEn" (output))
-	(block_io "TimeCounter[63..0]" (output))
-	(block_io "Buffer_Empty" (output))
-	(block_io "Step[15..0]" (output))
-	(block_io "DecodeAddr[15..0]" (output))
-	(block_io "PortData[127..0]" (output))
-	(mapper
-		(pt 0 208)
-		(bidir)
-		)
-	(mapper
-		(pt 0 64)
-		(bidir)
-		)
-)
-(block
-	(rect 544 768 728 1016)
-	(text "System_State" (rect 5 5 74 16)(font "Arial" ))	(text "statemgr" (rect 5 246 49 257)(font "Arial" ))	(block_io "Do_Arm" (input))
-	(block_io "Do_Stop" (input))
-	(block_io "Do_Trigger" (input))
-	(block_io "PCI_Enabled" (input))
-	(block_io "Buffer_Empty" (input))
-	(block_io "Do_Repeat" (input))
-	(block_io "Do_Pause" (input))
-	(block_io "Do_Resume" (input))
-	(block_io "Is_Finished" (input))
-	(block_io "MClr" (input))
-	(block_io "MasterClk" (input))
-	(block_io "PCI_Allowed" (output))
-	(block_io "Load_Instructions" (output))
-	(block_io "Run_Timer" (output))
-	(block_io "Internal_State[2..0]" (output))
-	(parameter
-		"STOPPING"
-		"0"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"ARMING1"
-		"1"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"READY"
-		"2"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"SETUP"
-		"3"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"ARMING2"
-		"4"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"RUN"
-		"5"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"PAUSED"
-		"6"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(mapper
-		(pt 0 40)
-		(bidir)
-		)
-	(mapper
-		(pt 0 216)
-		(bidir)
-		)
-	(annotation_block (parameter)(rect 552 1040 728 1144))
-)
-(connector
-	(pt 432 280)
-	(pt 424 280)
-	(conduit)
-)
-(connector
-	(text "<<__$DEF_ALIAS29905>>" (rect 0 0 135 11)(font "Arial" )(invisible))
-	(pt 144 424)
-	(pt 168 424)
-	(conduit)
-)
-(connector
-	(pt 432 280)
-	(pt 432 272)
-	(conduit)
 )
 (connector
 	(text "<<__$DEF_ALIAS29416>>" (rect 56 88 191 99)(font "Arial" )(invisible))
@@ -613,11 +565,6 @@ applicable agreement for further details.
 	(conduit)
 )
 (connector
-	(pt 424 96)
-	(pt 480 96)
-	(conduit)
-)
-(connector
 	(pt 480 136)
 	(pt 488 136)
 	(conduit)
@@ -625,11 +572,6 @@ applicable agreement for further details.
 (connector
 	(pt 440 -32)
 	(pt 480 -32)
-	(conduit)
-)
-(connector
-	(pt 480 96)
-	(pt 480 136)
 	(conduit)
 )
 (connector
@@ -648,23 +590,14 @@ applicable agreement for further details.
 	(conduit)
 )
 (connector
-	(pt 480 16)
-	(pt 480 96)
-	(conduit)
-)
-(connector
 	(pt 440 16)
 	(pt 480 16)
 	(conduit)
 )
 (connector
+	(text "<<__$DEF_ALIAS8734>>" (rect 0 0 129 11)(font "Arial" )(invisible))
 	(pt 88 696)
 	(pt 104 696)
-	(conduit)
-)
-(connector
-	(pt 168 96)
-	(pt 72 96)
 	(conduit)
 )
 (connector
@@ -688,35 +621,14 @@ applicable agreement for further details.
 	(conduit)
 )
 (connector
+	(text "<<__$DEF_ALIAS8745>>" (rect 0 0 129 11)(font "Arial" )(invisible))
 	(pt 88 664)
 	(pt 104 664)
 	(conduit)
 )
 (connector
-	(pt 104 664)
-	(pt 104 696)
-	(conduit)
-)
-(connector
 	(pt 480 136)
 	(pt 480 736)
-	(conduit)
-)
-(connector
-	(pt 424 536)
-	(pt 528 536)
-	(conduit)
-)
-(connector
-	(text "<<__$DEF_ALIAS6002>>" (rect 0 0 129 11)(font "Arial" )(invisible))
-	(pt 144 424)
-	(pt 144 656)
-	(conduit)
-)
-(connector
-	(text "<<__$DEF_ALIAS6121>>" (rect 0 0 129 11)(font "Arial" )(invisible))
-	(pt 144 656)
-	(pt 144 832)
 	(conduit)
 )
 (connector
@@ -732,71 +644,9 @@ applicable agreement for further details.
 	(conduit)
 )
 (connector
-	(pt 104 768)
-	(pt 264 768)
-	(conduit)
-)
-(connector
-	(pt 1032 360)
-	(pt 1144 360)
-	(conduit)
-)
-(connector
-	(pt 1032 88)
-	(pt 1144 88)
-	(conduit)
-)
-(connector
-	(pt 1032 176)
-	(pt 1144 176)
-	(conduit)
-)
-(connector
-	(pt 1032 232)
-	(pt 1144 232)
-	(conduit)
-)
-(connector
-	(pt 1032 296)
-	(pt 1144 296)
-	(conduit)
-)
-(connector
-	(pt 872 520)
-	(pt 784 520)
-	(conduit)
-)
-(connector
-	(text "<<__$DEF_ALIAS25600>>" (rect 0 0 135 11)(font "Arial" )(invisible))
-	(pt 872 664)
-	(pt 784 664)
-	(conduit)
-)
-(connector
-	(text "<<__$DEF_ALIAS25601>>" (rect 0 0 135 11)(font "Arial" )(invisible))
-	(pt 784 712)
-	(pt 784 664)
-	(conduit)
-)
-(connector
 	(text "<<__$DEF_ALIAS25603>>" (rect 0 0 135 11)(font "Arial" )(invisible))
 	(pt 784 712)
 	(pt 496 712)
-	(conduit)
-)
-(connector
-	(pt 784 272)
-	(pt 784 520)
-	(conduit)
-)
-(connector
-	(pt 432 272)
-	(pt 784 272)
-	(conduit)
-)
-(connector
-	(pt 784 272)
-	(pt 856 272)
 	(conduit)
 )
 (connector
@@ -818,29 +668,208 @@ applicable agreement for further details.
 	(conduit)
 )
 (connector
-	(pt 104 984)
-	(pt 544 984)
+	(pt 784 520)
+	(pt 872 520)
 	(conduit)
 )
 (connector
+	(text "<<__$DEF_ALIAS25600>>" (rect 0 0 135 11)(font "Arial" )(invisible))
+	(pt 784 664)
+	(pt 872 664)
+	(conduit)
+)
+(connector
+	(text "<<__$DEF_ALIAS25601>>" (rect 0 0 135 11)(font "Arial" )(invisible))
+	(pt 784 712)
+	(pt 784 664)
+	(conduit)
+)
+(connector
+	(text "<<__$DEF_ALIAS39956>>" (rect 0 0 135 11)(font "Arial" )(invisible))
+	(pt 104 776)
+	(pt 144 776)
+	(conduit)
+)
+(connector
+	(text "<<__$DEF_ALIAS27006>>" (rect 0 0 135 11)(font "Arial" )(invisible))
+	(pt 104 664)
 	(pt 104 696)
-	(pt 104 768)
 	(conduit)
 )
 (connector
-	(pt 104 768)
-	(pt 104 984)
+	(text "<<__$DEF_ALIAS39960>>" (rect 0 0 135 11)(font "Arial" )(invisible))
+	(pt 104 696)
+	(pt 104 776)
+	(conduit)
+)
+(connector
+	(text "<<__$DEF_ALIAS39963>>" (rect 0 0 135 11)(font "Arial" )(invisible))
+	(pt 144 776)
+	(pt 144 832)
+	(conduit)
+)
+(connector
+	(pt 72 96)
+	(pt 80 96)
+	(conduit)
+)
+(connector
+	(pt 528 536)
+	(pt 520 536)
+	(conduit)
+)
+(connector
+	(text "<<__$DEF_ALIAS29905>>" (rect 0 -16 135 -5)(font "Arial" )(invisible))
+	(pt 144 408)
+	(pt 168 408)
+	(conduit)
+)
+(connector
+	(pt 480 80)
+	(pt 424 80)
+	(conduit)
+)
+(connector
+	(pt 80 96)
+	(pt 80 80)
+	(conduit)
+)
+(connector
+	(pt 80 80)
+	(pt 168 80)
+	(conduit)
+)
+(connector
+	(pt 520 536)
+	(pt 520 520)
+	(conduit)
+)
+(connector
+	(pt 520 520)
+	(pt 424 520)
+	(conduit)
+)
+(connector
+	(pt 480 16)
+	(pt 480 80)
+	(conduit)
+)
+(connector
+	(pt 480 80)
+	(pt 480 136)
+	(conduit)
+)
+(connector
+	(text "<<__$DEF_ALIAS6002>>" (rect 0 0 129 11)(font "Arial" )(invisible))
+	(pt 144 408)
+	(pt 144 656)
+	(conduit)
+)
+(connector
+	(text "<<__$DEF_ALIAS40012>>" (rect 0 0 135 11)(font "Arial" )(invisible))
+	(pt 144 656)
+	(pt 144 776)
+	(conduit)
+)
+(connector
+	(pt 1136 88)
+	(pt 1136 80)
+	(conduit)
+)
+(connector
+	(pt 1144 88)
+	(pt 1136 88)
+	(conduit)
+)
+(connector
+	(pt 1136 80)
+	(pt 1032 80)
+	(conduit)
+)
+(connector
+	(pt 1128 176)
+	(pt 1128 168)
+	(conduit)
+)
+(connector
+	(pt 1144 176)
+	(pt 1128 176)
+	(conduit)
+)
+(connector
+	(pt 1128 168)
+	(pt 1032 168)
+	(conduit)
+)
+(connector
+	(pt 1120 232)
+	(pt 1120 224)
+	(conduit)
+)
+(connector
+	(pt 1144 232)
+	(pt 1120 232)
+	(conduit)
+)
+(connector
+	(pt 1120 224)
+	(pt 1032 224)
+	(conduit)
+)
+(connector
+	(pt 1112 296)
+	(pt 1112 288)
+	(conduit)
+)
+(connector
+	(pt 1144 296)
+	(pt 1112 296)
+	(conduit)
+)
+(connector
+	(pt 1112 288)
+	(pt 1032 288)
+	(conduit)
+)
+(connector
+	(pt 1104 360)
+	(pt 1104 352)
+	(conduit)
+)
+(connector
+	(pt 1144 360)
+	(pt 1104 360)
+	(conduit)
+)
+(connector
+	(pt 1104 352)
+	(pt 1032 352)
+	(conduit)
+)
+(connector
+	(pt 784 264)
+	(pt 784 520)
+	(conduit)
+)
+(connector
+	(pt 424 264)
+	(pt 784 264)
+	(conduit)
+)
+(connector
+	(pt 784 264)
+	(pt 856 264)
 	(conduit)
 )
 (junction (pt 144 832))
 (junction (pt 480 136))
-(junction (pt 480 96))
 (junction (pt 480 -8))
 (junction (pt 480 16))
 (junction (pt 104 696))
 (junction (pt 144 656))
 (junction (pt 496 656))
-(junction (pt 104 768))
 (junction (pt 496 712))
-(junction (pt 784 272))
+(junction (pt 144 776))
+(junction (pt 480 80))
+(junction (pt 784 264))
 (text "PLL CLKINs cannot come from FlexIOs. :-(" (rect -328 880 -88 893)(font "Arial" (font_size 8)))

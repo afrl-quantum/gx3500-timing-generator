@@ -53,10 +53,9 @@ and controls PXI triggers 7-4.
 
 This register sets the number of times the card should execute a sequence before
 returning to the `SETUP` state. If `CONFIG:AUTO_TRIGGER` is set, the card will
-re-arm and soft-trigger itself upon completion of the sequence, `N_REPS-1` times.
+re-arm and soft-trigger itself upon completion of the sequence.
 If `CONFIG:AUTO_TRIGGER` is cleared, the card will re-arm but *not* trigger upon
-completion of each sequence; it will re-arm itself `N_REPS-1` times before returning
-to `SETUP`.
+completion of each sequence.
 
 If `N_REPS` is 0, the card will continuously re-arm (and re-trigger if
 `CONFIG:AUTO_TRIGGER` is set) upon completion of a sequence.
@@ -79,8 +78,10 @@ The configuration register consists of two blocks. Bits 31..16 should be set to 
     onboard oscillator. **This is not currently implemented as a software bit**
 
 `A`
-:   `AUTO_TRIGGER` -- controls the behavior of the card when `N_REPS` is not 1;
-    see `N_REPS` for details.
+:   `AUTO_TRIGGER` -- if set, the card will automatically soft-trigger itself upon
+    completion of the arming sequence. This means that the `ARM` command implicitly
+    contains a `TRIGGER` command, and the card will also automatically re-trigger itself
+    if it is programmed for multiple repetitions of the sequence.
 
 #### `CMD`
 

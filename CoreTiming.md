@@ -9,6 +9,9 @@ load cycle, so the minimum delay is 50 ns for BufferedTimeout == 0, which will s
 circuit through cycle 5; any longer delay loops through cycle 6 decrementing the
 Timer until it reaches 0.
 
+Note the the SequenceBuffer explicitly adds one cycle of pipeline delay to the RAM,
+so addresses must be loaded (and RE set) on the cycle before the result is used.
+
 Cycle -2 (finishing):
   - Addr -> DecodeAddr, 0 -> RE
   - 1 -> Set(Buffer_Empty)
