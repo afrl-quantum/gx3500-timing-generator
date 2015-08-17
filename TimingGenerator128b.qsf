@@ -350,4 +350,7 @@ set_global_assignment -name QIP_FILE Eq16b.qip
 set_global_assignment -name BDF_FILE SystemController.bdf
 set_global_assignment -name BDF_FILE FFSynchronizer.bdf
 set_global_assignment -name BDF_FILE SamplingSynchronizer.bdf
+set_global_assignment -name SYNCHRONIZER_IDENTIFICATION AUTO
+set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL ON
+set_instance_assignment -name SYNCHRONIZER_IDENTIFICATION "FORCED IF ASYNCHRONOUS" -to "*|FFSynchronizer:*|b*"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
