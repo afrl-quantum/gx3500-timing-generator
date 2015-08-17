@@ -13,7 +13,7 @@ create_clock -name "10MHz" -period 100.00ns [get_ports {"10MHz"}]
 #create_clock -name "Addr[2]" -period 30.303ns [get_ports {Addr[2]}]
 
 # virtual clock for the PCI IO
-create_clock -name "PCIClock_ext" -period 30.303
+#create_clock -name "PCIClock_ext" -period 30.303ns
 
 # Automatically constrain PLL and other generated clocks
 derive_pll_clocks -create_base_clocks
@@ -45,37 +45,7 @@ set_clock_groups -logically_exclusive -group {RAM_PCI PCIClock_ext PCIClock} -gr
 # Automatically calculate clock uncertainty to jitter and other effects.
 derive_clock_uncertainty
 
-# multicycle the PCI_Allowed signal, since it is level-triggered and held
-# for at least 6 cycles
-set_multicycle_path -start -setup \
-	-from {SequenceBuffer:sequencebuffer|inst3} \
-	-to {SequenceBuffer:sequencebuffer|inst20} \
-	3
-
-# FIXME: this seems sketchy that I have to do both a setup and a hold multicycle path?
-# (is it better to just put in a set_false_path since it goes through a synchronizer?)
-set_multicycle_path -start -hold \
-	-from {SequenceBuffer:sequencebuffer|inst3} \
-	-to {SequenceBuffer:sequencebuffer|inst20} \
-	3
-	
-# the PCI_Enabled signal is also held for at least 6 cycles
-set_multicycle_path -start -hold \
-	-from {SequenceBuffer:sequencebuffer|inst1} \
-	-to {SequenceBuffer:sequencebuffer|inst22} \
-	6
-
-# the PCI_PERMITTED bit is slow
-set_multicycle_path -start -setup \
-	-from {Registers:registers|pci_sync|a} \
-	-to {Registers:registers|pci_sync|b} \
-	6
-
-set_multicycle_path -start -hold \
-	-from {Registers:registers|pci_sync|a} \
-	-to {Registers:registers|pci_sync|b} \
-	6
-
+# Set multicycle paths for the synchronizers we use
 # capture synchronizers
 set_multicycle_path -start -setup \
   -from {*|CaptureSynchronizer:*|cap*} \
@@ -110,17 +80,20 @@ set_false_path -to [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated
   
 # tsu/th constraints
 
-set_input_delay -clock PCIClock_ext -min 0ns [get_ports {FDt[*] Addr[*] CS[*] RdEn WrEn}]
-set_input_delay -clock PCIClock_ext -add -max 0ns [get_ports {FDt[*] Addr[*] CS[*] RdEn WrEn}]
+set_input_delay -clock PCIClock -min 0ns [get_ports {FDt[*] Addr[*] CS[*] RdEn WrEn}]
+set_input_delay -clock PCIClock -add -max 0ns [get_ports {FDt[*] Addr[*] CS[*] RdEn WrEn}]
 
-set_output_delay -clock PCIClock_ext -min -1ns [get_ports {FDt[*]}]
-set_output_delay -clock PCIClock_ext -add -max 2ns [get_ports {FDt[*]}]
+set_output_delay -clock PCIClock -min -1ns [get_ports {FDt[*]}]
+set_output_delay -clock PCIClock -add -max 2ns [get_ports {FDt[*]}]
 
 # tco constraints
 
 # tpd constraints
 
 # loose constraints for the Ports
+set_output_delay -clock clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0] -min -1ns [get_ports {PxiTrig* FlexIO*}]
+set_output_delay -clock clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0] -add -max 2ns [get_ports {PxiTrig* FlexIO*}]
+
 set_max_delay 200.0ns -to [get_ports {PxiTrig* FlexIO*}]
 set_min_delay -200.0ns -to [get_ports {PxiTrig* FlexIO*}]
 
