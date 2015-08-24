@@ -53,7 +53,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 328 -224 496 -208)
+	(rect 408 -240 576 -224)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
 	(text "MasterClk" (rect 5 0 55 11)(font "Arial" ))
 	(pt 168 8)
@@ -134,7 +134,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 720 -176 896 -160)
+	(rect 864 -176 1040 -160)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "Do_Arm" (rect 90 0 132 11)(font "Arial" ))
 	(pt 0 8)
@@ -150,7 +150,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 720 -72 896 -56)
+	(rect 864 -72 1040 -56)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "Do_Stop" (rect 90 0 134 11)(font "Arial" ))
 	(pt 0 8)
@@ -166,7 +166,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 720 32 896 48)
+	(rect 864 32 1040 48)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "Do_Trigger" (rect 90 0 146 11)(font "Arial" ))
 	(pt 0 8)
@@ -182,7 +182,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 720 136 896 152)
+	(rect 864 136 1040 152)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "Do_Pause" (rect 90 0 143 11)(font "Arial" ))
 	(pt 0 8)
@@ -198,7 +198,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 720 240 896 256)
+	(rect 864 240 1040 256)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "Do_Resume" (rect 90 0 152 11)(font "Arial" ))
 	(pt 0 8)
@@ -1008,149 +1008,214 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 552 8 680 104)
-	(text "CaptureSynchronizer" (rect 5 0 125 13)(font "Arial" (font_size 8)))
-	(text "inst10" (rect 8 81 38 92)(font "Arial" ))
+	(rect 608 216 792 312)
+	(text "FFSynchronizer" (rect 5 0 95 13)(font "Arial" (font_size 8)))
+	(text "inst8" (rect 8 81 32 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "capture" (rect 0 0 43 13)(font "Arial" (font_size 8)))
-		(text "capture" (rect 21 27 64 40)(font "Arial" (font_size 8)))
+		(text "clka" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clka" (rect 21 27 44 40)(font "Arial" (font_size 8)))
 		(line (pt 0 32)(pt 16 32))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "clock" (rect 0 0 31 13)(font "Arial" (font_size 8)))
-		(text "clock" (rect 21 43 52 56)(font "Arial" (font_size 8)))
+		(text "clkb" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clkb" (rect 21 43 44 56)(font "Arial" (font_size 8)))
 		(line (pt 0 48)(pt 16 48))
 	)
 	(port
-		(pt 128 32)
+		(pt 0 64)
+		(input)
+		(text "input[N..0]" (rect 0 0 59 13)(font "Arial" (font_size 8)))
+		(text "input[N..0]" (rect 21 59 80 72)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 184 32)
 		(output)
-		(text "pulse" (rect 0 0 31 13)(font "Arial" (font_size 8)))
-		(text "pulse" (rect 76 27 107 40)(font "Arial" (font_size 8)))
-		(line (pt 128 32)(pt 112 32))
+		(text "output[N..0]" (rect 0 0 67 13)(font "Arial" (font_size 8)))
+		(text "output[N..0]" (rect 96 27 163 40)(font "Arial" (font_size 8)))
+		(line (pt 184 32)(pt 168 32)(line_width 3))
+	)
+	(parameter
+		"N"
+		"0"
+		""
 	)
 	(drawing
-		(rectangle (rect 16 16 112 80))
+		(rectangle (rect 16 16 168 80))
 	)
+	(annotation_block (parameter)(rect 792 183 920 216))
 )
 (symbol
-	(rect 552 112 680 208)
-	(text "CaptureSynchronizer" (rect 5 0 125 13)(font "Arial" (font_size 8)))
-	(text "inst11" (rect 8 81 38 92)(font "Arial" ))
+	(rect 608 112 792 208)
+	(text "FFSynchronizer" (rect 5 0 95 13)(font "Arial" (font_size 8)))
+	(text "inst7" (rect 8 81 32 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "capture" (rect 0 0 43 13)(font "Arial" (font_size 8)))
-		(text "capture" (rect 21 27 64 40)(font "Arial" (font_size 8)))
+		(text "clka" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clka" (rect 21 27 44 40)(font "Arial" (font_size 8)))
 		(line (pt 0 32)(pt 16 32))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "clock" (rect 0 0 31 13)(font "Arial" (font_size 8)))
-		(text "clock" (rect 21 43 52 56)(font "Arial" (font_size 8)))
+		(text "clkb" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clkb" (rect 21 43 44 56)(font "Arial" (font_size 8)))
 		(line (pt 0 48)(pt 16 48))
 	)
 	(port
-		(pt 128 32)
+		(pt 0 64)
+		(input)
+		(text "input[N..0]" (rect 0 0 59 13)(font "Arial" (font_size 8)))
+		(text "input[N..0]" (rect 21 59 80 72)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 184 32)
 		(output)
-		(text "pulse" (rect 0 0 31 13)(font "Arial" (font_size 8)))
-		(text "pulse" (rect 76 27 107 40)(font "Arial" (font_size 8)))
-		(line (pt 128 32)(pt 112 32))
+		(text "output[N..0]" (rect 0 0 67 13)(font "Arial" (font_size 8)))
+		(text "output[N..0]" (rect 96 27 163 40)(font "Arial" (font_size 8)))
+		(line (pt 184 32)(pt 168 32)(line_width 3))
+	)
+	(parameter
+		"N"
+		"0"
+		""
 	)
 	(drawing
-		(rectangle (rect 16 16 112 80))
+		(rectangle (rect 16 16 168 80))
 	)
+	(annotation_block (parameter)(rect 792 79 920 112))
 )
 (symbol
-	(rect 552 216 680 312)
-	(text "CaptureSynchronizer" (rect 5 0 125 13)(font "Arial" (font_size 8)))
-	(text "inst12" (rect 8 81 38 92)(font "Arial" ))
+	(rect 608 8 792 104)
+	(text "FFSynchronizer" (rect 5 0 95 13)(font "Arial" (font_size 8)))
+	(text "inst6" (rect 8 81 32 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "capture" (rect 0 0 43 13)(font "Arial" (font_size 8)))
-		(text "capture" (rect 21 27 64 40)(font "Arial" (font_size 8)))
+		(text "clka" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clka" (rect 21 27 44 40)(font "Arial" (font_size 8)))
 		(line (pt 0 32)(pt 16 32))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "clock" (rect 0 0 31 13)(font "Arial" (font_size 8)))
-		(text "clock" (rect 21 43 52 56)(font "Arial" (font_size 8)))
+		(text "clkb" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clkb" (rect 21 43 44 56)(font "Arial" (font_size 8)))
 		(line (pt 0 48)(pt 16 48))
 	)
 	(port
-		(pt 128 32)
+		(pt 0 64)
+		(input)
+		(text "input[N..0]" (rect 0 0 59 13)(font "Arial" (font_size 8)))
+		(text "input[N..0]" (rect 21 59 80 72)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 184 32)
 		(output)
-		(text "pulse" (rect 0 0 31 13)(font "Arial" (font_size 8)))
-		(text "pulse" (rect 76 27 107 40)(font "Arial" (font_size 8)))
-		(line (pt 128 32)(pt 112 32))
+		(text "output[N..0]" (rect 0 0 67 13)(font "Arial" (font_size 8)))
+		(text "output[N..0]" (rect 96 27 163 40)(font "Arial" (font_size 8)))
+		(line (pt 184 32)(pt 168 32)(line_width 3))
+	)
+	(parameter
+		"N"
+		"0"
+		""
 	)
 	(drawing
-		(rectangle (rect 16 16 112 80))
+		(rectangle (rect 16 16 168 80))
 	)
+	(annotation_block (parameter)(rect 792 -25 920 8))
 )
 (symbol
-	(rect 552 -96 680 0)
-	(text "CaptureSynchronizer" (rect 5 0 125 13)(font "Arial" (font_size 8)))
-	(text "inst13" (rect 8 81 38 92)(font "Arial" ))
+	(rect 608 -96 792 0)
+	(text "FFSynchronizer" (rect 5 0 95 13)(font "Arial" (font_size 8)))
+	(text "inst5" (rect 8 81 32 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "capture" (rect 0 0 43 13)(font "Arial" (font_size 8)))
-		(text "capture" (rect 21 27 64 40)(font "Arial" (font_size 8)))
+		(text "clka" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clka" (rect 21 27 44 40)(font "Arial" (font_size 8)))
 		(line (pt 0 32)(pt 16 32))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "clock" (rect 0 0 31 13)(font "Arial" (font_size 8)))
-		(text "clock" (rect 21 43 52 56)(font "Arial" (font_size 8)))
+		(text "clkb" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clkb" (rect 21 43 44 56)(font "Arial" (font_size 8)))
 		(line (pt 0 48)(pt 16 48))
 	)
 	(port
-		(pt 128 32)
+		(pt 0 64)
+		(input)
+		(text "input[N..0]" (rect 0 0 59 13)(font "Arial" (font_size 8)))
+		(text "input[N..0]" (rect 21 59 80 72)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 184 32)
 		(output)
-		(text "pulse" (rect 0 0 31 13)(font "Arial" (font_size 8)))
-		(text "pulse" (rect 76 27 107 40)(font "Arial" (font_size 8)))
-		(line (pt 128 32)(pt 112 32))
+		(text "output[N..0]" (rect 0 0 67 13)(font "Arial" (font_size 8)))
+		(text "output[N..0]" (rect 96 27 163 40)(font "Arial" (font_size 8)))
+		(line (pt 184 32)(pt 168 32)(line_width 3))
+	)
+	(parameter
+		"N"
+		"0"
+		""
 	)
 	(drawing
-		(rectangle (rect 16 16 112 80))
+		(rectangle (rect 16 16 168 80))
 	)
+	(annotation_block (parameter)(rect 792 -129 920 -96))
 )
 (symbol
-	(rect 552 -200 680 -104)
-	(text "CaptureSynchronizer" (rect 5 0 125 13)(font "Arial" (font_size 8)))
-	(text "inst14" (rect 8 81 38 92)(font "Arial" ))
+	(rect 608 -200 792 -104)
+	(text "FFSynchronizer" (rect 5 0 95 13)(font "Arial" (font_size 8)))
+	(text "inst4" (rect 8 81 32 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "capture" (rect 0 0 43 13)(font "Arial" (font_size 8)))
-		(text "capture" (rect 21 27 64 40)(font "Arial" (font_size 8)))
+		(text "clka" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clka" (rect 21 27 44 40)(font "Arial" (font_size 8)))
 		(line (pt 0 32)(pt 16 32))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "clock" (rect 0 0 31 13)(font "Arial" (font_size 8)))
-		(text "clock" (rect 21 43 52 56)(font "Arial" (font_size 8)))
+		(text "clkb" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clkb" (rect 21 43 44 56)(font "Arial" (font_size 8)))
 		(line (pt 0 48)(pt 16 48))
 	)
 	(port
-		(pt 128 32)
+		(pt 0 64)
+		(input)
+		(text "input[N..0]" (rect 0 0 59 13)(font "Arial" (font_size 8)))
+		(text "input[N..0]" (rect 21 59 80 72)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 184 32)
 		(output)
-		(text "pulse" (rect 0 0 31 13)(font "Arial" (font_size 8)))
-		(text "pulse" (rect 76 27 107 40)(font "Arial" (font_size 8)))
-		(line (pt 128 32)(pt 112 32))
+		(text "output[N..0]" (rect 0 0 67 13)(font "Arial" (font_size 8)))
+		(text "output[N..0]" (rect 96 27 163 40)(font "Arial" (font_size 8)))
+		(line (pt 184 32)(pt 168 32)(line_width 3))
+	)
+	(parameter
+		"N"
+		"0"
+		""
 	)
 	(drawing
-		(rectangle (rect 16 16 112 80))
+		(rectangle (rect 16 16 168 80))
 	)
+	(annotation_block (parameter)(rect 792 -233 920 -200))
 )
 (connector
 	(pt 312 328)
@@ -1218,50 +1283,6 @@ applicable agreement for further details.
 	(pt 24 216)
 )
 (connector
-	(pt 496 -216)
-	(pt 520 -216)
-)
-(connector
-	(pt 520 264)
-	(pt 552 264)
-)
-(connector
-	(pt 520 160)
-	(pt 552 160)
-)
-(connector
-	(pt 520 160)
-	(pt 520 264)
-)
-(connector
-	(pt 552 56)
-	(pt 520 56)
-)
-(connector
-	(pt 520 56)
-	(pt 520 160)
-)
-(connector
-	(pt 552 -48)
-	(pt 520 -48)
-)
-(connector
-	(pt 520 -48)
-	(pt 520 56)
-)
-(connector
-	(pt 552 -152)
-	(pt 520 -152)
-)
-(connector
-	(pt 520 -216)
-	(pt 520 -152)
-)
-(connector
-	(pt 520 -152)
-	(pt 520 -48)
-)
-(connector
 	(pt 648 472)
 	(pt 720 472)
 )
@@ -1325,24 +1346,12 @@ applicable agreement for further details.
 	(pt 408 296)
 )
 (connector
-	(pt 408 296)
-	(pt 408 -64)
-)
-(connector
-	(pt 408 -64)
-	(pt 552 -64)
-)
-(connector
 	(pt 296 232)
 	(pt 320 232)
 )
 (connector
 	(pt 320 -176)
 	(pt 432 -176)
-)
-(connector
-	(pt 496 -168)
-	(pt 552 -168)
 )
 (connector
 	(pt 296 248)
@@ -1353,20 +1362,8 @@ applicable agreement for further details.
 	(pt 432 32)
 )
 (connector
-	(pt 496 40)
-	(pt 552 40)
-)
-(connector
 	(pt 368 136)
 	(pt 432 136)
-)
-(connector
-	(pt 496 144)
-	(pt 552 144)
-)
-(connector
-	(pt 552 248)
-	(pt 496 248)
 )
 (connector
 	(pt 296 280)
@@ -1530,26 +1527,6 @@ applicable agreement for further details.
 	(pt -40 440)
 )
 (connector
-	(pt 680 -168)
-	(pt 720 -168)
-)
-(connector
-	(pt 680 -64)
-	(pt 720 -64)
-)
-(connector
-	(pt 680 40)
-	(pt 720 40)
-)
-(connector
-	(pt 680 144)
-	(pt 720 144)
-)
-(connector
-	(pt 680 248)
-	(pt 720 248)
-)
-(connector
 	(pt -88 192)
 	(pt -32 192)
 	(bus)
@@ -1603,10 +1580,175 @@ applicable agreement for further details.
 	(pt 552 488)
 	(pt 552 576)
 )
-(junction (pt 520 160))
-(junction (pt 520 56))
-(junction (pt 520 -48))
-(junction (pt 520 -152))
+(connector
+	(text "PCIClock" (rect 474 -224 521 -213)(font "Arial" ))
+	(pt 528 -208)
+	(pt 464 -208)
+)
+(connector
+	(pt 584 -232)
+	(pt 576 -232)
+)
+(connector
+	(pt 496 -168)
+	(pt 504 -168)
+)
+(connector
+	(pt 496 40)
+	(pt 504 40)
+)
+(connector
+	(pt 496 144)
+	(pt 504 144)
+)
+(connector
+	(pt 496 248)
+	(pt 512 248)
+)
+(connector
+	(pt 528 -168)
+	(pt 608 -168)
+)
+(connector
+	(pt 864 -168)
+	(pt 792 -168)
+)
+(connector
+	(pt 584 -152)
+	(pt 608 -152)
+)
+(connector
+	(pt 504 -168)
+	(pt 504 -136)
+)
+(connector
+	(pt 504 -136)
+	(pt 608 -136)
+)
+(connector
+	(pt 528 -64)
+	(pt 608 -64)
+)
+(connector
+	(pt 864 -64)
+	(pt 792 -64)
+)
+(connector
+	(pt 584 -48)
+	(pt 608 -48)
+)
+(connector
+	(pt 408 296)
+	(pt 408 -32)
+)
+(connector
+	(pt 408 -32)
+	(pt 608 -32)
+)
+(connector
+	(pt 528 40)
+	(pt 608 40)
+)
+(connector
+	(pt 864 40)
+	(pt 792 40)
+)
+(connector
+	(pt 584 56)
+	(pt 608 56)
+)
+(connector
+	(pt 504 40)
+	(pt 504 72)
+)
+(connector
+	(pt 504 72)
+	(pt 608 72)
+)
+(connector
+	(pt 528 144)
+	(pt 608 144)
+)
+(connector
+	(pt 864 144)
+	(pt 792 144)
+)
+(connector
+	(pt 584 160)
+	(pt 608 160)
+)
+(connector
+	(pt 504 144)
+	(pt 504 176)
+)
+(connector
+	(pt 504 176)
+	(pt 608 176)
+)
+(connector
+	(pt 512 248)
+	(pt 512 280)
+)
+(connector
+	(pt 512 280)
+	(pt 608 280)
+)
+(connector
+	(pt 584 264)
+	(pt 608 264)
+)
+(connector
+	(pt 864 248)
+	(pt 792 248)
+)
+(connector
+	(pt 528 -208)
+	(pt 528 -168)
+)
+(connector
+	(pt 584 -232)
+	(pt 584 -152)
+)
+(connector
+	(pt 528 -168)
+	(pt 528 -64)
+)
+(connector
+	(pt 584 -152)
+	(pt 584 -48)
+)
+(connector
+	(pt 528 -64)
+	(pt 528 40)
+)
+(connector
+	(pt 584 -48)
+	(pt 584 56)
+)
+(connector
+	(pt 528 40)
+	(pt 528 144)
+)
+(connector
+	(pt 528 144)
+	(pt 528 248)
+)
+(connector
+	(pt 584 56)
+	(pt 584 160)
+)
+(connector
+	(pt 584 160)
+	(pt 584 264)
+)
+(connector
+	(pt 528 248)
+	(pt 608 248)
+)
+(connector
+	(pt 608 248)
+	(pt 616 248)
+)
 (junction (pt 552 488))
 (junction (pt 320 232))
 (junction (pt 336 248))
@@ -1616,11 +1758,20 @@ applicable agreement for further details.
 (junction (pt 272 472))
 (junction (pt 264 392))
 (junction (pt 368 264))
+(junction (pt 584 -152))
+(junction (pt 584 -48))
+(junction (pt 584 56))
+(junction (pt 584 160))
+(junction (pt 528 144))
+(junction (pt 528 40))
+(junction (pt 528 -64))
+(junction (pt 528 -168))
+(junction (pt 608 248))
 (text "The command processor is in the PCI clock domain and validates" (rect -296 472 69 485)(font "Arial" (font_size 8)))
 (text "its commands against the user-visible state, not the MasterClk-domain" (rect -296 488 96 501)(font "Arial" (font_size 8)))
 (text "internal state." (rect -296 504 -221 517)(font "Arial" (font_size 8)))
-(text "The command signals are captured into pulses" (rect 568 -232 829 -219)(font "Arial" (font_size 8)))
-(text "synchronous to MasterClk." (rect 568 -216 717 -203)(font "Arial" (font_size 8)))
+(text "The command signals are captured into pulses" (rect 648 -256 909 -243)(font "Arial" (font_size 8)))
+(text "synchronous to MasterClk." (rect 648 -240 797 -227)(font "Arial" (font_size 8)))
 (text "STOP is always valid," (rect 400 -120 521 -107)(font "Arial" (font_size 8)))
 (text "though it may be ignored" (rect 400 -104 540 -91)(font "Arial" (font_size 8)))
 (text "during ARMING" (rect 400 -88 490 -75)(font "Arial" (font_size 8)))

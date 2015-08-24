@@ -360,4 +360,5 @@ set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
 set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
 set_global_assignment -name FITTER_AUTO_EFFORT_DESIRED_SLACK_MARGIN "500 ps"
 set_instance_assignment -name SYNCHRONIZER_IDENTIFICATION "FORCED IF ASYNCHRONOUS" -to "*|CaptureSynchronizer:*|lock*"
+set_global_assignment -name QIP_FILE Incr2b.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
