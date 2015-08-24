@@ -20,9 +20,9 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 0 0 200 128)
+	(rect 0 0 200 136)
 	(text "RAMClock_CTRL" (rect 4 -16 130 0)(font "Arial" (font_size 10)))
-	(text "inst" (rect 8 113 26 124)(font "Arial" ))
+	(text "inst" (rect 8 121 26 132)(font "Arial" ))
 	(port
 		(pt 0 104)
 		(input)
@@ -61,6 +61,7 @@ applicable agreement for further details.
 	(drawing
 		(text "clk" (rect 114 51 241 112)(font "Arial" ))
 		(text "Global Clock" (rect 144 118 342 246)(font "Arial" ))
+		(text "Glitch-free impl." (rect 132 128 330 266)(font "Arial" ))
 		(line (pt 72 24)(pt 72 88))
 		(line (pt 72 24)(pt 96 32))
 		(line (pt 72 88)(pt 96 80))
@@ -71,8 +72,8 @@ applicable agreement for further details.
 		(line (pt 112 41)(pt 132 57))
 		(line (pt 112 71)(pt 132 55))
 		(line (pt 0 0)(pt 202 0))
-		(line (pt 202 0)(pt 202 130))
-		(line (pt 0 130)(pt 202 130))
-		(line (pt 0 0)(pt 0 130))
+		(line (pt 202 0)(pt 202 140))
+		(line (pt 0 140)(pt 202 140))
+		(line (pt 0 0)(pt 0 140))
 	)
 )

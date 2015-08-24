@@ -61,7 +61,7 @@ endmodule
 // Retrieval info: PRIVATE: clock_inputs NUMERIC "3"
 // Retrieval info: CONSTANT: ENA_REGISTER_MODE STRING "falling edge"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone III"
-// Retrieval info: CONSTANT: USE_GLITCH_FREE_SWITCH_OVER_IMPLEMENTATION STRING "OFF"
+// Retrieval info: CONSTANT: USE_GLITCH_FREE_SWITCH_OVER_IMPLEMENTATION STRING "ON"
 // Retrieval info: CONSTANT: clock_type STRING "Global Clock"
 // Retrieval info: USED_PORT: clkselect 0 0 2 0 INPUT GND "clkselect[1..0]"
 // Retrieval info: USED_PORT: inclk0x 0 0 0 0 INPUT NODEFVAL "inclk0x"
@@ -78,7 +78,7 @@ endmodule
 // Retrieval info: GEN_FILE: TYPE_NORMAL RAMClock_CTRL.v TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL RAMClock_CTRL.inc FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL RAMClock_CTRL.cmp FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL RAMClock_CTRL.bsf TRUE FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL RAMClock_CTRL.bsf TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL RAMClock_CTRL_inst.v FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL RAMClock_CTRL_bb.v TRUE
 // Retrieval info: LIB_FILE: cycloneiii

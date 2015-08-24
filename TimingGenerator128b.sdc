@@ -16,12 +16,12 @@ create_clock -name "10MHz" -period 100.00ns [get_ports {"10MHz"}]
 # Automatically constrain PLL and other generated clocks
 derive_pll_clocks -create_base_clocks
 
-create_generated_clock [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_uhi_component|clkctrl1|outclk}] \
+create_generated_clock [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|clkctrl1|outclk}] \
 	-name "RAM_PCI" \
 	-source [get_ports {PCIClock}] \
 	-master_clock [get_clocks {PCIClock}]
 
-create_generated_clock [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_uhi_component|clkctrl1|outclk}] \
+create_generated_clock [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|clkctrl1|outclk}] \
 	-add \
 	-name "RAM_Master" \
 	-source [get_pins {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}] \
@@ -32,6 +32,20 @@ set_clock_groups -logically_exclusive -group {RAM_PCI PCIClock} -group {RAM_Mast
 
 # Automatically calculate clock uncertainty to jitter and other effects.
 derive_clock_uncertainty
+
+# Set multicycle paths for the UsePCIClock signal
+set_multicycle_path -start -setup \
+	-to {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|ena_reg} \
+	2
+set_multicycle_path -start -setup \
+	-to {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|select_reg*} \
+	2
+set_multicycle_path -start -hold \
+	-to {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|ena_reg} \
+	2
+set_multicycle_path -start -hold \
+	-to {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|select_reg*} \
+	2
 
 # Set multicycle paths for the synchronizers we use
 # capture synchronizers
