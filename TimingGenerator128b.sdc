@@ -15,7 +15,7 @@ create_clock -name "10MHz" -period 100.00ns [get_ports {"10MHz"}]
 
 # Automatically constrain PLL and other generated clocks
 derive_pll_clocks -create_base_clocks
-
+ 
 create_generated_clock [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|clkctrl1|outclk}] \
 	-name "RAM_PCI" \
 	-source [get_ports {PCIClock}] \
@@ -28,7 +28,6 @@ create_generated_clock [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altc
 	-master_clock [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}]
 
 set_clock_groups -logically_exclusive -group {RAM_PCI PCIClock} -group {RAM_Master}
-# -group {Addr[2] CS[2]}
 
 # Automatically calculate clock uncertainty to jitter and other effects.
 derive_clock_uncertainty
@@ -75,6 +74,10 @@ set_multicycle_path -start -hold \
 set_false_path -from [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}] \
 	-through [get_pins -compatibility_mode timingcore\|addrff*] \
 	-to [get_clocks {RAM_PCI}]
+
+#set_false_path -from [get_clocks {RAM_PCI}] \
+#	-through [get_pins -compatibility_mode sequencebuffer\|RAM\|*] \
+#	-to [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}]
 
 set_false_path -to [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}] \
 	-through [get_pins -compatibility_mode sequencebuffer\|RAM_Qreg*] \
