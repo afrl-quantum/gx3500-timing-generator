@@ -82,7 +82,11 @@ The configuration register consists of two blocks. Bits 31..16 should be set to 
 :   `FIFO_SELF_TEST` -- if set, the FIFO self-test bits can be latched in `STATUS`.
     Clearing `FIFO_SELF_TEST` does not clear any latched test failure bits, and it
     is the user's responsibility to ensure that memory contains no consecutive
-    identical words.
+    identical words. _Note_: the card may read beyond the end of the sequence, so all
+    memory should be filled with e.g. `np.arange(2**16)` before loading the sequence,
+    and a cyclic sequence should not be subsetted as the last word read at the end
+    of one sequence run may be identical to the first word of the following run --- 
+    leading to a false positive.
 
 `A`
 :   `AUTO_TRIGGER` -- if set, the card will automatically soft-trigger itself upon
