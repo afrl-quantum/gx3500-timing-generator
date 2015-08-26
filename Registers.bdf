@@ -1889,7 +1889,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1152 1392 1184 1424)
+	(rect 1184 1352 1216 1384)
 	(text "GND" (rect 8 16 30 26)(font "Arial" (font_size 6)))
 	(text "inst4" (rect 3 21 27 32)(font "Arial" )(invisible))
 	(port
@@ -2054,7 +2054,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1048 1456 1112 1504)
+	(rect 984 1384 1048 1432)
 	(text "AND2" (rect 1 0 29 10)(font "Arial" (font_size 6)))
 	(text "inst9" (rect 3 37 27 48)(font "Arial" ))
 	(port
@@ -3072,6 +3072,39 @@ applicable agreement for further details.
 	)
 	(drawing
 		(rectangle (rect 16 16 112 80))
+	)
+)
+(symbol
+	(rect 1136 1392 1200 1440)
+	(text "OR2" (rect 1 0 23 10)(font "Arial" (font_size 6)))
+	(text "inst32" (rect 3 37 33 48)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN2" (rect 2 23 23 34)(font "Courier New" (bold))(invisible))
+		(text "IN2" (rect 2 23 23 34)(font "Courier New" (bold))(invisible))
+		(line (pt 0 32)(pt 15 32))
+	)
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN1" (rect 2 7 23 18)(font "Courier New" (bold))(invisible))
+		(text "IN1" (rect 2 7 23 18)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 15 16))
+	)
+	(port
+		(pt 64 24)
+		(output)
+		(text "OUT" (rect 48 15 69 26)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 48 15 69 26)(font "Courier New" (bold))(invisible))
+		(line (pt 48 24)(pt 64 24))
+	)
+	(drawing
+		(line (pt 14 36)(pt 25 36))
+		(line (pt 14 13)(pt 25 13))
+		(arc (pt 7 29)(pt 7 19)(rect -14 8 19 41))
+		(arc (pt 49 24)(pt 25 13)(rect -6 13 57 76))
+		(arc (pt 25 35)(pt 49 24)(rect -6 -27 57 36))
 	)
 )
 (connector
@@ -4506,50 +4539,14 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1168 1392)
-	(pt 1168 1384)
-	(bus)
-)
-(connector
 	(pt 1328 1432)
 	(pt 1256 1432)
-	(bus)
-)
-(connector
-	(text "WE[9]" (rect 1002 1456 1032 1467)(font "Arial" ))
-	(pt 992 1472)
-	(pt 1048 1472)
-)
-(connector
-	(pt 1136 1416)
-	(pt 1136 1480)
-	(bus)
-)
-(connector
-	(pt 1136 1480)
-	(pt 1112 1480)
 	(bus)
 )
 (connector
 	(text "PCIClock" (rect 1210 1384 1257 1395)(font "Arial" ))
 	(pt 1184 1400)
 	(pt 1328 1400)
-)
-(connector
-	(pt 1136 1416)
-	(pt 1328 1416)
-	(bus)
-)
-(connector
-	(pt 1168 1384)
-	(pt 1328 1384)
-	(bus)
-)
-(connector
-	(text "FDt[13..4]" (rect 970 1472 1018 1483)(font "Arial" ))
-	(pt 1048 1488)
-	(pt 960 1488)
-	(bus)
 )
 (connector
 	(text "reg_STATUS[13..4]" (rect 1402 1368 1498 1379)(font "Arial" ))
@@ -4561,12 +4558,6 @@ applicable agreement for further details.
 	(text "reg_STATUS[31..14], reg_STATUS[3]" (rect 1440 1392 1626 1403)(font "Arial" ))
 	(pt 1440 1408)
 	(pt 1480 1408)
-	(bus)
-)
-(connector
-	(text "error_bits[9..0]" (rect 1234 1464 1305 1475)(font "Arial" ))
-	(pt 1328 1480)
-	(pt 1224 1480)
 	(bus)
 )
 (connector
@@ -4709,6 +4700,68 @@ applicable agreement for further details.
 	(pt 1312 1064)
 	(pt 1312 1168)
 )
+(connector
+	(pt 1328 1384)
+	(pt 1272 1384)
+	(bus)
+)
+(connector
+	(pt 1272 1384)
+	(pt 1272 1344)
+	(bus)
+)
+(connector
+	(pt 1200 1344)
+	(pt 1200 1352)
+	(bus)
+)
+(connector
+	(pt 1272 1344)
+	(pt 1200 1344)
+	(bus)
+)
+(connector
+	(text "WE[9]" (rect 938 1384 968 1395)(font "Arial" ))
+	(pt 928 1400)
+	(pt 984 1400)
+)
+(connector
+	(text "FDt[13..4]" (rect 906 1400 954 1411)(font "Arial" ))
+	(pt 984 1416)
+	(pt 896 1416)
+	(bus)
+)
+(connector
+	(pt 1136 1408)
+	(pt 1048 1408)
+	(bus)
+)
+(connector
+	(pt 1200 1416)
+	(pt 1328 1416)
+	(bus)
+)
+(connector
+	(pt 1136 1424)
+	(pt 1096 1424)
+	(bus)
+)
+(connector
+	(pt 1096 1424)
+	(pt 1096 1480)
+	(bus)
+)
+(connector
+	(text "error_bits[9..0]" (rect 994 1464 1065 1475)(font "Arial" ))
+	(pt 984 1480)
+	(pt 1096 1480)
+	(bus)
+)
+(connector
+	(pt 1096 1480)
+	(pt 1328 1480)
+	(bus)
+)
 (junction (pt 560 256))
 (junction (pt 536 272))
 (junction (pt 232 544))
@@ -4776,6 +4829,7 @@ applicable agreement for further details.
 (junction (pt 1312 1168))
 (junction (pt 1336 1080))
 (junction (pt 1312 1064))
+(junction (pt 1096 1480))
 (text "Reading/decoding register addresses" (rect -144 384 66 397)(font "Arial" (font_size 8)))
 (text "Reading/decoding register addresses" (rect -144 384 66 397)(font "Arial" (font_size 8)))
 (text "Signal Routing to PXI Trigger lines" (rect 1880 136 2073 149)(font "Arial" (font_size 8)))
