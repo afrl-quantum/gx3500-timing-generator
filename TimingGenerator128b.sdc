@@ -46,17 +46,6 @@ set_multicycle_path -start -hold \
 	-to {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|select_reg*} \
 	1
 
-# Set multicycle paths for the RAM_Enabled signal when it is on the PCI clock
-set_multicycle_path -start -setup \
-	-from [get_clocks RAM_PCI] \
-	-through [get_pins -compatibility_mode {sequencebuffer|cap_bad_ram|captureff*}] \
-	2
-
-set_multicycle_path -start -hold \
-	-from [get_clocks RAM_PCI] \
-	-through [get_pins -compatibility_mode {sequencebuffer|cap_bad_ram|captureff*}] \
-	1
-
 # Set multicycle paths for the synchronizers we use
 # capture synchronizers
 set_multicycle_path -start -setup \
