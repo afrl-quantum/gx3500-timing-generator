@@ -106,7 +106,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 920 776 1088 792)
+	(rect 912 648 1080 664)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
 	(text "MasterClk" (rect 5 0 55 11)(font "Arial" ))
 	(pt 168 8)
@@ -122,7 +122,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 1528 616 1696 632)
+	(rect 1136 856 1304 872)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
 	(text "err_bad_cmd" (rect 5 0 71 11)(font "Arial" ))
 	(pt 168 8)
@@ -138,7 +138,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 896 864 1088 880)
+	(rect 888 736 1080 752)
 	(text "INPUT" (rect 149 0 178 10)(font "Arial" (font_size 6)))
 	(text "Internal_State[2..0]" (rect 5 0 98 11)(font "Arial" ))
 	(pt 192 8)
@@ -154,7 +154,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 1480 640 1696 656)
+	(rect 1088 880 1304 896)
 	(text "INPUT" (rect 173 0 202 10)(font "Arial" (font_size 6)))
 	(text "err_inappropriate_state" (rect 5 0 120 11)(font "Arial" ))
 	(pt 216 8)
@@ -170,7 +170,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 1496 688 1696 704)
+	(rect 1104 928 1304 944)
 	(text "INPUT" (rect 157 0 186 10)(font "Arial" (font_size 6)))
 	(text "err_bad_pci_access" (rect 5 0 105 11)(font "Arial" ))
 	(pt 200 8)
@@ -186,7 +186,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 1512 664 1696 680)
+	(rect 1120 904 1304 920)
 	(text "INPUT" (rect 141 0 170 10)(font "Arial" (font_size 6)))
 	(text "err_bad_duration" (rect 5 0 89 11)(font "Arial" ))
 	(pt 184 8)
@@ -218,7 +218,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 1528 720 1696 736)
+	(rect 1136 960 1304 976)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
 	(text "RefClk_OK" (rect 5 0 62 11)(font "Arial" ))
 	(pt 168 8)
@@ -234,7 +234,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 1520 760 1696 776)
+	(rect 1128 1000 1304 1016)
 	(text "INPUT" (rect 133 0 162 10)(font "Arial" (font_size 6)))
 	(text "PXIClock_OK" (rect 5 0 74 11)(font "Arial" ))
 	(pt 176 8)
@@ -458,7 +458,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 1504 816 1696 832)
+	(rect 1112 1056 1304 1072)
 	(text "INPUT" (rect 149 0 178 10)(font "Arial" (font_size 6)))
 	(text "bug_fifo_underflow" (rect 5 0 99 11)(font "Arial" ))
 	(pt 192 8)
@@ -474,7 +474,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 1488 792 1696 808)
+	(rect 1096 1032 1304 1048)
 	(text "INPUT" (rect 165 0 194 10)(font "Arial" (font_size 6)))
 	(text "bug_bad_ram_access" (rect 5 0 114 11)(font "Arial" ))
 	(pt 208 8)
@@ -492,7 +492,7 @@ applicable agreement for further details.
 	(input)
 	(rect -232 1784 -56 1800)
 	(text "INPUT" (rect 133 0 162 10)(font "Arial" (font_size 6)))
-	(text "Fifo_Level[4..0]" (rect 5 0 81 11)(font "Arial" ))
+	(text "Fifo_Level[4..0]" (rect 5 0 80 11)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 92 12)(pt 117 12))
@@ -503,6 +503,38 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 157 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 1112 1144 1304 1160)
+	(text "INPUT" (rect 149 0 178 10)(font "Arial" (font_size 6)))
+	(text "bug_fetch_no_load" (rect 5 0 101 11)(font "Arial" ))
+	(pt 192 8)
+	(drawing
+		(line (pt 108 12)(pt 133 12))
+		(line (pt 108 4)(pt 133 4))
+		(line (pt 137 8)(pt 192 8))
+		(line (pt 108 12)(pt 108 4))
+		(line (pt 133 4)(pt 137 8))
+		(line (pt 133 12)(pt 137 8))
+	)
+	(text "VCC" (rect 152 7 173 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 1112 1248 1304 1264)
+	(text "INPUT" (rect 149 0 178 10)(font "Arial" (font_size 6)))
+	(text "bug_load_no_fetch" (rect 5 0 101 11)(font "Arial" ))
+	(pt 192 8)
+	(drawing
+		(line (pt 108 12)(pt 133 12))
+		(line (pt 108 4)(pt 133 4))
+		(line (pt 137 8)(pt 192 8))
+		(line (pt 108 12)(pt 108 4))
+		(line (pt 133 4)(pt 137 8))
+		(line (pt 133 12)(pt 137 8))
+	)
+	(text "VCC" (rect 152 7 173 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(output)
@@ -842,7 +874,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 1472 920 1657 936)
+	(rect 1464 792 1649 808)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "Visible_State[2..0]" (rect 90 0 179 11)(font "Arial" ))
 	(pt 0 8)
@@ -1857,7 +1889,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1152 1112 1184 1144)
+	(rect 1152 1392 1184 1424)
 	(text "GND" (rect 8 16 30 26)(font "Arial" (font_size 6)))
 	(text "inst4" (rect 3 21 27 32)(font "Arial" )(invisible))
 	(port
@@ -1874,7 +1906,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1424 1144 1456 1176)
+	(rect 1424 1424 1456 1456)
 	(text "GND" (rect 8 16 30 26)(font "Arial" (font_size 6)))
 	(text "inst5" (rect 3 21 27 32)(font "Arial" )(invisible))
 	(port
@@ -1922,7 +1954,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1328 1080 1400 1232)
+	(rect 1328 1360 1400 1512)
 	(text "DFFEAS" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "inst7" (rect 3 140 27 151)(font "Arial" ))
 	(port
@@ -2007,7 +2039,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1240 1136 1272 1152)
+	(rect 1240 1416 1272 1432)
 	(text "VCC" (rect 7 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst8" (rect 3 5 27 16)(font "Arial" )(invisible))
 	(port
@@ -2022,7 +2054,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1048 1176 1112 1224)
+	(rect 1048 1456 1112 1504)
 	(text "AND2" (rect 1 0 29 10)(font "Arial" (font_size 6)))
 	(text "inst9" (rect 3 37 27 48)(font "Arial" ))
 	(port
@@ -2054,7 +2086,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1720 752 1768 784)
+	(rect 1328 992 1376 1024)
 	(text "NOT" (rect 1 0 22 10)(font "Arial" (font_size 6)))
 	(text "inst" (rect 3 21 21 32)(font "Arial" ))
 	(port
@@ -2079,7 +2111,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1720 712 1768 744)
+	(rect 1328 952 1376 984)
 	(text "NOT" (rect 1 0 22 10)(font "Arial" (font_size 6)))
 	(text "inst1" (rect 3 21 27 32)(font "Arial" ))
 	(port
@@ -2537,7 +2569,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1192 808 1376 904)
+	(rect 1184 680 1368 776)
 	(text "FFSynchronizer" (rect 5 0 95 13)(font "Arial" (font_size 8)))
 	(text "state_sync" (rect 8 81 62 92)(font "Arial" ))
 	(port
@@ -2576,7 +2608,7 @@ applicable agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 168 80))
 	)
-	(annotation_block (parameter)(rect 1248 776 1376 809))
+	(annotation_block (parameter)(rect 1240 648 1368 681))
 )
 (symbol
 	(rect 1280 80 1464 176)
@@ -2897,6 +2929,78 @@ applicable agreement for further details.
 		(rectangle (rect 16 16 168 80))
 	)
 	(annotation_block (parameter)(rect 440 1672 568 1705))
+)
+(symbol
+	(rect 1344 1120 1472 1216)
+	(text "CaptureSynchronizer" (rect 5 0 125 13)(font "Arial" (font_size 8)))
+	(text "inst26" (rect 8 81 38 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "capture" (rect 0 0 43 13)(font "Arial" (font_size 8)))
+		(text "capture" (rect 21 27 64 40)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clka" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clka" (rect 21 43 44 56)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "clkb" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clkb" (rect 21 59 44 72)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 128 32)
+		(output)
+		(text "pulse" (rect 0 0 31 13)(font "Arial" (font_size 8)))
+		(text "pulse" (rect 76 27 107 40)(font "Arial" (font_size 8)))
+		(line (pt 128 32)(pt 112 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 112 80))
+	)
+)
+(symbol
+	(rect 1344 1224 1472 1320)
+	(text "CaptureSynchronizer" (rect 5 0 125 13)(font "Arial" (font_size 8)))
+	(text "inst25" (rect 8 81 38 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "capture" (rect 0 0 43 13)(font "Arial" (font_size 8)))
+		(text "capture" (rect 21 27 64 40)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clka" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clka" (rect 21 43 44 56)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "clkb" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clkb" (rect 21 59 44 72)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 128 32)
+		(output)
+		(text "pulse" (rect 0 0 31 13)(font "Arial" (font_size 8)))
+		(text "pulse" (rect 76 27 107 40)(font "Arial" (font_size 8)))
+		(line (pt 128 32)(pt 112 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 112 80))
+	)
 )
 (connector
 	(text "Addr[6..2]" (rect -102 472 -54 483)(font "Arial" ))
@@ -3608,51 +3712,6 @@ applicable agreement for further details.
 	(pt 928 496)
 )
 (connector
-	(pt 1440 1144)
-	(pt 1440 1128)
-	(bus)
-)
-(connector
-	(pt 1168 1112)
-	(pt 1168 1104)
-	(bus)
-)
-(connector
-	(pt 1328 1152)
-	(pt 1256 1152)
-	(bus)
-)
-(connector
-	(text "WE[9]" (rect 1002 1176 1032 1187)(font "Arial" ))
-	(pt 992 1192)
-	(pt 1048 1192)
-)
-(connector
-	(pt 1136 1136)
-	(pt 1136 1200)
-	(bus)
-)
-(connector
-	(pt 1136 1200)
-	(pt 1112 1200)
-	(bus)
-)
-(connector
-	(text "PCIClock" (rect 1210 1104 1257 1115)(font "Arial" ))
-	(pt 1184 1120)
-	(pt 1328 1120)
-)
-(connector
-	(pt 1136 1136)
-	(pt 1328 1136)
-	(bus)
-)
-(connector
-	(pt 1168 1104)
-	(pt 1328 1104)
-	(bus)
-)
-(connector
 	(pt 752 1024)
 	(pt 752 1016)
 )
@@ -3768,49 +3827,6 @@ applicable agreement for further details.
 	(text "synced_time[63..32]" (rect 664 1488 763 1499)(font "Arial" ))
 	(pt 728 1504)
 	(pt 664 1504)
-	(bus)
-)
-(connector
-	(text "PCIClock" (rect 1074 792 1121 803)(font "Arial" ))
-	(pt 1152 808)
-	(pt 1064 808)
-)
-(connector
-	(pt 1192 856)
-	(pt 1152 856)
-)
-(connector
-	(pt 1192 840)
-	(pt 1168 840)
-)
-(connector
-	(pt 1152 808)
-	(pt 1152 856)
-)
-(connector
-	(pt 1088 872)
-	(pt 1192 872)
-	(bus)
-)
-(connector
-	(pt 1472 928)
-	(pt 1400 928)
-	(bus)
-)
-(connector
-	(pt 1400 840)
-	(pt 1400 928)
-	(bus)
-)
-(connector
-	(pt 1376 840)
-	(pt 1400 840)
-	(bus)
-)
-(connector
-	(text "reg_STATUS[2..0]" (rect 1424 824 1514 835)(font "Arial" ))
-	(pt 1400 840)
-	(pt 1464 840)
 	(bus)
 )
 (connector
@@ -3950,14 +3966,6 @@ applicable agreement for further details.
 	(text "RE[9]" (rect 736 936 764 947)(font "Arial" ))
 	(pt 736 952)
 	(pt 744 952)
-)
-(connector
-	(pt 1168 784)
-	(pt 1088 784)
-)
-(connector
-	(pt 1168 784)
-	(pt 1168 840)
 )
 (connector
 	(pt 1480 424)
@@ -4358,78 +4366,6 @@ applicable agreement for further details.
 	(pt -128 1832)
 )
 (connector
-	(text "error_bits[0]" (rect 1706 608 1765 619)(font "Arial" ))
-	(pt 1696 624)
-	(pt 1760 624)
-)
-(connector
-	(text "error_bits[1]" (rect 1706 632 1765 643)(font "Arial" ))
-	(pt 1696 648)
-	(pt 1760 648)
-)
-(connector
-	(text "error_bits[3]" (rect 1706 680 1765 691)(font "Arial" ))
-	(pt 1696 696)
-	(pt 1760 696)
-)
-(connector
-	(text "error_bits[2]" (rect 1706 656 1765 667)(font "Arial" ))
-	(pt 1696 672)
-	(pt 1760 672)
-)
-(connector
-	(pt 1696 768)
-	(pt 1720 768)
-)
-(connector
-	(text "error_bits[5]" (rect 1786 752 1845 763)(font "Arial" ))
-	(pt 1768 768)
-	(pt 1840 768)
-)
-(connector
-	(pt 1696 728)
-	(pt 1720 728)
-)
-(connector
-	(text "error_bits[4]" (rect 1786 712 1845 723)(font "Arial" ))
-	(pt 1768 728)
-	(pt 1840 728)
-)
-(connector
-	(text "error_bits[7..0]" (rect 1170 1152 1241 1163)(font "Arial" ))
-	(pt 1328 1168)
-	(pt 1160 1168)
-	(bus)
-)
-(connector
-	(text "reg_STATUS[31..12], reg_STATUS[3]" (rect 1440 1112 1626 1123)(font "Arial" ))
-	(pt 1440 1128)
-	(pt 1480 1128)
-	(bus)
-)
-(connector
-	(text "reg_STATUS[11..4]" (rect 1402 1088 1498 1099)(font "Arial" ))
-	(pt 1400 1104)
-	(pt 1472 1104)
-	(bus)
-)
-(connector
-	(text "error_bits[6]" (rect 1706 784 1765 795)(font "Arial" ))
-	(pt 1696 800)
-	(pt 1768 800)
-)
-(connector
-	(text "error_bits[7]" (rect 1706 808 1765 819)(font "Arial" ))
-	(pt 1696 824)
-	(pt 1768 824)
-)
-(connector
-	(text "FDt[11..4]" (rect 970 1192 1018 1203)(font "Arial" ))
-	(pt 1048 1208)
-	(pt 960 1208)
-	(bus)
-)
-(connector
 	(text "debug[31..27]" (rect -56 1776 11 1787)(font "Arial" ))
 	(pt -56 1792)
 	(pt 0 1792)
@@ -4440,6 +4376,226 @@ applicable agreement for further details.
 	(pt -128 1832)
 	(pt 0 1832)
 	(bus)
+)
+(connector
+	(text "PCIClock" (rect 1066 664 1113 675)(font "Arial" ))
+	(pt 1144 680)
+	(pt 1056 680)
+)
+(connector
+	(pt 1184 728)
+	(pt 1144 728)
+)
+(connector
+	(pt 1184 712)
+	(pt 1160 712)
+)
+(connector
+	(pt 1144 680)
+	(pt 1144 728)
+)
+(connector
+	(pt 1080 744)
+	(pt 1184 744)
+	(bus)
+)
+(connector
+	(pt 1464 800)
+	(pt 1392 800)
+	(bus)
+)
+(connector
+	(pt 1392 712)
+	(pt 1392 800)
+	(bus)
+)
+(connector
+	(pt 1160 656)
+	(pt 1080 656)
+)
+(connector
+	(pt 1160 656)
+	(pt 1160 712)
+)
+(connector
+	(pt 1368 712)
+	(pt 1392 712)
+	(bus)
+)
+(connector
+	(text "reg_STATUS[2..0]" (rect 1416 696 1506 707)(font "Arial" ))
+	(pt 1392 712)
+	(pt 1456 712)
+	(bus)
+)
+(connector
+	(pt 1440 1424)
+	(pt 1440 1408)
+	(bus)
+)
+(connector
+	(pt 1168 1392)
+	(pt 1168 1384)
+	(bus)
+)
+(connector
+	(pt 1328 1432)
+	(pt 1256 1432)
+	(bus)
+)
+(connector
+	(text "WE[9]" (rect 1002 1456 1032 1467)(font "Arial" ))
+	(pt 992 1472)
+	(pt 1048 1472)
+)
+(connector
+	(pt 1136 1416)
+	(pt 1136 1480)
+	(bus)
+)
+(connector
+	(pt 1136 1480)
+	(pt 1112 1480)
+	(bus)
+)
+(connector
+	(text "PCIClock" (rect 1210 1384 1257 1395)(font "Arial" ))
+	(pt 1184 1400)
+	(pt 1328 1400)
+)
+(connector
+	(pt 1136 1416)
+	(pt 1328 1416)
+	(bus)
+)
+(connector
+	(pt 1168 1384)
+	(pt 1328 1384)
+	(bus)
+)
+(connector
+	(text "FDt[13..4]" (rect 970 1472 1018 1483)(font "Arial" ))
+	(pt 1048 1488)
+	(pt 960 1488)
+	(bus)
+)
+(connector
+	(text "reg_STATUS[13..4]" (rect 1402 1368 1498 1379)(font "Arial" ))
+	(pt 1400 1384)
+	(pt 1472 1384)
+	(bus)
+)
+(connector
+	(text "reg_STATUS[31..14], reg_STATUS[3]" (rect 1440 1392 1626 1403)(font "Arial" ))
+	(pt 1440 1408)
+	(pt 1480 1408)
+	(bus)
+)
+(connector
+	(text "error_bits[9..0]" (rect 1234 1464 1305 1475)(font "Arial" ))
+	(pt 1328 1480)
+	(pt 1224 1480)
+	(bus)
+)
+(connector
+	(pt 1344 1288)
+	(pt 1336 1288)
+)
+(connector
+	(pt 1344 1272)
+	(pt 1312 1272)
+)
+(connector
+	(pt 1344 1256)
+	(pt 1304 1256)
+)
+(connector
+	(text "error_bits[0]" (rect 1314 848 1373 859)(font "Arial" ))
+	(pt 1304 864)
+	(pt 1368 864)
+)
+(connector
+	(text "error_bits[3]" (rect 1314 920 1373 931)(font "Arial" ))
+	(pt 1304 936)
+	(pt 1368 936)
+)
+(connector
+	(text "error_bits[2]" (rect 1314 896 1373 907)(font "Arial" ))
+	(pt 1304 912)
+	(pt 1368 912)
+)
+(connector
+	(pt 1304 1008)
+	(pt 1328 1008)
+)
+(connector
+	(text "error_bits[5]" (rect 1394 992 1453 1003)(font "Arial" ))
+	(pt 1376 1008)
+	(pt 1448 1008)
+)
+(connector
+	(pt 1304 968)
+	(pt 1328 968)
+)
+(connector
+	(text "error_bits[4]" (rect 1394 952 1453 963)(font "Arial" ))
+	(pt 1376 968)
+	(pt 1448 968)
+)
+(connector
+	(text "error_bits[6]" (rect 1314 1024 1373 1035)(font "Arial" ))
+	(pt 1304 1040)
+	(pt 1376 1040)
+)
+(connector
+	(text "error_bits[7]" (rect 1314 1048 1373 1059)(font "Arial" ))
+	(pt 1304 1064)
+	(pt 1376 1064)
+)
+(connector
+	(text "error_bits[1]" (rect 1314 872 1373 883)(font "Arial" ))
+	(pt 1304 888)
+	(pt 1368 888)
+)
+(connector
+	(text "error_bits[9]" (rect 1488 1240 1547 1251)(font "Arial" ))
+	(pt 1472 1256)
+	(pt 1536 1256)
+)
+(connector
+	(text "error_bits[8]" (rect 1482 1136 1541 1147)(font "Arial" ))
+	(pt 1472 1152)
+	(pt 1528 1152)
+)
+(connector
+	(pt 1344 1152)
+	(pt 1304 1152)
+)
+(connector
+	(pt 1344 1184)
+	(pt 1336 1184)
+)
+(connector
+	(pt 1336 1184)
+	(pt 1336 1288)
+)
+(connector
+	(text "PCIClock" (rect 1320 1294 1331 1341)(font "Arial" )(vertical))
+	(pt 1336 1288)
+	(pt 1336 1344)
+)
+(connector
+	(pt 1344 1168)
+	(pt 1312 1168)
+)
+(connector
+	(pt 1312 1168)
+	(pt 1312 1272)
+)
+(connector
+	(text "MasterClk" (rect 1296 1291 1307 1341)(font "Arial" )(vertical))
+	(pt 1312 1272)
+	(pt 1312 1344)
 )
 (junction (pt 560 256))
 (junction (pt 536 272))
@@ -4480,7 +4636,6 @@ applicable agreement for further details.
 (junction (pt 864 1376))
 (junction (pt 864 1440))
 (junction (pt 864 1504))
-(junction (pt 1400 840))
 (junction (pt 400 1056))
 (junction (pt 272 1040))
 (junction (pt 272 1328))
@@ -4502,12 +4657,13 @@ applicable agreement for further details.
 (junction (pt 864 1696))
 (junction (pt 864 1632))
 (junction (pt 760 1616))
+(junction (pt 1392 712))
+(junction (pt 1336 1288))
+(junction (pt 1312 1272))
 (text "Reading/decoding register addresses" (rect -144 384 66 397)(font "Arial" (font_size 8)))
 (text "Reading/decoding register addresses" (rect -144 384 66 397)(font "Arial" (font_size 8)))
 (text "Signal Routing to PXI Trigger lines" (rect 1880 136 2073 149)(font "Arial" (font_size 8)))
 (text "Register definitions" (rect 1648 64 1862 89)(font "Arial" (font_size 16)))
-(text "The STATUS regster has a number of resettable, asynchronously latched error bits" (rect 1024 736 1487 749)(font "Arial" (font_size 8)))
-(text "plus the command FIFO full bit and the state readback from the Master Clock which is" (rect 1024 752 1503 765)(font "Arial" (font_size 8)))
-(text "This doesn't actually need to have error_bits on the ALOAD port, since they" (rect 1064 1040 1486 1053)(font "Arial" (font_size 8)))
-(text "are now capture-synchronized out of the SequenceBuffer..." (rect 1064 1056 1393 1069)(font "Arial" (font_size 8)))
-(text "bridged by a synchronizer chain" (rect 960 768 1139 781)(font "Arial" (font_size 8)))
+(text "The STATUS regster has a number of resettable, asynchronously latched error bits" (rect 1016 608 1479 621)(font "Arial" (font_size 8)))
+(text "plus the command FIFO full bit and the state readback from the Master Clock which is" (rect 1016 624 1495 637)(font "Arial" (font_size 8)))
+(text "bridged by a synchronizer chain" (rect 952 640 1131 653)(font "Arial" (font_size 8)))
