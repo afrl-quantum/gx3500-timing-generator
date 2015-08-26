@@ -227,6 +227,22 @@ applicable agreement for further details.
 		(line (pt 78 12)(pt 82 8))
 	)
 )
+(pin
+	(output)
+	(rect 672 800 867 816)
+	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
+	(text "Debug_Data1[31..0]" (rect 90 0 189 11)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
 (symbol
 	(rect 520 432 592 584)
 	(text "DFFEAS" (rect 1 0 39 10)(font "Arial" (font_size 6)))
@@ -979,6 +995,63 @@ applicable agreement for further details.
 		(circle (rect 28 68 36 76))
 	)
 )
+(symbol
+	(rect 552 784 616 864)
+	(text "DFFE" (rect 1 0 26 10)(font "Arial" (font_size 6)))
+	(text "inst10" (rect 3 68 33 79)(font "Arial" ))
+	(port
+		(pt 32 0)
+		(input)
+		(text "PRN" (rect 24 13 44 24)(font "Courier New" (bold)))
+		(text "PRN" (rect 24 11 44 22)(font "Courier New" (bold)))
+		(line (pt 32 4)(pt 32 0))
+	)
+	(port
+		(pt 32 80)
+		(input)
+		(text "CLRN" (rect 21 59 48 70)(font "Courier New" (bold)))
+		(text "CLRN" (rect 21 58 48 69)(font "Courier New" (bold)))
+		(line (pt 32 80)(pt 32 76))
+	)
+	(port
+		(pt 0 24)
+		(input)
+		(text "D" (rect 14 20 22 31)(font "Courier New" (bold)))
+		(text "D" (rect 14 20 22 31)(font "Courier New" (bold)))
+		(line (pt 0 24)(pt 12 24))
+	)
+	(port
+		(pt 0 40)
+		(input)
+		(text "CLK" (rect 2 28 23 39)(font "Courier New" (bold))(invisible))
+		(text "CLK" (rect 2 28 23 39)(font "Courier New" (bold))(invisible))
+		(line (pt 0 40)(pt 12 40))
+	)
+	(port
+		(pt 0 56)
+		(input)
+		(text "ENA" (rect 14 50 35 61)(font "Courier New" (bold)))
+		(text "ENA" (rect 14 50 35 61)(font "Courier New" (bold)))
+		(line (pt 0 56)(pt 12 56))
+	)
+	(port
+		(pt 64 24)
+		(output)
+		(text "Q" (rect 44 20 52 31)(font "Courier New" (bold)))
+		(text "Q" (rect 42 20 50 31)(font "Courier New" (bold)))
+		(line (pt 53 24)(pt 64 24))
+	)
+	(drawing
+		(line (pt 12 68)(pt 52 68))
+		(line (pt 12 12)(pt 52 12))
+		(line (pt 52 68)(pt 52 12))
+		(line (pt 12 68)(pt 12 12))
+		(line (pt 12 34)(pt 19 41))
+		(line (pt 18 41)(pt 12 47))
+		(circle (rect 28 4 36 12))
+		(circle (rect 28 68 36 76))
+	)
+)
 (connector
 	(pt 784 472)
 	(pt 800 472)
@@ -1321,20 +1394,11 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 488 712)
-	(pt 488 680)
-	(bus)
-)
-(connector
 	(pt 368 712)
 	(pt 368 752)
 )
 (connector
 	(pt 264 768)
-	(pt 352 768)
-)
-(connector
-	(pt 352 696)
 	(pt 352 768)
 )
 (connector
@@ -1377,10 +1441,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 640 704)
-	(pt 672 704)
-)
-(connector
 	(pt 272 696)
 	(pt 264 696)
 )
@@ -1410,6 +1470,62 @@ applicable agreement for further details.
 	(pt 256 712)
 	(pt 272 712)
 )
+(connector
+	(pt 672 808)
+	(pt 616 808)
+	(bus)
+)
+(connector
+	(pt 488 680)
+	(pt 488 712)
+	(bus)
+)
+(connector
+	(pt 488 712)
+	(pt 488 808)
+	(bus)
+)
+(connector
+	(pt 488 808)
+	(pt 552 808)
+	(bus)
+)
+(connector
+	(pt 352 824)
+	(pt 552 824)
+)
+(connector
+	(pt 352 696)
+	(pt 352 768)
+)
+(connector
+	(pt 352 768)
+	(pt 352 824)
+)
+(connector
+	(pt 552 840)
+	(pt 536 840)
+)
+(connector
+	(pt 536 768)
+	(pt 536 840)
+)
+(connector
+	(pt 536 768)
+	(pt 656 768)
+)
+(connector
+	(pt 656 768)
+	(pt 656 704)
+)
+(connector
+	(pt 640 704)
+	(pt 656 704)
+)
+(connector
+	(pt 656 704)
+	(pt 672 704)
+)
 (junction (pt 608 456))
 (junction (pt 344 536))
 (junction (pt 248 168))
@@ -1424,3 +1540,6 @@ applicable agreement for further details.
 (junction (pt 256 752))
 (junction (pt 264 768))
 (junction (pt 360 680))
+(junction (pt 488 712))
+(junction (pt 352 768))
+(junction (pt 656 704))
