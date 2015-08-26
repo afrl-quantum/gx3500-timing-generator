@@ -112,7 +112,7 @@ bits are set to 1 when an error is detected and may be cleared by writing 1 to t
 appropriate bit in the register. Writes to State\[2:0] and `F` are ignored.
 
 -------------------------------------------------------------------------------------
-|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|`I`|`R`|`P`|`D`|`S`|`B`|X| State\[2:0] |
+|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|`F`|`A`|`I`|`R`|`P`|`D`|`S`|`B`|X| State\[2:0] |
 -------------------------------------------------------------------------------------
 
 State\[2:0]
@@ -150,6 +150,14 @@ State\[2:0]
 
 `I`
 :   `WARN_NO_PXI_CLOCK` -- the card does not detect a valid 10 MHz PXI clock
+
+`A`
+:   `BUG_BAD_RAM_ACCESS` -- an internal error resulted in the card attempting to
+    access the RAM while it was attached to the PCI interface
+
+`F`
+:   `BUG_FIFO_UNDERFLOW` -- an internal error resulted in the card causing a FIFO
+    underflow in the instruction fetch block
 
 #### `STEP`
 

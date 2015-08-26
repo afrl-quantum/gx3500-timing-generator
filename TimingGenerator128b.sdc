@@ -18,14 +18,14 @@ derive_pll_clocks -create_base_clocks
  
 create_generated_clock [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|clkctrl1|outclk}] \
 	-name "RAM_PCI" \
-	-source [get_ports {PCIClock}] \
-	-master_clock [get_clocks {PCIClock}]
+	-source [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|clkctrl1|inclk[0]}]
+#	-master_clock [get_clocks {PCIClock}]
 
 create_generated_clock [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|clkctrl1|outclk}] \
 	-add \
 	-name "RAM_Master" \
-	-source [get_pins {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}] \
-	-master_clock [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}]
+	-source [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|clkctrl1|inclk[2]}]
+#	-master_clock [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}]
 
 set_clock_groups -logically_exclusive -group {RAM_PCI PCIClock} -group {RAM_Master}
 
@@ -72,7 +72,7 @@ set_multicycle_path -start -hold \
 # Tell TimeQuest that the timing core doesn't try to access the RAM when it is using RAM_PCI
 # as its clock
 set_false_path -from [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}] \
-	-through [get_pins -compatibility_mode timingcore\|addrff*] \
+	-through [get_pins -compatibility_mode fetcher\|addrff*] \
 	-to [get_clocks {RAM_PCI}]
 
 #set_false_path -from [get_clocks {RAM_PCI}] \
