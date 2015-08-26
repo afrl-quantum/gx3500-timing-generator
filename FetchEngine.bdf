@@ -117,7 +117,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 672 352 849 368)
+	(rect 672 536 849 552)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "FetchAddr[15..0]" (rect 90 0 171 11)(font "Arial" ))
 	(pt 0 8)
@@ -149,7 +149,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 672 152 848 168)
+	(rect 672 144 848 160)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "Decode_Ready" (rect 90 0 167 11)(font "Arial" ))
 	(pt 0 8)
@@ -184,6 +184,22 @@ applicable agreement for further details.
 	(rect 672 192 848 208)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "Fifo_Level[4..0]" (rect 90 0 165 11)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 672 -96 856 -80)
+	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
+	(text "bug_fifo_overflow" (rect 90 0 178 11)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -760,15 +776,37 @@ applicable agreement for further details.
 		(line (pt 0 0)(pt 0 0))
 	)
 )
-(connector
-	(pt 672 360)
-	(pt 608 360)
-	(bus)
-)
-(connector
-	(pt 608 360)
-	(pt 608 456)
-	(bus)
+(symbol
+	(rect 544 -112 608 -64)
+	(text "AND2" (rect 1 0 29 10)(font "Arial" (font_size 6)))
+	(text "inst8" (rect 3 37 27 48)(font "Arial" ))
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN1" (rect 2 7 23 18)(font "Courier New" (bold))(invisible))
+		(text "IN1" (rect 2 7 23 18)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 14 16))
+	)
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN2" (rect 2 23 23 34)(font "Courier New" (bold))(invisible))
+		(text "IN2" (rect 2 23 23 34)(font "Courier New" (bold))(invisible))
+		(line (pt 0 32)(pt 14 32))
+	)
+	(port
+		(pt 64 24)
+		(output)
+		(text "OUT" (rect 48 15 69 26)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 48 15 69 26)(font "Courier New" (bold))(invisible))
+		(line (pt 42 24)(pt 64 24))
+	)
+	(drawing
+		(line (pt 14 12)(pt 30 12))
+		(line (pt 14 37)(pt 31 37))
+		(line (pt 14 12)(pt 14 37))
+		(arc (pt 31 37)(pt 30 12)(rect 18 12 43 37))
+	)
 )
 (connector
 	(pt 784 472)
@@ -798,16 +836,6 @@ applicable agreement for further details.
 (connector
 	(pt 496 456)
 	(pt 520 456)
-	(bus)
-)
-(connector
-	(pt 592 456)
-	(pt 608 456)
-	(bus)
-)
-(connector
-	(pt 608 456)
-	(pt 624 456)
 	(bus)
 )
 (connector
@@ -865,28 +893,12 @@ applicable agreement for further details.
 	(pt 344 328)
 )
 (connector
-	(pt 672 160)
-	(pt 632 160)
-)
-(connector
-	(pt 496 152)
-	(pt 520 152)
-)
-(connector
 	(pt 512 184)
 	(pt 496 184)
 )
 (connector
 	(pt 608 248)
 	(pt 608 328)
-)
-(connector
-	(pt 632 160)
-	(pt 632 144)
-)
-(connector
-	(pt 520 152)
-	(pt 520 144)
 )
 (connector
 	(text "wrreq" (rect 810 232 839 243)(font "Arial" ))
@@ -1049,19 +1061,9 @@ applicable agreement for further details.
 	(pt 208 488)
 )
 (connector
-	(text "almost_full" (rect 506 152 560 163)(font "Arial" ))
-	(pt 496 168)
-	(pt 576 168)
-)
-(connector
 	(text "almost_full" (rect 90 472 144 483)(font "Arial" ))
 	(pt 160 488)
 	(pt 80 488)
-)
-(connector
-	(text "full" (rect 530 128 545 139)(font "Arial" ))
-	(pt 632 144)
-	(pt 520 144)
 )
 (connector
 	(text "usedw[3..0]" (rect 496 184 552 195)(font "Arial" ))
@@ -1078,6 +1080,58 @@ applicable agreement for further details.
 (connector
 	(pt 608 -32)
 	(pt 672 -32)
+)
+(connector
+	(pt 608 544)
+	(pt 672 544)
+	(bus)
+)
+(connector
+	(pt 608 456)
+	(pt 608 544)
+	(bus)
+)
+(connector
+	(pt 592 456)
+	(pt 608 456)
+	(bus)
+)
+(connector
+	(pt 608 456)
+	(pt 624 456)
+	(bus)
+)
+(connector
+	(pt 504 168)
+	(pt 504 176)
+)
+(connector
+	(pt 496 168)
+	(pt 504 168)
+)
+(connector
+	(text "almost_full" (rect 514 160 568 171)(font "Arial" ))
+	(pt 504 176)
+	(pt 584 176)
+)
+(connector
+	(text "full" (rect 530 136 545 147)(font "Arial" ))
+	(pt 496 152)
+	(pt 672 152)
+)
+(connector
+	(pt 672 -88)
+	(pt 608 -88)
+)
+(connector
+	(text "full" (rect 498 -96 513 -85)(font "Arial" ))
+	(pt 544 -80)
+	(pt 488 -80)
+)
+(connector
+	(text "wrreq" (rect 498 -112 527 -101)(font "Arial" ))
+	(pt 544 -96)
+	(pt 488 -96)
 )
 (junction (pt 608 456))
 (junction (pt 344 536))
