@@ -66,9 +66,9 @@ If `N_REPS` is 0, the card will continuously re-arm (and re-trigger if
 The configuration register consists of two blocks. Bits 31..16 should be set to the
 (unsigned) number of steps in the sequence being programmed.
 
------------------------------------------------------------
-| number of steps[31..16] |X|X|X|X|X|X|X|X|X|X|X|X|`A`|X|`M`|`T`|
------------------------------------------------------------
+-------------------------------------------------------------------
+| number of steps[31..16] |X|X|X|X|X|X|X|X|X|X|X|X|`A`|`F`|`M`|`T`|
+-------------------------------------------------------------------
 
 `T`
 :   `TRIG_ENABLE` -- set this bit to unmask the external trigger input
@@ -77,6 +77,12 @@ The configuration register consists of two blocks. Bits 31..16 should be set to 
 :   `REFCLK_10MHZ` -- if set, the Master Clock is derived from the PXI 10 MHz
     clock. If clear, the Master Clock is derived from the card's own 80 MHz
     onboard oscillator. **This is not currently implemented as a software bit**
+
+`F`
+:   `FIFO_SELF_TEST` -- if set, the FIFO self-test bits can be latched in `STATUS`.
+    Clearing `FIFO_SELF_TEST` does not clear any latched test failure bits, and it
+    is the user's responsibility to ensure that memory contains no consecutive
+    identical words.
 
 `A`
 :   `AUTO_TRIGGER` -- if set, the card will automatically soft-trigger itself upon
@@ -111,9 +117,9 @@ The status register consists of two parts, a readback of the current state in
 bits are set to 1 when an error is detected and may be cleared by writing 1 to the
 appropriate bit in the register. Writes to State\[2:0] and `F` are ignored.
 
------------------------------------------------------------------------------------------------
-|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|`O`|`L`|`F`|`U`|`A`|`I`|`R`|`P`|`D`|`S`|`B`|X| State\[2:0] |
------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|`M`|`T`|`O`|`L`|`F`|`U`|`A`|`I`|`R`|`P`|`D`|`S`|`B`|X| State\[2:0] |
+---------------------------------------------------------------------------------------------------
 
 State\[2:0]
 :   The current state of the card:
@@ -130,46 +136,54 @@ State\[2:0]
     --------------------
 
 `B`
-:   `ERR_BAD_CMD` -- an undefined command number was written to the `CMD` register
+:   `ERR_BAD_CMD` -- an undefined command number was written to the `CMD` register _\[bit 4]_
 
 `S`
 :   `ERR_INAPPROPRIATE_STATE` -- a command was requested in a state not appropriate
-    to that command
+    to that command _\[bit 5]_
 
 `D`
 :   `ERR_BAD_DURATION` -- a sequence step requested a duration of &lt;50 ns (i.e. the
     duration was specified as 0-4 Master Clock ticks). The step was automatically
-    extended to to 50 ns and this status bit was latched.
+    extended to to 50 ns and this status bit was latched. _\[bit 6]_
 
 `P`
 :   `ERR_BAD_PCI_ACCESS` -- PCI access to the sequence buffer was detected while the
-    card was not in the `SETUP` state.
+    card was not in the `SETUP` state. _\[bit 7]_
 
 `R`
-:   `WARN_BAD_REFCLK` -- the card cannot lock to the onboard 80 MHz reference clock
+:   `WARN_BAD_REFCLK` -- the card cannot lock to the onboard 80 MHz reference clock _\[bit 8]_
 
 `I`
-:   `WARN_NO_PXI_CLOCK` -- the card does not detect a valid 10 MHz PXI clock
+:   `WARN_NO_PXI_CLOCK` -- the card does not detect a valid 10 MHz PXI clock _\[bit 9]_
 
 `A`
 :   `BUG_BAD_RAM_ACCESS` -- an internal error resulted in the card attempting to
-    access the RAM while it was attached to the PCI interface
+    access the RAM while it was attached to the PCI interface _\[bit 10]_
 
 `U`
 :   `BUG_FIFO_UNDERFLOW` -- an internal error resulted in the card causing a FIFO
-    underflow in the instruction fetch block
+    underflow in the instruction fetch block _\[bit 11]_
 
 `F`
 :   `BUG_FETCH_NO_LOAD` -- an internal error resulted in the card fetching a word
-    from the FIFO but not using it
+    from the FIFO but not using it _\[bit 12]_
     
 `L`
 :   `BUG_LOAD_NO_FETCH` -- an internal error resulted in the card loading a nonsense
-    word because no FIFO fetch was requested beforehand
+    word because no FIFO fetch was requested beforehand _\[bit 13]_
 
 `O`
 :   `BUG_FIFO_OVERFLOW` -- an internal error resulted in the card attempting to write
-    a word to the FIFO when it was full
+    a word to the FIFO when it was full _\[bit 14]_
+
+`T`
+:   `TFAIL_DUP_WORD_AFTER_FIFO` -- the FIFO self-test (unmasked by `CONFIG:FIFO_SELF_TEST`)
+    failed and detected a duplicated word exiting the FIFO _\[bit 15]_
+
+`M`
+:   `TFAIL_DUP_WORD_FROM_MEM` -- the FIFO self-test (unmasked by `CONFIG:FIFO_SELF_TEST`)
+    failed and detected a duplicated word being fetched from memory _\[bit 16]_
 
 #### `STEP`
 
