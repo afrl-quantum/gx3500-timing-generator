@@ -118,5 +118,11 @@ set_max_delay 200.0ns -to [get_ports {PxiTrig* FlexIO*}]
 set_min_delay -200.0ns -to [get_ports {PxiTrig* FlexIO*}]
 
 # and loose constraints for MClr
+set_input_delay -clock PCIClock -min -1ns [get_ports {MClr}]
+set_input_delay -clock PCIClock -add -max 2ns [get_ports {MClr}]
+
+set_multicycle_path -setup -start -from [get_ports {MClr}] 10
+set_multicycle_path -hold -start -from [get_ports {MClr}] 9
+
 set_max_delay 200.0ns -to [get_ports {MClr}]
 set_min_delay -200.0ns -to [get_ports {MClr}]
