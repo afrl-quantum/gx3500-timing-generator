@@ -84,35 +84,6 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 224 136 352 232)
-	(text "CaptureSynchronizer" (rect 5 0 125 13)(font "Arial" (font_size 8)))
-	(text "cap" (rect 8 81 28 92)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "capture" (rect 0 0 43 13)(font "Arial" (font_size 8)))
-		(text "capture" (rect 21 27 64 40)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "clock" (rect 0 0 31 13)(font "Arial" (font_size 8)))
-		(text "clock" (rect 21 43 52 56)(font "Arial" (font_size 8)))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 128 32)
-		(output)
-		(text "pulse" (rect 0 0 31 13)(font "Arial" (font_size 8)))
-		(text "pulse" (rect 76 27 107 40)(font "Arial" (font_size 8)))
-		(line (pt 128 32)(pt 112 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 112 80))
-	)
-)
-(symbol
 	(rect 544 96 608 176)
 	(text "DFFE" (rect 1 0 26 10)(font "Arial" (font_size 6)))
 	(text "hold" (rect 3 68 25 79)(font "Arial" ))
@@ -297,21 +268,51 @@ applicable agreement for further details.
 		(circle (rect 28 68 36 76))
 	)
 )
-(connector
-	(pt 208 32)
-	(pt 208 184)
-)
-(connector
-	(pt 208 184)
-	(pt 224 184)
+(symbol
+	(rect 264 136 448 232)
+	(text "FFSynchronizer" (rect 5 0 95 13)(font "Arial" (font_size 8)))
+	(text "gate" (rect 8 81 31 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clka" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clka" (rect 21 27 44 40)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clkb" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clkb" (rect 21 43 44 56)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "input[N..0]" (rect 0 0 59 13)(font "Arial" (font_size 8)))
+		(text "input[N..0]" (rect 21 59 80 72)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 184 32)
+		(output)
+		(text "output[N..0]" (rect 0 0 67 13)(font "Arial" (font_size 8)))
+		(text "output[N..0]" (rect 96 27 163 40)(font "Arial" (font_size 8)))
+		(line (pt 184 32)(pt 168 32)(line_width 3))
+	)
+	(parameter
+		"N"
+		"0"
+		""
+	)
+	(drawing
+		(rectangle (rect 16 16 168 80))
+	)
+	(annotation_block (parameter)(rect 448 192 576 225))
 )
 (connector
 	(pt 184 64)
 	(pt 192 64)
-)
-(connector
-	(pt 184 32)
-	(pt 208 32)
 )
 (connector
 	(pt 448 136)
@@ -352,10 +353,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 208 32)
-	(pt 448 32)
-)
-(connector
 	(pt 448 32)
 	(pt 760 32)
 )
@@ -365,28 +362,12 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 352 168)
-	(pt 536 168)
-)
-(connector
 	(pt 760 104)
 	(pt 760 440)
 )
 (connector
 	(pt 192 440)
 	(pt 760 440)
-)
-(connector
-	(pt 200 240)
-	(pt 200 168)
-)
-(connector
-	(pt 200 168)
-	(pt 224 168)
-)
-(connector
-	(pt 200 240)
-	(pt 512 240)
 )
 (connector
 	(pt 512 400)
@@ -431,14 +412,58 @@ applicable agreement for further details.
 	(pt 192 360)
 )
 (connector
-	(pt 192 64)
-	(pt 192 360)
-)
-(connector
 	(pt 192 360)
 	(pt 192 440)
+)
+(connector
+	(pt 448 168)
+	(pt 536 168)
+)
+(connector
+	(pt 248 240)
+	(pt 512 240)
+)
+(connector
+	(pt 248 240)
+	(pt 248 200)
+)
+(connector
+	(pt 248 200)
+	(pt 264 200)
+)
+(connector
+	(pt 208 32)
+	(pt 208 184)
+)
+(connector
+	(pt 184 32)
+	(pt 208 32)
+)
+(connector
+	(pt 208 32)
+	(pt 448 32)
+)
+(connector
+	(pt 264 184)
+	(pt 208 184)
+)
+(connector
+	(pt 264 168)
+	(pt 192 168)
+)
+(connector
+	(pt 192 64)
+	(pt 192 168)
+)
+(connector
+	(pt 192 168)
+	(pt 192 360)
 )
 (junction (pt 208 32))
 (junction (pt 448 32))
 (junction (pt 192 360))
-(text "Trigger the capture buffer once every 4 clkb cycles" (rect 272 264 555 277)(font "Arial" (font_size 8)))
+(junction (pt 192 168))
+(text "Pulse capture buffer once every 4 clkb cycles" (rect 272 264 525 277)(font "Arial" (font_size 8)))
+(text "Synchronously latch the input bus" (rect 504 80 693 93)(font "Arial" (font_size 8)))
+(text "And then synchronize down the" (rect 784 168 961 181)(font "Arial" (font_size 8)))
+(text "bus value." (rect 784 184 841 197)(font "Arial" (font_size 8)))

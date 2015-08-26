@@ -367,4 +367,5 @@ set_global_assignment -name SAFE_STATE_MACHINE ON
 set_global_assignment -name PARALLEL_SYNTHESIS OFF
 set_global_assignment -name QIP_FILE FetchFIFO.qip
 set_global_assignment -name BDF_FILE FetchEngine.bdf
+set_global_assignment -name QIP_FILE CmpZero2b.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

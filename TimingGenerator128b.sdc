@@ -41,34 +41,45 @@ set_multicycle_path -start -setup \
 	2
 set_multicycle_path -start -hold \
 	-to {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|ena_reg} \
-	2
+	1
 set_multicycle_path -start -hold \
 	-to {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|select_reg*} \
+	1
+
+# Set multicycle paths for the RAM_Enabled signal when it is on the PCI clock
+set_multicycle_path -start -setup \
+	-from [get_clocks RAM_PCI] \
+	-through [get_pins -compatibility_mode {sequencebuffer|cap_bad_ram|captureff*}] \
 	2
+
+set_multicycle_path -start -hold \
+	-from [get_clocks RAM_PCI] \
+	-through [get_pins -compatibility_mode {sequencebuffer|cap_bad_ram|captureff*}] \
+	1
 
 # Set multicycle paths for the synchronizers we use
 # capture synchronizers
 set_multicycle_path -start -setup \
-  -from {*|CaptureSynchronizer:*|cap*} \
-  -to {*|CaptureSynchronizer:*|lock*} \
-  2
+	-from {*|CaptureSynchronizer:*|captureff*} \
+	-to {*|CaptureSynchronizer:*|lock*} \
+	2
 
 set_multicycle_path -start -hold \
-  -from {*|CaptureSynchronizer:*|cap*} \
-  -to {*|CaptureSynchronizer:*|lock*} \
-  2
+	-from {*|CaptureSynchronizer:*|captureff*} \
+	-to {*|CaptureSynchronizer:*|lock*} \
+	1
 
 # flip-flop synchronizers
 set_multicycle_path -start -setup \
-  -from {*|FFSynchronizer:*|a*} \
-  -to {*|FFSynchronizer:*|b*} \
-  2
+	-from {*|FFSynchronizer:*|a*} \
+	-to {*|FFSynchronizer:*|b*} \
+	2
 
 set_multicycle_path -start -hold \
-  -from {*|FFSynchronizer:*|a*} \
-  -to {*|FFSynchronizer:*|b*} \
-  2
-  
+	-from {*|FFSynchronizer:*|a*} \
+	-to {*|FFSynchronizer:*|b*} \
+	1
+
 # Tell TimeQuest that the timing core doesn't try to access the RAM when it is using RAM_PCI
 # as its clock
 set_false_path -from [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}] \

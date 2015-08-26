@@ -123,18 +123,24 @@ the input clock is faster than the output clock it requires multi-cycle setup ti
 
 ### CaptureSynchronizer
 
-`CaptureSynchronizer.bdf` implements a "capture synchronizer", which uses the captured
-signal as the clock on a flip-flop to produce a single-clock pulse in the synchronized
-domain when the capture signal experiences a rising-edge transition.
+`CaptureSynchronizer.bdf` implements a synchronous approximation of a "capture synchronizer".
+Rather than aynchronously trap a rising edge by using the input signal as the clock on a
+flip-flop (which Quartus intensely dislikes!), it synchronously detects the rising edge
+and uses it to trigger a 4-cycle pulse which is then transferred to the second clock
+domain and edge-detected down to a single-cycle pulse.
 
-**FIXME**: this should probably just use a state machine to stretch the input pulse
-and send it through a standard FFSynchronizer, rather than try to do asynchronous logic!
+The pulse duration is chosen as 4 cycles because 4 cycles at 100 MHz ensures greater than
+1 cycle at 33 MHz.
 
 ### SamplingSynchronizer
 
 `SamplingSynchronizer.bdf` implements a bus-sampling synchronizer: it uses a capture
 synchronizer to synchronously capture a sample from a multi-wire bus, and then
 synchronizes the sampled values down to the lower-frequency output clock.
+
+_Note_: the SamplingSynchronizer does not actually guarantee bus integrity! It will
+get it right _most_ of the time, which is enough for the debug registers, but _not_
+all of the time.
 
 ### Various `*.qip` files
 

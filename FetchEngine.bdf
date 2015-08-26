@@ -628,35 +628,6 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 704 -64 832 32)
-	(text "CaptureSynchronizer" (rect 5 0 125 13)(font "Arial" (font_size 8)))
-	(text "inst8" (rect 8 81 32 92)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "capture" (rect 0 0 43 13)(font "Arial" (font_size 8)))
-		(text "capture" (rect 21 27 64 40)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "clock" (rect 0 0 31 13)(font "Arial" (font_size 8)))
-		(text "clock" (rect 21 43 52 56)(font "Arial" (font_size 8)))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 128 32)
-		(output)
-		(text "pulse" (rect 0 0 31 13)(font "Arial" (font_size 8)))
-		(text "pulse" (rect 76 27 107 40)(font "Arial" (font_size 8)))
-		(line (pt 128 32)(pt 112 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 112 80))
-	)
-)
-(symbol
 	(rect 232 456 296 504)
 	(text "AND2" (rect 1 0 29 10)(font "Arial" (font_size 6)))
 	(text "inst3" (rect 3 37 27 48)(font "Arial" ))
@@ -803,6 +774,42 @@ applicable agreement for further details.
 		(line (pt 0 0)(pt 0 0))
 		(line (pt 0 0)(pt 0 0))
 		(line (pt 0 0)(pt 0 0))
+	)
+)
+(symbol
+	(rect 704 -64 832 32)
+	(text "CaptureSynchronizer" (rect 5 0 125 13)(font "Arial" (font_size 8)))
+	(text "inst8" (rect 8 81 32 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "capture" (rect 0 0 43 13)(font "Arial" (font_size 8)))
+		(text "capture" (rect 21 27 64 40)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clka" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clka" (rect 21 43 44 56)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "clkb" (rect 0 0 23 13)(font "Arial" (font_size 8)))
+		(text "clkb" (rect 21 59 44 72)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 128 32)
+		(output)
+		(text "pulse" (rect 0 0 31 13)(font "Arial" (font_size 8)))
+		(text "pulse" (rect 76 27 107 40)(font "Arial" (font_size 8)))
+		(line (pt 128 32)(pt 112 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 112 80))
 	)
 )
 (connector
@@ -1062,14 +1069,6 @@ applicable agreement for further details.
 	(pt 608 -32)
 )
 (connector
-	(pt 704 -16)
-	(pt 688 -16)
-)
-(connector
-	(pt 688 -16)
-	(pt 688 -80)
-)
-(connector
 	(pt 688 -80)
 	(pt 672 -80)
 )
@@ -1139,6 +1138,19 @@ applicable agreement for further details.
 	(pt 672 200)
 	(pt 584 200)
 	(bus)
+)
+(connector
+	(pt 704 0)
+	(pt 688 0)
+)
+(connector
+	(pt 688 -80)
+	(pt 688 0)
+)
+(connector
+	(text "MasterClk" (rect 658 -32 708 -21)(font "Arial" ))
+	(pt 704 -16)
+	(pt 648 -16)
 )
 (junction (pt 608 456))
 (junction (pt 344 536))
