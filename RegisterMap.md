@@ -111,9 +111,9 @@ The status register consists of two parts, a readback of the current state in
 bits are set to 1 when an error is detected and may be cleared by writing 1 to the
 appropriate bit in the register. Writes to State\[2:0] and `F` are ignored.
 
--------------------------------------------------------------------------------------
-|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|`F`|`A`|`I`|`R`|`P`|`D`|`S`|`B`|X| State\[2:0] |
--------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|`O`|`L`|`F`|`U`|`A`|`I`|`R`|`P`|`D`|`S`|`B`|X| State\[2:0] |
+-----------------------------------------------------------------------------------------------
 
 State\[2:0]
 :   The current state of the card:
@@ -155,9 +155,21 @@ State\[2:0]
 :   `BUG_BAD_RAM_ACCESS` -- an internal error resulted in the card attempting to
     access the RAM while it was attached to the PCI interface
 
-`F`
+`U`
 :   `BUG_FIFO_UNDERFLOW` -- an internal error resulted in the card causing a FIFO
     underflow in the instruction fetch block
+
+`F`
+:   `BUG_FETCH_NO_LOAD` -- an internal error resulted in the card fetching a word
+    from the FIFO but not using it
+    
+`L`
+:   `BUG_LOAD_NO_FETCH` -- an internal error resulted in the card loading a nonsense
+    word because no FIFO fetch was requested beforehand
+
+`O`
+:   `BUG_FIFO_OVERFLOW` -- an internal error resulted in the card attempting to write
+    a word to the FIFO when it was full
 
 #### `STEP`
 
