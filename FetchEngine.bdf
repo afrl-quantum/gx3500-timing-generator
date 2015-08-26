@@ -23,7 +23,7 @@ applicable agreement for further details.
 	(input)
 	(rect 32 120 208 136)
 	(text "INPUT" (rect 133 0 162 10)(font "Arial" (font_size 6)))
-	(text "Fetch_q[31..0]" (rect 5 0 76 11)(font "Arial" ))
+	(text "Fetch_q[31..0]" (rect 5 0 75 11)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 92 12)(pt 117 12))
@@ -39,7 +39,7 @@ applicable agreement for further details.
 	(input)
 	(rect 32 160 208 176)
 	(text "INPUT" (rect 133 0 162 10)(font "Arial" (font_size 6)))
-	(text "Decode_RdEn" (rect 5 0 79 11)(font "Arial" ))
+	(text "Decode_RdEn" (rect 5 0 78 11)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 92 12)(pt 117 12))
@@ -55,7 +55,7 @@ applicable agreement for further details.
 	(input)
 	(rect 40 184 208 200)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
-	(text "MasterClk" (rect 5 0 56 11)(font "Arial" ))
+	(text "MasterClk" (rect 5 0 55 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -71,7 +71,7 @@ applicable agreement for further details.
 	(input)
 	(rect 16 320 208 336)
 	(text "INPUT" (rect 149 0 178 10)(font "Arial" (font_size 6)))
-	(text "Load_Instructions" (rect 5 0 94 11)(font "Arial" ))
+	(text "Load_Instructions" (rect 5 0 93 11)(font "Arial" ))
 	(pt 192 8)
 	(drawing
 		(line (pt 108 12)(pt 133 12))
@@ -82,22 +82,6 @@ applicable agreement for further details.
 		(line (pt 133 12)(pt 137 8))
 	)
 	(text "VCC" (rect 152 7 173 17)(font "Arial" (font_size 6)))
-)
-(pin
-	(input)
-	(rect 504 -88 672 -72)
-	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
-	(text "PCIClock" (rect 5 0 53 11)(font "Arial" ))
-	(pt 168 8)
-	(drawing
-		(line (pt 84 12)(pt 109 12))
-		(line (pt 84 4)(pt 109 4))
-		(line (pt 113 8)(pt 168 8))
-		(line (pt 84 12)(pt 84 4))
-		(line (pt 109 4)(pt 113 8))
-		(line (pt 109 12)(pt 113 8))
-	)
-	(text "VCC" (rect 128 7 149 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(output)
@@ -149,7 +133,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 864 -40 1054 -24)
+	(rect 672 -40 862 -24)
 	(text "OUTPUT" (rect 1 0 41 10)(font "Arial" (font_size 6)))
 	(text "bug_fifo_underflow" (rect 90 0 184 11)(font "Arial" ))
 	(pt 0 8)
@@ -776,42 +760,6 @@ applicable agreement for further details.
 		(line (pt 0 0)(pt 0 0))
 	)
 )
-(symbol
-	(rect 704 -64 832 32)
-	(text "CaptureSynchronizer" (rect 5 0 125 13)(font "Arial" (font_size 8)))
-	(text "inst8" (rect 8 81 32 92)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "capture" (rect 0 0 43 13)(font "Arial" (font_size 8)))
-		(text "capture" (rect 21 27 64 40)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "clka" (rect 0 0 23 13)(font "Arial" (font_size 8)))
-		(text "clka" (rect 21 43 44 56)(font "Arial" (font_size 8)))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "clkb" (rect 0 0 23 13)(font "Arial" (font_size 8)))
-		(text "clkb" (rect 21 59 44 72)(font "Arial" (font_size 8)))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 128 32)
-		(output)
-		(text "pulse" (rect 0 0 31 13)(font "Arial" (font_size 8)))
-		(text "pulse" (rect 76 27 107 40)(font "Arial" (font_size 8)))
-		(line (pt 128 32)(pt 112 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 112 80))
-	)
-)
 (connector
 	(pt 672 360)
 	(pt 608 360)
@@ -1061,18 +1009,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 864 -32)
-	(pt 832 -32)
-)
-(connector
-	(pt 704 -32)
-	(pt 608 -32)
-)
-(connector
-	(pt 688 -80)
-	(pt 672 -80)
-)
-(connector
 	(pt 312 224)
 	(pt 312 536)
 )
@@ -1140,17 +1076,8 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 704 0)
-	(pt 688 0)
-)
-(connector
-	(pt 688 -80)
-	(pt 688 0)
-)
-(connector
-	(text "MasterClk" (rect 658 -32 708 -21)(font "Arial" ))
-	(pt 704 -16)
-	(pt 648 -16)
+	(pt 608 -32)
+	(pt 672 -32)
 )
 (junction (pt 608 456))
 (junction (pt 344 536))
