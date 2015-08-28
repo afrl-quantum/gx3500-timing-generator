@@ -86,7 +86,23 @@ set_false_path -to [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated
 set_false_path -from [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}] \
 	-through [get_pins -compatibility_mode sequencebuffer\|RAMGate*] \
 	-to [get_clocks {RAM_PCI}]
-	
+
+# faddrffa|ena is gated on RAMClock == RAM_Master
+set_false_path -to [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}] \
+	-through [get_pins -compatibility_mode sequencebuffer\|faddrffa*] \
+	-from [get_clocks {RAM_PCI}]
+
+# faddrffb doesn't change at all on RAM_PCI
+set_multicycle_path -start -setup \
+	-from [get_clocks {RAM_PCI}] \
+	-through [get_pins -compatibility_mode sequencebuffer\|faddrffb*] \
+	2
+
+set_multicycle_path -start -hold \
+	-from [get_clocks {RAM_PCI}] \
+	-through [get_pins -compatibility_mode sequencebuffer\|faddrffb*] \
+	2
+
 # tsu/th constraints
 
 set_input_delay -clock PCIClock -min 0ns [get_ports {FDt[*] Addr[*] CS[*] RdEn WrEn}]

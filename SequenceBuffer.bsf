@@ -131,9 +131,16 @@ applicable agreement for further details.
 	(port
 		(pt 272 128)
 		(output)
+		(text "FetchAddr_Out[15..0]" (rect 0 0 121 13)(font "Arial" (font_size 8)))
+		(text "FetchAddr_Out[15..0]" (rect 130 123 251 136)(font "Arial" (font_size 8)))
+		(line (pt 272 128)(pt 256 128)(line_width 3))
+	)
+	(port
+		(pt 272 144)
+		(output)
 		(text "PCI_Enabled" (rect 0 0 75 13)(font "Arial" (font_size 8)))
-		(text "PCI_Enabled" (rect 176 123 251 136)(font "Arial" (font_size 8)))
-		(line (pt 272 128)(pt 256 128))
+		(text "PCI_Enabled" (rect 176 139 251 152)(font "Arial" (font_size 8)))
+		(line (pt 272 144)(pt 256 144))
 	)
 	(port
 		(pt 272 32)

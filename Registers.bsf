@@ -250,8 +250,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 544)
 		(input)
-		(text "FetchAddr[15..0]" (rect 0 0 94 13)(font "Arial" (font_size 8)))
-		(text "FetchAddr[15..0]" (rect 21 539 115 552)(font "Arial" (font_size 8)))
+		(text "FetchAddr_Out[15..0]" (rect 0 0 121 13)(font "Arial" (font_size 8)))
+		(text "FetchAddr_Out[15..0]" (rect 21 539 142 552)(font "Arial" (font_size 8)))
 		(line (pt 0 544)(pt 16 544)(line_width 3))
 	)
 	(port
