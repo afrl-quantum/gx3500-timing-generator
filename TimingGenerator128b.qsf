@@ -155,7 +155,6 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name SAFE_STATE_MACHINE ON -to *
-set_instance_assignment -name IO_STANDARD "2.5 V" -to FlexIO*
 set_location_assignment PIN_W22 -to FlexIO1
 set_location_assignment PIN_W21 -to FlexIO2
 set_location_assignment PIN_AA18 -to FlexIO151
@@ -368,20 +367,20 @@ set_global_assignment -name PARALLEL_SYNTHESIS OFF
 set_global_assignment -name QIP_FILE FetchFIFO.qip
 set_global_assignment -name BDF_FILE FetchEngine.bdf
 set_global_assignment -name QIP_FILE CmpZero2b.qip
-set_location_assignment LCCOMB_X38_Y25_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[15]~0"
-set_location_assignment LCCOMB_X38_Y26_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[14]~1"
-set_location_assignment LCCOMB_X38_Y27_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[13]~2"
-set_location_assignment LCCOMB_X38_Y28_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[0]~3"
-set_location_assignment LCCOMB_X39_Y25_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[1]~4"
-set_location_assignment LCCOMB_X39_Y26_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[2]~5"
-set_location_assignment LCCOMB_X39_Y27_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[3]~6"
-set_location_assignment LCCOMB_X39_Y28_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[4]~7"
-set_location_assignment LCCOMB_X40_Y25_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[5]~8"
-set_location_assignment LCCOMB_X40_Y26_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[6]~9"
-set_location_assignment LCCOMB_X40_Y27_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[7]~10"
-set_location_assignment LCCOMB_X40_Y28_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[8]~11"
-set_location_assignment LCCOMB_X41_Y25_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[9]~12"
-set_location_assignment LCCOMB_X41_Y26_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[10]~13"
-set_location_assignment LCCOMB_X41_Y27_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[11]~14"
-set_location_assignment LCCOMB_X41_Y28_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|*"
+set_location_assignment LCCOMB_X38_Y26_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[15]~0"
+set_location_assignment LCCOMB_X38_Y26_N2 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[14]~1"
+set_location_assignment LCCOMB_X38_Y26_N4 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[13]~2"
+set_location_assignment LCCOMB_X38_Y26_N6 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[0]~3"
+set_location_assignment LCCOMB_X38_Y26_N8 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[1]~4"
+set_location_assignment LCCOMB_X38_Y26_N10 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[2]~5"
+set_location_assignment LCCOMB_X38_Y26_N12 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[3]~6"
+set_location_assignment LCCOMB_X38_Y26_N14 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[4]~7"
+set_location_assignment LCCOMB_X38_Y26_N16 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[5]~8"
+set_location_assignment LCCOMB_X38_Y26_N18 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[6]~9"
+set_location_assignment LCCOMB_X38_Y26_N20 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[7]~10"
+set_location_assignment LCCOMB_X38_Y26_N22 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[8]~11"
+set_location_assignment LCCOMB_X38_Y26_N24 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[9]~12"
+set_location_assignment LCCOMB_X38_Y26_N26 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[10]~13"
+set_location_assignment LCCOMB_X38_Y26_N28 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[11]~14"
+set_location_assignment LCCOMB_X38_Y26_N30 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|*"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
