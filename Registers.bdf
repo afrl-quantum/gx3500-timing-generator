@@ -588,7 +588,7 @@ applicable agreement for further details.
 	(input)
 	(rect -256 1760 -56 1776)
 	(text "INPUT" (rect 157 0 186 10)(font "Arial" (font_size 6)))
-	(text "FetchAddr_Out[15..0]" (rect 5 0 112 11)(font "Arial" ))
+	(text "FetchAddr_Out[15..0]" (rect 5 0 111 11)(font "Arial" ))
 	(pt 200 8)
 	(drawing
 		(line (pt 116 12)(pt 141 12))
@@ -1340,37 +1340,6 @@ applicable agreement for further details.
 		(line (pt 14 12)(pt 14 37))
 		(arc (pt 31 37)(pt 30 12)(rect 18 12 43 37))
 	)
-)
-(symbol
-	(rect 656 1992 768 2040)
-	(text "LPM_CONSTANT" (rect 4 0 133 16)(font "Arial" (font_size 10)))
-	(text "version" (rect 3 37 45 50)(font "Arial" (font_size 8)))
-	(port
-		(pt 112 32)
-		(output)
-		(text "result[LPM_WIDTH-1..0]" (rect 75 19 213 32)(font "Arial" (font_size 8)))
-		(text "result[]" (rect 75 19 113 32)(font "Arial" (font_size 8)))
-		(line (pt 64 32)(pt 112 32)(line_width 3))
-	)
-	(parameter
-		"LPM_CVALUE"
-		"afd00001"
-		"Unsigned value to which outputs will be set"
-		(type "PARAMETER_UNSIGNED_HEX")	)
-	(parameter
-		"LPM_WIDTH"
-		"32"
-		"Width of output, any integer > 0"
-		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" 
-	)
-	(drawing
-		(text "(cvalue)" (rect 21 26 65 39)(font "Arial" (font_size 8)))
-		(line (pt 16 24)(pt 64 24))
-		(line (pt 16 40)(pt 64 40))
-		(line (pt 64 40)(pt 64 24))
-		(line (pt 16 40)(pt 16 24))
-	)
-	(annotation_block (parameter)(rect 600 1952 799 1991))
 )
 (symbol
 	(rect 600 232 664 312)
@@ -3415,6 +3384,37 @@ applicable agreement for further details.
 		(line (pt 14 25)(pt 32 16))
 		(line (pt 14 7)(pt 32 16))
 	)
+)
+(symbol
+	(rect 656 1992 768 2040)
+	(text "LPM_CONSTANT" (rect 4 0 133 16)(font "Arial" (font_size 10)))
+	(text "version" (rect 3 37 45 50)(font "Arial" (font_size 8)))
+	(port
+		(pt 112 32)
+		(output)
+		(text "result[LPM_WIDTH-1..0]" (rect 75 19 213 32)(font "Arial" (font_size 8)))
+		(text "result[]" (rect 75 19 113 32)(font "Arial" (font_size 8)))
+		(line (pt 64 32)(pt 112 32)(line_width 3))
+	)
+	(parameter
+		"LPM_CVALUE"
+		"afd0005f"
+		"Unsigned value to which outputs will be set"
+		(type "PARAMETER_UNSIGNED_HEX")	)
+	(parameter
+		"LPM_WIDTH"
+		"32"
+		"Width of output, any integer > 0"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" 
+	)
+	(drawing
+		(text "(cvalue)" (rect 21 26 65 39)(font "Arial" (font_size 8)))
+		(line (pt 16 24)(pt 64 24))
+		(line (pt 16 40)(pt 64 40))
+		(line (pt 64 40)(pt 64 24))
+		(line (pt 16 40)(pt 16 24))
+	)
+	(annotation_block (parameter)(rect 600 1952 798 1991))
 )
 (connector
 	(text "Addr[6..2]" (rect -102 472 -54 483)(font "Arial" ))
