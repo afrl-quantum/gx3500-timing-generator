@@ -26,6 +26,8 @@ supports 19 32-bit registers over a 32 word address space (0x0000 - 0x007f).
 |  `16` | `0x0040` | Current time hiword (`TIME_HI`)  |  `R ` |
 |  `17` | `0x0044` | Current time loword (`TIME_LO`)  |  `R ` |
 |       |          |             ...                  |       |
+|  `28` | `0x0070` | Debug information (`CUR_INSTR`)  |  `R ` |
+|  `29` | `0x0074` | Debug information (`MEM_RDBK`)   |  `R ` |
 |  `30` | `0x0078` | Debug information (`DEBUG`)      |  `R ` |
 |  `31` | `0x007c` | Board ID & version (`VERSION`)   |  `R ` |
 ---------------------------------------------------------------
@@ -212,13 +214,23 @@ Since the Master Clock is not synchronous to the PCI clock, `TIME_HI` should be 
 and again after reading `TIME_LO` to detect major roll-overs. If the two values of `TIME_HI`
 differ, the reads should be repeated.
 
+#### `CUR_INSTR`
+
+A read-back register of the currently loaded instruction (i.e. the port mask and delay).
+Useful for hardware debugging.
+
+#### `MEM_RDBK`
+
+A read-back register of the memory word most recently loaded by the FetchEngine. Only useful
+for hardware debugging.
+
 #### `DEBUG`
 
 A read-back register of assorted bits of internal state, useful for debugging the hardware.
 
----------------------------------------------------------------------------------------
-| `Core_FState[8..0]` | `System_FState[7..0]` |X|X|X|X|X|X|X|X|X|X|`D`|`L`|`T`|`P`|`B`|
----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| `Fifo_Level[4..0]` | `Core_FState[3..0]` | `FetchAddr[15..0]` |X|X|`D`|`L`|`T`|`P`|`B`|
+-----------------------------------------------------------------------------------------
 
 `B`
 :   Buffer_Empty
@@ -235,11 +247,14 @@ A read-back register of assorted bits of internal state, useful for debugging th
 `D`
 :   Dynamic_Output
 
-`System_FState`
-:   A mirror of the internal `fstate` register of System\_State.{v,smf}
+`FetchAddr`
+:   The address most recently loaded by the FetchEngine
 
 `Core_FState`
 :   A mirror of the internal `fstate` register of Core\_Timing\_Loop.{v,smf}
+
+`Fifo_Level`
+:   The `usedw` words-used readout for the FetchEngine FIFO.
 
 #### `VERSION`
 
