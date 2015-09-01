@@ -9,11 +9,11 @@ load cycle, so the minimum delay is 50 ns for BufferedTimeout == 0, which will s
 circuit through cycle 5; any longer delay loops through cycle 6 decrementing the
 Timer until it reaches 0.
 
-Note the the SequenceBuffer explicitly adds one cycle of pipeline delay to the RAM,
-so addresses must be loaded (and RE set) on the cycle before the result is used.
+The timing loop does not do address generation, it simple sets the FIFO read-enable (RE) bit:
+the word from the FIFO is then available on the following clock cycle.
 
 Cycle -2 (FINISHING):
-  - Addr -> DecodeAddr, 0 -> RE
+  - 0 -> RE
   - 1 -> Set(Buffer_Empty)
   - If Load_Instructions:
     * goto -2
@@ -21,15 +21,14 @@ Cycle -2 (FINISHING):
     * goto -1
 
 Cycle -1 (HOLD):
-  - Addr -> DecodeAddr, 0 -> RE
+  - 0 -> RE
   - 0 -> Addr
   - 1 -> Set(Buffer_Empty)
   - If ~Load_Instructions:
     * goto -1
 
 Cycle 0 (PRELOAD):
-  - Addr -> DecodeAddr, 1 -> RE
-  - Addr + 1 -> Addr
+  - 1 -> RE
   - 0 -> Steps
   - 0 -> Timer
   - 0 -> TimeCounter
@@ -39,49 +38,44 @@ Cycle 0 (PRELOAD):
 
 Cycle 1 (LDTIME):
   - q -> { Mask\[A-D], BufferedTimeout }
-  - Addr -> DecodeAddr, 1 -> RE
   - If MaskA:
-    * Addr + 1 -> Addr
+    * 1 -> RE
   - If Run_Timer:
     * TimeCounter + 1 -> TimeCounter
   - If ~Load_Instructions:
     * goto -1
 
 Cycle 2 (LD_A):
-  - Addr -> DecodeAddr, 1 -> RE
   - If MaskA:
   	* q -> PatternA
   - If MaskB:
-    * Addr + 1 -> Addr
+    * 1 -> RE
   - If Run_Timer:
     * TimeCounter + 1 -> TimeCounter
   - If ~Load_Instructions:
     * goto -1
 
 Cycle 3 (LD_B):
-  - Addr -> DecodeAddr, 1 -> RE
   - If MaskB:
   	* q -> PatternB
   - If MaskC:
-    * Addr + 1 -> Addr
+    * 1 -> RE
   - If Run_Timer:
     * TimeCounter + 1 -> TimeCounter
   - If ~Load_Instructions:
     * goto -1
 
 Cycle 4 (LD_C):
-  - Addr -> DecodeAddr, 1 -> RE
   - If MaskC:
   	* q -> PatternC
   - If MaskD:
-    * Addr + 1 -> Addr
+    * 1 -> RE
   - If Run_Timer:
     * TimeCounter + 1 -> TimeCounter
   - If ~Load_Instructions:
     * goto -1
 
 Cycle 5 (LD_D):
-  - Addr -> DecodeAddr, 1 -> RE
   - Step + 1 -> Step
   - If Step != Number_Of_Steps:
     * 1 -> Clear(Buffer\_Empty)
@@ -91,12 +85,12 @@ Cycle 5 (LD_D):
     * TimeCounter + 1 -> TimeCounter
   - If Run_Timer && Timer == 0:
     * Pattern\[A-C] -> Output\[A-C]
+    * 1 -> RE
     * If MaskD:
 	  + q -> OutputD
 	* Else:
 	  + PatternD -> OutputD
     * BufferedTimeout -> Timer
-    * Addr + 1 -> Addr
     * If Step == Number\_Of\_Steps:
       + 1 -> Set(Buffer\_Empty)
       + goto -2
@@ -106,13 +100,12 @@ Cycle 5 (LD_D):
     * goto -1
 
 Cycle 6 (DELAY):
-  - Addr -> DecodeAddr, 1 -> RE
   - If Run_Timer:
     * TimeCounter + 1 -> TimeCounter
   - If Run_Timer && Timer == 0:
     * Pattern\[A-D] -> Output\[A-D]
 	* BufferedTimeout -> Timer
-    * Addr + 1 -> Addr
+    * 1 -> RE
 	* If Step == Number\_Of\_Steps:
 	  + 1 -> Set(Buffer\_Empty)
 	  + goto -2
