@@ -2,7 +2,7 @@ Register map for 128-bit timing generator
 =========================================
 
 The timing generator is configured through register space (PCI BAR 1), and currently
-supports 19 32-bit registers over a 32 word address space (0x0000 - 0x007f).
+supports 22 32-bit registers over a 32 word address space (0x0000 - 0x007f).
 
 ---------------------------------------------------------------
 | Index |  Address | Register function (Mnemonic)     | `R/W` |
