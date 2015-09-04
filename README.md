@@ -1,7 +1,7 @@
 README.md -- High-level overview of the 128-bit timing generator
 ================================================================
 
-# Architechtural description
+# Architectural description
 
 Conceptually, the operation of the timing device is simple: it has a memory programmed
 with a sequence of (pattern, delay-to-next-step) tuples, and when triggered it
@@ -90,6 +90,7 @@ the time delay, and the latching of the port values out to the `Output_Driver` b
 
 The instruction decoding cycle is implemented by the state machine in `Core_Timing_Loop.smf`.
 The minimum possible delay is 50 ns, limited by the 5 cycles needed to
+
   1. fetch and decode the delay instruction
   2. calculate (either fetch or retain) the new port A value
   3. calculate (either fetch or retain) the new port B value
