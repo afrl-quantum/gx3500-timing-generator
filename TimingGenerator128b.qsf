@@ -143,7 +143,7 @@ set_instance_assignment -name CLOCK_SETTINGS Ref -to RefClk
 set_instance_assignment -name CLOCK_SETTINGS Ref -to RefClka
 set_instance_assignment -name CLOCK_SETTINGS PXI10 -to 10Mhz
 set_instance_assignment -name CLOCK_SETTINGS PCI -to PCIClock
-set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
 set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
 set_global_assignment -name GENERATE_SVF_FILE ON
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
@@ -383,4 +383,6 @@ set_location_assignment LCCOMB_X38_Y26_N24 -to "SequenceBuffer:sequencebuffer|bu
 set_location_assignment LCCOMB_X38_Y26_N26 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[10]~13"
 set_location_assignment LCCOMB_X38_Y26_N28 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[11]~14"
 set_location_assignment LCCOMB_X38_Y26_N30 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|*"
+set_global_assignment -name CYCLONEIII_CONFIGURATION_DEVICE EPCS16
+set_global_assignment -name FORCE_CONFIGURATION_VCCIO ON
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
