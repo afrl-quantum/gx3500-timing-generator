@@ -25,6 +25,7 @@ supports 22 32-bit registers over a 32 word address space (0x0000 - 0x007f).
 |  `15` | `0x003c` | Port D readback (`OUTPUT_D`)     |  `R ` |
 |  `16` | `0x0040` | Current time hiword (`TIME_HI`)  |  `R ` |
 |  `17` | `0x0044` | Current time loword (`TIME_LO`)  |  `R ` |
+|  `18` | `0x0048` | PLL reconfig register (`PLL_CFG`)|  `RW` |
 |       |          |             ...                  |       |
 |  `28` | `0x0070` | Debug information (`CUR_INSTR`)  |  `R ` |
 |  `29` | `0x0074` | Debug information (`MEM_RDBK`)   |  `R ` |
@@ -68,17 +69,12 @@ If `N_REPS` is 0, the card will continuously re-arm (and re-trigger if
 The configuration register consists of two blocks. Bits 31..16 should be set to the
 (unsigned) number of steps in the sequence being programmed.
 
--------------------------------------------------------------------
-| number of steps[31..16] |X|X|X|X|X|X|X|X|X|X|X|X|`A`|`F`|`M`|`T`|
--------------------------------------------------------------------
+-----------------------------------------------------------------
+| number of steps[31..16] |X|X|X|X|X|X|X|X|X|X|X|X|`A`|`F`|X|`T`|
+-----------------------------------------------------------------
 
 `T`
 :   `TRIG_ENABLE` -- set this bit to unmask the external trigger input
-
-`M`
-:   `REFCLK_10MHZ` -- if set, the Master Clock is derived from the PXI 10 MHz
-    clock. If clear, the Master Clock is derived from the card's own 80 MHz
-    onboard oscillator. **This is not currently implemented as a software bit**
 
 `F`
 :   `FIFO_SELF_TEST` -- if set, the FIFO self-test bits can be latched in `STATUS`.
@@ -123,9 +119,9 @@ The status register consists of two parts, a readback of the current state in
 bits are set to 1 when an error is detected and may be cleared by writing 1 to the
 appropriate bit in the register. Writes to State\[2:0] and `F` are ignored.
 
----------------------------------------------------------------------------------------------------
-|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|`M`|`T`|`O`|`L`|`F`|`U`|`A`|`I`|`R`|`P`|`D`|`S`|`B`|X| State\[2:0] |
----------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|`M`|`T`|`O`|`L`|`F`|`U`|`A`|X|`R`|`P`|`D`|`S`|`B`|X| State\[2:0] |
+-------------------------------------------------------------------------------------------------
 
 State\[2:0]
 :   The current state of the card:
@@ -158,10 +154,7 @@ State\[2:0]
     card was not in the `SETUP` state. _\[bit 7]_
 
 `R`
-:   `WARN_BAD_REFCLK` -- the card cannot lock to the onboard 80 MHz reference clock _\[bit 8]_
-
-`I`
-:   `WARN_NO_PXI_CLOCK` -- the card does not detect a valid 10 MHz PXI clock _\[bit 9]_
+:   `WARN_BAD_REFCLK` -- the card cannot lock to the selected reference oscillator _\[bit 8]_
 
 `A`
 :   `BUG_BAD_RAM_ACCESS` -- an internal error resulted in the card attempting to
@@ -213,6 +206,12 @@ Read-back registers of the current sequence time stamp, in the 10 ns units of th
 Since the Master Clock is not synchronous to the PCI clock, `TIME_HI` should be read before
 and again after reading `TIME_LO` to detect major roll-overs. If the two values of `TIME_HI`
 differ, the reads should be repeated.
+
+#### `PLL_CFG`
+
+Control register for the reconfigurable PLL. This register drives and reads a
+state machine which allows switching the master time reference between the 10 MHz
+PXI chassis clock and the 80 MHz reference oscillator on the GX3500 board.
 
 #### `CUR_INSTR`
 
