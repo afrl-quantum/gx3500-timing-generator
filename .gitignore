@@ -12,6 +12,7 @@
 !*.bdf
 !*.bsf
 !*.md
+!*.mif
 !*.ppf
 !*.qip
 !*.qpf
