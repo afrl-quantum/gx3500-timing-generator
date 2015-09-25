@@ -115,6 +115,10 @@ set_multicycle_path -start -hold \
 	-through [get_pins -compatibility_mode sequencebuffer\|faddrffb*] \
 	2
 
+# don't try to constrain the HW_Trigger line (FlexIO[33]): it is completely asynchronous
+# to the system
+set_false_path -from [get_ports {FlexIO33}] -to {IOLines:inst|cap}
+
 # tsu/th constraints
 
 set_input_delay -clock PCIClock -min 0ns [get_ports {FDt[*] Addr[*] CS[*] RdEn WrEn}]
