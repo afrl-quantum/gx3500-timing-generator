@@ -664,7 +664,7 @@ applicable agreement for further details.
 )
 (block
 	(rect 928 432 1080 536)
-	(text "IOLines" (rect 5 5 45 16)(font "Arial" ))	(text "inst" (rect 5 102 23 113)(font "Arial" ))	(block_io "FlexIO[33]" (input))
+	(text "IOLines" (rect 5 5 45 16)(font "Arial" ))	(text "misc_io" (rect 5 102 43 113)(font "Arial" ))	(block_io "FlexIO[33]" (input))
 	(block_io "MasterClk" (input))
 	(block_io "HW_Trigger" (output))
 	(block_io "FlexIO[73]" (output))
