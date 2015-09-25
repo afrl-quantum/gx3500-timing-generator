@@ -117,7 +117,7 @@ set_multicycle_path -start -hold \
 
 # don't try to constrain the HW_Trigger line (FlexIO[33]): it is completely asynchronous
 # to the system
-set_false_path -from [get_ports {FlexIO33}] -to {IOLines:inst|cap}
+set_false_path -from [get_ports {FlexIO33}] -to {IOLines:misc_io|cap}
 
 # tsu/th constraints
 
