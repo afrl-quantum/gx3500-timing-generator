@@ -5,17 +5,23 @@ create_clock -name "RefClk" -period 12.500ns [get_ports {RefClk}]
 create_clock -name "PCIClock" -period 30.303ns [get_ports {PCIClock}]
 create_clock -name "10MHz" -period 100.00ns [get_ports {"10MHz"}]
 
-# "clocks" for capture synchronizers
-# set these loose, because they aren't actually clocking anything!
-#create_clock -name "CS[2]" -period 30.303ns [get_ports {CS[2]}]
-#create_clock -name "Addr[2]" -period 30.303ns [get_ports {Addr[2]}]
+# virtual clock for the digital out pins
+create_clock -name "OutputClk_virt" -period 10.0ns
 
-# virtual clock for the PCI IO
-#create_clock -name "PCIClock_ext" -period 30.303ns
+# TimeQuest can't automatically derive clocks from a PLL with multiple possible inputs,
+# so manually generate the PLL clocks.
+create_generated_clock -name PLL_Ref \
+	-source [get_pins {clocks|refclk_mux|PllSourceSwitch_altclkctrl_uhi_component|clkctrl1|inclk[0]}] \
+	-divide_by 4 \
+	-multiply_by 5 \
+	[get_pins {clocks|pll|altpll_component|auto_generated|pll1|clk[0]}]
 
-# Automatically constrain PLL and other generated clocks
-derive_pll_clocks -create_base_clocks
- 
+create_generated_clock -name PLL_PXI -add \
+	-source [get_pins {clocks|refclk_mux|PllSourceSwitch_altclkctrl_uhi_component|clkctrl1|inclk[1]}] \
+	-multiply_by 10 \
+	[get_pins {clocks|pll|altpll_component|auto_generated|pll1|clk[0]}]
+
+# Also manually create derived clocks to model the switchable RAM clock	
 create_generated_clock [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|clkctrl1|outclk}] \
 	-name "RAM_PCI" \
 	-source [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|clkctrl1|inclk[0]}]
@@ -23,11 +29,17 @@ create_generated_clock [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altc
 
 create_generated_clock [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|clkctrl1|outclk}] \
 	-add \
-	-name "RAM_Master" \
-	-source [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|clkctrl1|inclk[2]}]
-#	-master_clock [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}]
+	-name "RAM_Master_PXI" \
+	-source [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|clkctrl1|inclk[2]}] \
+	-master_clock [get_clocks {PLL_PXI}]
 
-set_clock_groups -logically_exclusive -group {RAM_PCI PCIClock} -group {RAM_Master}
+create_generated_clock [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|clkctrl1|outclk}] \
+	-add \
+	-name "RAM_Master_Ref" \
+	-source [get_pins {sequencebuffer|RAMClock_Mux|RAMClock_CTRL_altclkctrl_0fi_component|clkctrl1|inclk[2]}] \
+	-master_clock [get_clocks {PLL_Ref}]
+
+set_clock_groups -logically_exclusive -group {RAM_PCI PCIClock} -group {PLL_PXI RAM_Master_PXI} -group {PLL_Ref RAM_Master_Ref}
 
 # Automatically calculate clock uncertainty to jitter and other effects.
 derive_clock_uncertainty
@@ -71,7 +83,7 @@ set_multicycle_path -start -hold \
 
 # Tell TimeQuest that the timing core doesn't try to access the RAM when it is using RAM_PCI
 # as its clock
-set_false_path -from [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}] \
+set_false_path -from [get_clocks {PLL_Ref PLL_PXI}] \
 	-through [get_pins -compatibility_mode fetcher\|addrff*] \
 	-to [get_clocks {RAM_PCI}]
 
@@ -79,16 +91,16 @@ set_false_path -from [get_clocks {clocks|pll_80MHz|altpll_component|auto_generat
 #	-through [get_pins -compatibility_mode sequencebuffer\|RAM\|*] \
 #	-to [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}]
 
-set_false_path -to [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}] \
+set_false_path -to [get_clocks {PLL_Ref PLL_PXI}] \
 	-through [get_pins -compatibility_mode sequencebuffer\|RAM_Qreg*] \
 	-from [get_clocks {RAM_PCI}]
 
-set_false_path -from [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}] \
+set_false_path -from [get_clocks {PLL_Ref PLL_PXI}] \
 	-through [get_pins -compatibility_mode sequencebuffer\|RAMGate*] \
 	-to [get_clocks {RAM_PCI}]
 
 # faddrffa|ena is gated on RAMClock == RAM_Master
-set_false_path -to [get_clocks {clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0]}] \
+set_false_path -to [get_clocks {PLL_Ref PLL_PXI}] \
 	-through [get_pins -compatibility_mode sequencebuffer\|faddrffa*] \
 	-from [get_clocks {RAM_PCI}]
 
@@ -116,8 +128,8 @@ set_output_delay -clock PCIClock -add -max 2ns [get_ports {FDt[*]}]
 # tpd constraints
 
 # loose constraints for the Ports
-set_output_delay -clock clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0] -min -1ns [get_ports {PxiTrig* FlexIO*}]
-set_output_delay -clock clocks|pll_80MHz|altpll_component|auto_generated|pll1|clk[0] -add -max 2ns [get_ports {PxiTrig* FlexIO*}]
+set_output_delay -clock OutputClk_virt -min -1ns [get_ports {PxiTrig* FlexIO*}]
+set_output_delay -clock OutputClk_virt -add -max 2ns [get_ports {PxiTrig* FlexIO*}]
 
 set_max_delay 200.0ns -to [get_ports {PxiTrig* FlexIO*}]
 set_min_delay -200.0ns -to [get_ports {PxiTrig* FlexIO*}]

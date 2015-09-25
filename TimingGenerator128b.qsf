@@ -324,8 +324,6 @@ set_global_assignment -name BDF_FILE Output_Drive.bdf
 set_global_assignment -name TCL_SCRIPT_FILE "../../../../../group/current/docs/commercial-info/marvintest/windows-software/GxFpga/Gx3500Pins.tcl"
 set_global_assignment -name BDF_FILE TimingGenerator128b.bdf
 set_global_assignment -name BDF_FILE Registers.bdf
-set_global_assignment -name QIP_FILE PLL_10MHz.qip
-set_global_assignment -name QIP_FILE PLL_80MHz.qip
 set_global_assignment -name BDF_FILE SequenceBuffer.bdf
 set_global_assignment -name QIP_FILE MainRAM.qip
 set_global_assignment -name QIP_FILE Driver128b.qip
