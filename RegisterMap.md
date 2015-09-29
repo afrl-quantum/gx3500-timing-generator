@@ -213,6 +213,77 @@ Control register for the reconfigurable PLL. This register drives and reads a
 state machine which allows switching the master time reference between the 10 MHz
 PXI chassis clock and the 80 MHz reference oscillator on the GX3500 board.
 
+The register layout when written is
+
+---------------------------------------------------------------------------------------
+| unused[11..0] | `I` | value[8..0] | parameter[2..0] | counter[3..0] | command[2..0] |
+---------------------------------------------------------------------------------------
+
+where the fields are
+
+command[2..0]
+:   The PLL controller command. Note that a READ command must be written to PLL_CFG before the PLL_CFG
+    register is read back to retrieve the desired value. **(PLL_CFG\[2..0\])**
+
+------------------------
+| value | command      |
+|-------|--------------|
+|   0   | `NOOP`       |
+|   1   | `READ`       |
+|   2   | `WRITE`      |
+|   3   | `RECONFIG`   |
+|   4   | `RESET`      |
+|   5   | `PLL_RESET`  |
+|   6   | `CLK_SWITCH` |
+|   7   | (unused)     |
+------------------------
+
+counter[3..0]
+:   The PLL counter addressed by a `READ` or `WRITE` command. **(PLL_CFG\[6..3\])**
+
+-------------------
+| value | counter |
+|-------|---------|
+|   0   | N       |
+|   1   | M       |
+|   2   | cp_lf   |
+|   3   | vco     |
+|   4   | c0      |
+|   5   | c1      |
+|   6   | c2      |
+|   7   | c3      |
+-------------------
+
+parameter[2..0]
+:   The parameter within the PLL counter addressed by a `READ` or `WRITE` command.
+    The parameter index depends on the selected counter. **(PLL_CFG\[9..7\])** 
+
+------------------------------------
+| counter | value | parameter      |
+|---------|-------|----------------|
+| c0..c4  |   0   | high count     |
+|         |   1   | low count      |
+|         |   4   | bypass         |
+|         |   5   | odd            |
+| M, N    |   0   | high count     |
+|         |   1   | low count      |
+|         |   4   | bypass         |
+|         |   5   | odd            |
+|         |   7   | nominal        |
+| vco     |   0   | VCO post scale |
+| cp_lf   |   0   | CP current     |
+|         |   1   | LF resistor    |
+|         |   2   | LF capacitor   |
+------------------------------------
+
+value[8..0]
+:    The value of the specified counter parameter.  **(PLL_CFG\[18..10\])** 
+
+`I`
+:   Status/selector bit for the PLL `inclk` input. Written by a `CLK_SWITCH` command.
+    The bit is 0 if the 80 MHz on-board reference should be used and 1 if the 10 MHz
+    PXI chassis clock should be used.  **(PLL_CFG\[19\])** 
+
 #### `CUR_INSTR`
 
 A read-back register of the currently loaded instruction (i.e. the port mask and delay).
