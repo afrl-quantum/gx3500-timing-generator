@@ -159,3 +159,52 @@ RegisterMap.md
 SequenceFormat.md
 :  Documentatoin of the memory format for uploaded sequences
 
+# How To Build/Install
+
+These are very simple instructions to use Altera Quartus to build the bit-code for the timing
+generator.
+
+1. Start Altera Quartus (command line:  quartus)
++  Load the timing generator project:  `TimingGenerator128b.qpf`
++  Select from the menu "Processing->Start Compliation"
++  Wait a while for compilation to complete.
+    This generates a (.svf) file that can be used to directly load the volatile memory of
+    the FPGA.  We also want to generate a Raw Programming Data file (.rpd) next...
++  Generate the (.rpd) file:
+    1. Select "File->Convert Programming Files..."
+    +  Select Raw Programming Data File (.rpd) as the Programming file type
+    +  Specify "output_files/TimingGenerator128b.rpd" as the output file
+    +  Select the "POF Data" line in the bottom box
+    +  Select "Add File" and select `output_files/TimingGenerator128b.pof`
+    +  Click on the "Generate" button.
+
++  Copy the two output files
+
+    - `output_files/TimingGenerator128b.svf`
+    - `output_files/TimingGenerator128b.rpd`
+
+    to the target computer.
+
++  Do either of these:
+
+    1. Copy the `output_files/TimingGenerator128b.rpd` program to the FPGA eeprom
+       for permanent storage
+
+        1. Do the copying using this python code:<br>
+            import marvin.fpga<br>
+            # use lspci to identify PCI slot address<br>
+            f = marvin.fpga.Board(0x020b) # for pci slot 02:0b<br>
+            f.load_program('/path/to/TimingGenerator128b.rpd', target='eeprom')<br>
+
+
+        + Configure the GX3500 to autoload the volatile memory upon boot from eeprom
+           by soldering a shunt on jumper JP7
+
+    + Copy the `output_files/TimingGenerator128b.svf' program to the FPGA volatile
+        memory for immediate execution
+
+        Do the copying using this python code:<br>
+          import marvin.fpga<br>
+          # use lspci to identify PCI slot address<br>
+          f = marvin.fpga.Board(0x020b) # for pci slot 02:0b<br>
+          f.load_program('/path/to/TimingGenerator128b.svf')<br>
