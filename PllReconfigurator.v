@@ -33,7 +33,7 @@
 //applicable agreement for further details.
 
 
-//altpll_reconfig CBX_AUTO_BLACKBOX="ALL" device_family="Cyclone III" init_from_rom="NO" scan_init_file="/afs/cold-atoms.afrl.af.mil/user/bks/current/Documents/gx3500-timing-generator/PLL_80MHz.mif" busy clock counter_param counter_type data_in data_out pll_areset pll_areset_in pll_configupdate pll_scanclk pll_scanclkena pll_scandata pll_scandataout pll_scandone read_param reconfig reset write_param
+//altpll_reconfig CBX_AUTO_BLACKBOX="ALL" device_family="Cyclone III" init_from_rom="NO" scan_init_file="PLL_80MHz.mif" busy clock counter_param counter_type data_in data_out pll_areset pll_areset_in pll_configupdate pll_scanclk pll_scanclkena pll_scandata pll_scandataout pll_scandone read_param reconfig reset write_param
 //VERSION_BEGIN 13.1 cbx_altpll_reconfig 2013:10:17:04:07:49:SJ cbx_altsyncram 2013:10:17:04:07:49:SJ cbx_cycloneii 2013:10:17:04:07:49:SJ cbx_lpm_add_sub 2013:10:17:04:07:49:SJ cbx_lpm_compare 2013:10:17:04:07:49:SJ cbx_lpm_counter 2013:10:17:04:07:49:SJ cbx_lpm_decode 2013:10:17:04:07:49:SJ cbx_lpm_mux 2013:10:17:04:07:49:SJ cbx_mgl 2013:10:17:04:34:36:SJ cbx_stratix 2013:10:17:04:07:49:SJ cbx_stratixii 2013:10:17:04:07:49:SJ cbx_stratixiii 2013:10:17:04:07:49:SJ cbx_stratixv 2013:10:17:04:07:49:SJ cbx_util_mgl 2013:10:17:04:07:49:SJ  VERSION_END
 // synthesis VERILOG_INPUT_VERSION VERILOG_2001
 // altera message_off 10463
@@ -325,7 +325,7 @@ module  PllReconfigurator_pllrcfg_gt51
 	`endif
 	);
 	defparam
-		altsyncram4.init_file = "/afs/cold-atoms.afrl.af.mil/user/bks/current/Documents/gx3500-timing-generator/PLL_80MHz.mif",
+		altsyncram4.init_file = "PLL_80MHz.mif",
 		altsyncram4.numwords_a = 144,
 		altsyncram4.operation_mode = "SINGLE_PORT",
 		altsyncram4.width_a = 1,
@@ -1406,7 +1406,7 @@ module PllReconfigurator (
 				.busy (sub_wire5),
 				.pll_areset (sub_wire6))/* synthesis synthesis_clearbox=2
 	 clearbox_macroname = altpll_reconfig
-	 clearbox_defparam = "init_from_rom=NO;intended_device_family=Cyclone III;scan_init_file=/afs/cold-atoms.afrl.af.mil/user/bks/current/Documents/gx3500-timing-generator/PLL_80MHz.mif;" */;
+	 clearbox_defparam = "init_from_rom=NO;intended_device_family=Cyclone III;scan_init_file=PLL_80MHz.mif;" */;
 
 endmodule
 
@@ -1414,13 +1414,13 @@ endmodule
 // CNX file retrieval info
 // ============================================================
 // Retrieval info: PRIVATE: CHAIN_TYPE NUMERIC "0"
-// Retrieval info: PRIVATE: INIT_FILE_NAME STRING "/afs/cold-atoms.afrl.af.mil/user/bks/current/Documents/gx3500-timing-generator/PLL_80MHz.mif"
+// Retrieval info: PRIVATE: INIT_FILE_NAME STRING "PLL_80MHz.mif"
 // Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone III"
 // Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
 // Retrieval info: PRIVATE: USE_INIT_FILE STRING "1"
 // Retrieval info: CONSTANT: INIT_FROM_ROM STRING "NO"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone III"
-// Retrieval info: CONSTANT: SCAN_INIT_FILE STRING "/afs/cold-atoms.afrl.af.mil/user/bks/current/Documents/gx3500-timing-generator/PLL_80MHz.mif"
+// Retrieval info: CONSTANT: SCAN_INIT_FILE STRING "PLL_80MHz.mif"
 // Retrieval info: USED_PORT: busy 0 0 0 0 OUTPUT NODEFVAL "busy"
 // Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL "clock"
 // Retrieval info: USED_PORT: counter_param 0 0 3 0 INPUT NODEFVAL "counter_param[2..0]"

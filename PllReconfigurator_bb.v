@@ -83,13 +83,13 @@ endmodule
 // CNX file retrieval info
 // ============================================================
 // Retrieval info: PRIVATE: CHAIN_TYPE NUMERIC "0"
-// Retrieval info: PRIVATE: INIT_FILE_NAME STRING "/afs/cold-atoms.afrl.af.mil/user/bks/current/Documents/gx3500-timing-generator/PLL_80MHz.mif"
+// Retrieval info: PRIVATE: INIT_FILE_NAME STRING "PLL_80MHz.mif"
 // Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone III"
 // Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
 // Retrieval info: PRIVATE: USE_INIT_FILE STRING "1"
 // Retrieval info: CONSTANT: INIT_FROM_ROM STRING "NO"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone III"
-// Retrieval info: CONSTANT: SCAN_INIT_FILE STRING "/afs/cold-atoms.afrl.af.mil/user/bks/current/Documents/gx3500-timing-generator/PLL_80MHz.mif"
+// Retrieval info: CONSTANT: SCAN_INIT_FILE STRING "PLL_80MHz.mif"
 // Retrieval info: USED_PORT: busy 0 0 0 0 OUTPUT NODEFVAL "busy"
 // Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL "clock"
 // Retrieval info: USED_PORT: counter_param 0 0 3 0 INPUT NODEFVAL "counter_param[2..0]"

@@ -17,7 +17,7 @@
 --    Device Part: -
 --    Device Speed Grade: 8
 --    PLL Scan Chain: Fast PLL (144 bits)
---    File Name: /afs/cold-atoms.afrl.af.mil/user/bks/current/Documents/gx3500-timing-generator/PLL_10MHz.mif
+--    File Name: PLL_10MHz.mif
 --    Generated: Thu Sep 24 17:28:36 2015
 
 WIDTH=1;
