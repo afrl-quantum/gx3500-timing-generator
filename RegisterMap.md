@@ -27,6 +27,8 @@ supports 22 32-bit registers over a 32 word address space (0x0000 - 0x007f).
 |  `17` | `0x0044` | Current time loword (`TIME_LO`)  |  `R ` |
 |  `18` | `0x0048` | PLL reconfig register (`PLL_CFG`)|  `RW` |
 |       |          |             ...                  |       |
+|  `26` | `0x0068` | Board git version (`GIT_HASH`)   |  `R ` |
+|  `27` | `0x006c` | Debug information (`DEBUG_DATA`) |  `R ` |
 |  `28` | `0x0070` | Debug information (`CUR_INSTR`)  |  `R ` |
 |  `29` | `0x0074` | Debug information (`MEM_RDBK`)   |  `R ` |
 |  `30` | `0x0078` | Debug information (`DEBUG`)      |  `R ` |
@@ -331,3 +333,7 @@ A read-back register of assorted bits of internal state, useful for debugging th
 A constant indicating the card program and revision. It will read as `0xafd0MMNN`, denoting
 Air Force Digital Output, major revision MM, minor revision NN.
 
+#### `GIT_HASH`
+
+A constant indicating 32 bits of the md5 hash of the git version.  It will read as
+`0xHHHHHHHH`, denoting the (near) exact git revision of the firmware.

@@ -315,6 +315,42 @@ set_location_assignment PIN_G13 -to FlexIO116
 set_location_assignment PIN_G10 -to FlexIO117
 set_location_assignment PIN_F10 -to FlexIO118
 set_location_assignment PIN_F8 -to FlexIO119
+set_global_assignment -name SYNCHRONIZER_IDENTIFICATION AUTO
+set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL ON
+set_instance_assignment -name SYNCHRONIZER_IDENTIFICATION "FORCED IF ASYNCHRONOUS" -to "*|FFSynchronizer:*|b*"
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC OFF
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION OFF
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name FITTER_AUTO_EFFORT_DESIRED_SLACK_MARGIN "500 ps"
+set_instance_assignment -name SYNCHRONIZER_IDENTIFICATION "FORCED IF ASYNCHRONOUS" -to "*|CaptureSynchronizer:*|lock*"
+set_global_assignment -name ALLOW_POWER_UP_DONT_CARE OFF
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
+set_global_assignment -name SAFE_STATE_MACHINE ON
+set_global_assignment -name PARALLEL_SYNTHESIS OFF
+set_location_assignment LCCOMB_X38_Y26_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[15]~0"
+set_location_assignment LCCOMB_X38_Y26_N2 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[14]~1"
+set_location_assignment LCCOMB_X38_Y26_N4 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[13]~2"
+set_location_assignment LCCOMB_X38_Y26_N6 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[0]~3"
+set_location_assignment LCCOMB_X38_Y26_N8 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[1]~4"
+set_location_assignment LCCOMB_X38_Y26_N10 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[2]~5"
+set_location_assignment LCCOMB_X38_Y26_N12 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[3]~6"
+set_location_assignment LCCOMB_X38_Y26_N14 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[4]~7"
+set_location_assignment LCCOMB_X38_Y26_N16 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[5]~8"
+set_location_assignment LCCOMB_X38_Y26_N18 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[6]~9"
+set_location_assignment LCCOMB_X38_Y26_N20 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[7]~10"
+set_location_assignment LCCOMB_X38_Y26_N22 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[8]~11"
+set_location_assignment LCCOMB_X38_Y26_N24 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[9]~12"
+set_location_assignment LCCOMB_X38_Y26_N26 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[10]~13"
+set_location_assignment LCCOMB_X38_Y26_N28 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[11]~14"
+set_location_assignment LCCOMB_X38_Y26_N30 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|*"
+set_global_assignment -name CYCLONEIII_CONFIGURATION_DEVICE EPCS16
+set_global_assignment -name FORCE_CONFIGURATION_VCCIO ON
+
+set_global_assignment -name PRE_FLOW_SCRIPT_FILE "quartus_sh:version.tcl"
+
+set_global_assignment -name AHDL_FILE version.tdf
 set_global_assignment -name VERILOG_FILE Core_Timing_Loop.v
 set_global_assignment -name VERILOG_FILE System_State.v
 set_global_assignment -name BDF_FILE CaptureSynchronizer.bdf
@@ -347,45 +383,12 @@ set_global_assignment -name QIP_FILE Eq16b.qip
 set_global_assignment -name BDF_FILE SystemController.bdf
 set_global_assignment -name BDF_FILE FFSynchronizer.bdf
 set_global_assignment -name BDF_FILE SamplingSynchronizer.bdf
-set_global_assignment -name SYNCHRONIZER_IDENTIFICATION AUTO
-set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL ON
-set_instance_assignment -name SYNCHRONIZER_IDENTIFICATION "FORCED IF ASYNCHRONOUS" -to "*|FFSynchronizer:*|b*"
-set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC OFF
-set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
-set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION OFF
-set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
-set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
-set_global_assignment -name FITTER_AUTO_EFFORT_DESIRED_SLACK_MARGIN "500 ps"
-set_instance_assignment -name SYNCHRONIZER_IDENTIFICATION "FORCED IF ASYNCHRONOUS" -to "*|CaptureSynchronizer:*|lock*"
 set_global_assignment -name QIP_FILE Incr2b.qip
-set_global_assignment -name ALLOW_POWER_UP_DONT_CARE OFF
-set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
-set_global_assignment -name SAFE_STATE_MACHINE ON
-set_global_assignment -name PARALLEL_SYNTHESIS OFF
 set_global_assignment -name QIP_FILE FetchFIFO.qip
 set_global_assignment -name BDF_FILE FetchEngine.bdf
 set_global_assignment -name QIP_FILE CmpZero2b.qip
-set_location_assignment LCCOMB_X38_Y26_N0 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[15]~0"
-set_location_assignment LCCOMB_X38_Y26_N2 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[14]~1"
-set_location_assignment LCCOMB_X38_Y26_N4 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[13]~2"
-set_location_assignment LCCOMB_X38_Y26_N6 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[0]~3"
-set_location_assignment LCCOMB_X38_Y26_N8 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[1]~4"
-set_location_assignment LCCOMB_X38_Y26_N10 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[2]~5"
-set_location_assignment LCCOMB_X38_Y26_N12 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[3]~6"
-set_location_assignment LCCOMB_X38_Y26_N14 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[4]~7"
-set_location_assignment LCCOMB_X38_Y26_N16 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[5]~8"
-set_location_assignment LCCOMB_X38_Y26_N18 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[6]~9"
-set_location_assignment LCCOMB_X38_Y26_N20 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[7]~10"
-set_location_assignment LCCOMB_X38_Y26_N22 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[8]~11"
-set_location_assignment LCCOMB_X38_Y26_N24 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[9]~12"
-set_location_assignment LCCOMB_X38_Y26_N26 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[10]~13"
-set_location_assignment LCCOMB_X38_Y26_N28 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|lpm_mux:\$00000|mux_krc:auto_generated|result_node[11]~14"
-set_location_assignment LCCOMB_X38_Y26_N30 -to "SequenceBuffer:sequencebuffer|busmux:AddrMux|*"
-set_global_assignment -name CYCLONEIII_CONFIGURATION_DEVICE EPCS16
-set_global_assignment -name FORCE_CONFIGURATION_VCCIO ON
 set_global_assignment -name QIP_FILE ReconfigurablePLL.qip
 set_global_assignment -name QIP_FILE PllReconfigurator.qip
 set_global_assignment -name QIP_FILE PllSourceSwitch.qip
 set_global_assignment -name BDF_FILE IOLines.bdf
-
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
