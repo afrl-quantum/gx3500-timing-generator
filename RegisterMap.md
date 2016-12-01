@@ -72,11 +72,24 @@ The configuration register consists of two blocks. Bits 31..16 should be set to 
 (unsigned) number of steps in the sequence being programmed.
 
 -----------------------------------------------------------------
-| number of steps[31..16] |X|X|X|X|X|X|X|X|X|X|X|X|`A`|`F`|X|`T`|
+| number of steps[31..16] |X|X|X|X|X|X|X|X|X|X|X|`F`|`A`|`L`|`I`|`T`|
 -----------------------------------------------------------------
 
 `T`
 :   `TRIG_ENABLE` -- set this bit to unmask the external trigger input
+
+`I`
+:   `TRIG_INVERT` -- set this bit to invert the external trigger input
+
+`L`
+:   `TRIG_TYPE` -- set this bit to make the external trigger input be level
+    sensitive instead of edge sensitive (if bit is not set)
+
+`A`
+:   `AUTO_TRIGGER` -- if set, the card will automatically soft-trigger itself upon
+    completion of the arming sequence. This means that the `ARM` command implicitly
+    contains a `TRIGGER` command, and the card will also automatically re-trigger itself
+    if it is programmed for multiple repetitions of the sequence.
 
 `F`
 :   `FIFO_SELF_TEST` -- if set, the FIFO self-test bits can be latched in `STATUS`.
@@ -87,12 +100,6 @@ The configuration register consists of two blocks. Bits 31..16 should be set to 
     and a cyclic sequence should not be subsetted as the last word read at the end
     of one sequence run may be identical to the first word of the following run --- 
     leading to a false positive.
-
-`A`
-:   `AUTO_TRIGGER` -- if set, the card will automatically soft-trigger itself upon
-    completion of the arming sequence. This means that the `ARM` command implicitly
-    contains a `TRIGGER` command, and the card will also automatically re-trigger itself
-    if it is programmed for multiple repetitions of the sequence.
 
 #### `CMD`
 
