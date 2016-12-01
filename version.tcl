@@ -1,7 +1,9 @@
 #!/usr/bin/env tclsh
 set FIRMWARE_ID 0xafd0
 set gitversion [ exec git describe --tags ]
-regexp {v([0-9]*).([0-9]*)(-[0-9]*-g([0-9a-z]*))?} $gitversion matched major minor verincr hash
+regexp {v([0-9]*).([0-9]*)(-[0-9]*-g([0-9a-z]*))?} $gitversion matched major minor verincr thash
+set githashfull [ exec git rev-parse --verify HEAD ]
+regexp {([0-9a-z]{8})} $githashfull hash
 set version [ format H"%x" [ expr ($FIRMWARE_ID << 16) | ($major<<8) | $minor ] ]
 
 set id [ format H"%x" $FIRMWARE_ID ]
