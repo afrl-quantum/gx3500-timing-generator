@@ -13,8 +13,10 @@ Port C\[31..0]: `FlexIO[111..80]`
 Port D\[31..0]: `FlexIO[151..120]`
 
 External trigger input: `FlexIO[32]`
-Trigger indicator: `FlexIO[33]` (goes HIGH when the card enters the `RUN` state)
-Sequence transition indicator: `FlexIO[34]` (pulses HIGH for 20 ns when a new pattern is output)
+MasterClock output: `FlexIO[72]`
+
+NOTE:  In quartus, FlexIO pins are not zero indexed as described here.  Rather,
+they are indexed starting at FlexIO[1] not FlexIO[0].
 
 We would like to also support an external 10MHz reference input, but CLKINs cannot come
 from GPIO pins, i.e. the FlexIOs --- there are dedicated CLKIN pins.
