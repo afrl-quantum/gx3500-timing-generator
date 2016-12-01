@@ -21,7 +21,7 @@ applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 480 208 648 224)
+	(rect 128 208 296 224)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
 	(text "FlexIO[33]" (rect 5 0 55 11)(font "Arial" ))
 	(pt 168 8)
@@ -37,7 +37,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 384 528 552 544)
+	(rect 112 528 280 544)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
 	(text "MasterClk" (rect 5 0 55 11)(font "Arial" ))
 	(pt 168 8)
@@ -53,9 +53,9 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 480 152 672 168)
+	(rect 128 152 320 168)
 	(text "INPUT" (rect 149 0 178 10)(font "Arial" (font_size 6)))
-	(text "HW_Trigger_invert" (rect 5 0 100 11)(font "Arial" ))
+	(text "HW_Trigger_invert" (rect 5 0 99 11)(font "Arial" ))
 	(pt 192 8)
 	(drawing
 		(line (pt 108 12)(pt 133 12))
@@ -69,9 +69,9 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 328 480 520 496)
+	(rect 408 480 600 496)
 	(text "INPUT" (rect 149 0 178 10)(font "Arial" (font_size 6)))
-	(text "HW_Trigger_type" (rect 5 0 94 11)(font "Arial" ))
+	(text "HW_Trigger_type" (rect 5 0 93 11)(font "Arial" ))
 	(pt 192 8)
 	(drawing
 		(line (pt 108 12)(pt 133 12))
@@ -116,7 +116,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 632 376 696 456)
+	(rect 392 192 456 272)
 	(text "DFF" (rect 1 0 21 10)(font "Arial" (font_size 6)))
 	(text "cap" (rect 3 68 23 79)(font "Arial" ))
 	(port
@@ -240,7 +240,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 664 200 712 232)
+	(rect 312 200 360 232)
 	(text "ALT_INBUF" (rect 1 0 54 10)(font "Arial" (font_size 6)))
 	(text "trig_in" (rect 3 21 34 32)(font "Arial" ))
 	(port
@@ -329,7 +329,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 480 352 592 440)
+	(rect 560 352 672 440)
 	(text "MUX" (rect 42 0 78 16)(font "Arial" (font_size 10)))
 	(text "trigmode" (rect 3 77 53 90)(font "Arial" (font_size 8)))
 	(port
@@ -370,7 +370,7 @@ applicable agreement for further details.
 		(line (pt 44 16)(pt 68 32))
 		(line (pt 44 80)(pt 68 64))
 	)
-	(annotation_block (parameter)(rect 440 304 636 343))
+	(annotation_block (parameter)(rect 520 304 716 343))
 )
 (symbol
 	(rect 848 336 896 368)
@@ -398,7 +398,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 744 184 808 232)
+	(rect 592 184 656 232)
 	(text "XOR" (rect 1 0 23 10)(font "Arial" (font_size 6)))
 	(text "trig_invert" (rect 3 37 52 48)(font "Arial" ))
 	(port
@@ -432,22 +432,6 @@ applicable agreement for further details.
 	)
 )
 (connector
-	(pt 520 488)
-	(pt 536 488)
-)
-(connector
-	(pt 536 488)
-	(pt 536 440)
-)
-(connector
-	(pt 696 400)
-	(pt 720 400)
-)
-(connector
-	(pt 632 400)
-	(pt 592 400)
-)
-(connector
 	(pt 864 176)
 	(pt 864 192)
 )
@@ -456,52 +440,9 @@ applicable agreement for further details.
 	(pt 888 192)
 )
 (connector
-	(pt 744 200)
-	(pt 736 200)
-)
-(connector
-	(pt 736 200)
-	(pt 736 160)
-)
-(connector
-	(pt 712 216)
-	(pt 744 216)
-)
-(connector
-	(pt 648 216)
-	(pt 664 216)
-)
-(connector
-	(pt 672 160)
-	(pt 736 160)
-)
-(connector
 	(text "trig_type[0]" (rect 986 176 1041 187)(font "Arial" ))
 	(pt 952 192)
 	(pt 1040 192)
-)
-(connector
-	(text "trig_type[1..0]" (rect 394 384 461 395)(font "Arial" ))
-	(pt 480 400)
-	(pt 384 400)
-	(bus)
-)
-(connector
-	(pt 840 208)
-	(pt 840 296)
-)
-(connector
-	(text "trig_type[1]" (rect 850 280 905 291)(font "Arial" ))
-	(pt 840 296)
-	(pt 904 296)
-)
-(connector
-	(pt 808 208)
-	(pt 840 208)
-)
-(connector
-	(pt 840 208)
-	(pt 888 208)
 )
 (connector
 	(pt 848 352)
@@ -528,14 +469,6 @@ applicable agreement for further details.
 	(pt 920 352)
 )
 (connector
-	(pt 632 416)
-	(pt 624 416)
-)
-(connector
-	(pt 624 416)
-	(pt 624 536)
-)
-(connector
 	(pt 720 416)
 	(pt 712 416)
 )
@@ -548,19 +481,91 @@ applicable agreement for further details.
 	(pt 968 536)
 )
 (connector
-	(pt 552 536)
-	(pt 624 536)
+	(pt 616 488)
+	(pt 616 440)
 )
 (connector
-	(pt 624 536)
-	(pt 712 536)
+	(pt 600 488)
+	(pt 616 488)
+)
+(connector
+	(text "trig_type[1..0]" (rect 474 384 541 395)(font "Arial" ))
+	(pt 464 400)
+	(pt 560 400)
+	(bus)
+)
+(connector
+	(pt 672 400)
+	(pt 720 400)
 )
 (connector
 	(pt 712 536)
 	(pt 888 536)
 )
-(junction (pt 840 208))
+(connector
+	(pt 384 536)
+	(pt 384 232)
+)
+(connector
+	(pt 280 536)
+	(pt 384 536)
+)
+(connector
+	(pt 384 536)
+	(pt 712 536)
+)
+(connector
+	(pt 360 216)
+	(pt 392 216)
+)
+(connector
+	(pt 296 216)
+	(pt 312 216)
+)
+(connector
+	(pt 384 232)
+	(pt 392 232)
+)
+(connector
+	(pt 392 232)
+	(pt 400 232)
+)
+(connector
+	(pt 592 200)
+	(pt 584 200)
+)
+(connector
+	(pt 320 160)
+	(pt 584 160)
+)
+(connector
+	(pt 584 200)
+	(pt 584 160)
+)
+(connector
+	(pt 456 216)
+	(pt 592 216)
+)
+(connector
+	(pt 776 208)
+	(pt 776 256)
+)
+(connector
+	(text "trig_type[1]" (rect 786 240 841 251)(font "Arial" ))
+	(pt 776 256)
+	(pt 840 256)
+)
+(connector
+	(pt 656 208)
+	(pt 776 208)
+)
+(connector
+	(pt 776 208)
+	(pt 888 208)
+)
 (junction (pt 816 400))
-(junction (pt 624 536))
 (junction (pt 712 536))
+(junction (pt 384 536))
+(junction (pt 392 232))
+(junction (pt 776 208))
 (text "Reset edge detection" (rect 808 320 928 333)(font "Arial" (font_size 8)))
